@@ -1,0 +1,2 @@
+ru/stqa/pft/sandbox/TestPoint.java
+ ru.stqa.pft.sandbox.TestPoint

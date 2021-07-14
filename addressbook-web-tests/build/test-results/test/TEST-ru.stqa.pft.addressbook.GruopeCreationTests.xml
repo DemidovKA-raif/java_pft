@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.addressbook.GruopeCreationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-07-14T17:11:49" hostname="N-MSK-RUADMK3" time="1.71">
+  <properties/>
+  <testcase name="testGruopeCreation" classname="ru.stqa.pft.addressbook.GruopeCreationTests" time="1.71"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+1626282705952	geckodriver	INFO	Listening on 127.0.0.1:9954
+1626282706566	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "0" "-foreground" "-no-remote" "-profile" "C:\\Users\\ruadmk3\\AppData\\Local\\Temp\\rust_mozprofilelVcUeK"
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "https://addons.mozilla.org/firefox/downloads/file/3448508/saml_tracer-1.6-an+fx.xpi?src=dp-btn-primary" - origin was expected but received full URL.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "https://armbio-test-app.raiffeisen.ru/armb/views/equipment_test" - origin was expected but received full URL.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "https://armbio-test-app.raiffeisen.ru/armb/*" - origin was expected but received full URL.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "http://armbio-test-app.raiffeisen.ru/armb/*" - origin was expected but received full URL.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "https://armbio-test-app.raiffeisen.ru/armb/views/equipment_test" - origin was expected but received full URL.
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "https://armbio-test-app.raiffeisen.ru/armb/*" - origin was expected but received full URL.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1626282708598	Marionette	INFO	Listening on port 53784
+1626282708944	Marionette	WARN	TLS certificate errors will be ignored for this session
+Jul 14, 2021 8:11:49 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+1626282711165	Marionette	INFO	Stopped listening on port 53784
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 446: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+]]></system-err>
+</testsuite>

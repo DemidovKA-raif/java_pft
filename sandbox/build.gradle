@@ -10,9 +10,9 @@ dependencies {
     testCompile 'org.testng:testng:7.4.0'
 }
 
-//dependencies {
-//    implementation 'org.testng:testng:7.1.0'
-//}
+dependencies {
+    implementation 'org.testng:testng:7.1.0'
+}
 test {
     useTestNG()
 }
