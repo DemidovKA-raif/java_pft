@@ -1,0 +1,10 @@
+ru/stqa/pft/addressbook/GroupData.java
+ ru.stqa.pft.addressbook.GroupData
+ru/stqa/pft/addressbook/NameNewContact.java
+ ru.stqa.pft.addressbook.NameNewContact
+ru/stqa/pft/addressbook/AddNewContacts.java
+ ru.stqa.pft.addressbook.AddNewContacts
+ru/stqa/pft/addressbook/StepTesting.java
+ ru.stqa.pft.addressbook.StepTesting
+ru/stqa/pft/addressbook/GruopeCreationTests.java
+ ru.stqa.pft.addressbook.GruopeCreationTests

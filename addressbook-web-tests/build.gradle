@@ -1,0 +1,23 @@
+apply plugin: 'java'
+
+
+repositories {
+    mavenCentral{}
+}
+
+dependencies {
+    testCompile 'org.testng:testng:7.4.0'
+
+}
+
+dependencies {
+    implementation 'org.testng:testng:7.1.0'
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.0.0-beta-4'
+
+}
+test {
+    useTestNG()
+}
+
+
