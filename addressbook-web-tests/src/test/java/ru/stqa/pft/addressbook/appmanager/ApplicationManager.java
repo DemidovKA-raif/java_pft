@@ -1,7 +1,6 @@
 package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stqa.pft.addressbook.tests.NameNewContact;
@@ -10,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
     FirefoxDriver wd;
+
 private SessionHelper sessionHelper;
     private NavigationHelper navigationHelper;
     private GroupHelper groupHelper;
@@ -71,15 +71,6 @@ private SessionHelper sessionHelper;
             wd.findElement(by);
             return true;
         } catch (NoSuchElementException e) {
-            return false;
-        }
-    }
-
-    public boolean isAlertPresent() {
-        try {
-            wd.switchTo().alert();
-            return true;
-        } catch (NoAlertPresentException e) {
             return false;
         }
     }

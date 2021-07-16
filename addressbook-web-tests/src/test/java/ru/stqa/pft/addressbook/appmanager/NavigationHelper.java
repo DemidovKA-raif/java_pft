@@ -3,15 +3,15 @@ package ru.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class NavigationHelper {
-     private FirefoxDriver wd;
+public class NavigationHelper extends HelperBase{
+
 
     public NavigationHelper(FirefoxDriver wd) {
-        this.wd = wd;
+        super(wd);
     }
 
     public void gotoHomePage() {
-        wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
-        wd.findElement(By.linkText("home page")).click();
+        click(By.xpath("//div[@id='content']/form/input[21]"));
+        click(By.linkText("home page"));
     }
 }
