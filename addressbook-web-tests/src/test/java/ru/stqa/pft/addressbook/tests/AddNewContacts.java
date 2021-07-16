@@ -10,6 +10,6 @@ public class AddNewContacts extends StepTesting {
         app.setNameContact(new NameNewContact("Qqwerty", "Voiue", "Fret"));
         app.setNickName("Krevedko");
         app.setHome("New Bitch");
-        app.gotoHomePage();
+        app.getNavigationHelper().gotoHomePage();
     }
 }
