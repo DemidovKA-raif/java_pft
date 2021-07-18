@@ -3,14 +3,14 @@ package ru.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import ru.stqa.pft.addressbook.tests.NameNewContact;
 
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
     FirefoxDriver wd;
 
-private SessionHelper sessionHelper;
+    private NewContactClass newContactClass;
+    private SessionHelper sessionHelper;
     private NavigationHelper navigationHelper;
     private GroupHelper groupHelper;
 
@@ -21,41 +21,10 @@ private SessionHelper sessionHelper;
         groupHelper = new GroupHelper(wd);
         navigationHelper = new NavigationHelper(wd);
         sessionHelper = new SessionHelper(wd);
+        newContactClass = new NewContactClass(wd);
         sessionHelper.login("admin", "secret");
     }
 
-
-    public void gotoGroupPage() {
-        wd.findElement(By.linkText("groups")).click();
-    }
-
-    public void addNewContact() {
-        wd.findElement(By.linkText("add new")).click();
-        wd.findElement(By.name("firstname")).click();
-        wd.findElement(By.name("firstname")).clear();
-    }
-
-    public void setNameContact(NameNewContact nameNewContact) {
-        wd.findElement(By.name("firstname")).sendKeys(nameNewContact.getFirstName());
-        wd.findElement(By.name("middlename")).click();
-        wd.findElement(By.name("middlename")).clear();
-        wd.findElement(By.name("middlename")).sendKeys(nameNewContact.getMiddleName());
-        wd.findElement(By.name("lastname")).click();
-        wd.findElement(By.name("lastname")).clear();
-        wd.findElement(By.name("lastname")).sendKeys(nameNewContact.getLastName());
-    }
-
-    public void setNickName(String nickName) {
-        wd.findElement(By.name("nickname")).click();
-        wd.findElement(By.name("nickname")).clear();
-        wd.findElement(By.name("nickname")).sendKeys(nickName);
-    }
-
-    public void setHome(String s) {
-        wd.findElement(By.name("home")).click();
-        wd.findElement(By.name("home")).clear();
-        wd.findElement(By.name("home")).sendKeys(s);
-    }
 
     public void stop() {
         logoutPage();
@@ -81,5 +50,9 @@ private SessionHelper sessionHelper;
 
     public NavigationHelper getNavigationHelper() {
         return navigationHelper;
+    }
+
+    public NewContactClass getNewContactClass() {
+        return newContactClass;
     }
 }

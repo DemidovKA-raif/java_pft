@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stqa.pft.addressbook.model.GroupData;
 
-public class GroupHelper extends HelperBase{
+public class GroupHelper extends HelperBase {
 
     public GroupHelper(FirefoxDriver wd) {
         super(wd);
@@ -14,7 +14,8 @@ public class GroupHelper extends HelperBase{
         click(By.xpath("//div[@id='content']/form/span"));
     }
 
-    public void submitGroupCreation() { click(By.name("submit"));
+    public void submitGroupCreation() {
+        click(By.name("submit"));
         click(By.linkText("group page"));
     }
 
@@ -25,6 +26,6 @@ public class GroupHelper extends HelperBase{
     }
 
     public void initGroupCreation() {
-      click(By.name("new"));
+        click(By.name("new"));
     }
 }
