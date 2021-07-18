@@ -8,12 +8,12 @@ public class StepTesting {
 
     protected final ApplicationManager app = new ApplicationManager();
 
-    @BeforeMethod(alwaysRun = true)
+    @BeforeMethod
     public void setUp() throws Exception {
         app.init();
     }
 
-    @AfterMethod(alwaysRun = true)
+    @AfterMethod
     public void tearDown() throws Exception {
         app.stop();
     }

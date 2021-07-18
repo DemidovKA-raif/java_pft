@@ -27,22 +27,9 @@ public class ApplicationManager {
 
 
     public void stop() {
-        logoutPage();
         wd.quit();
     }
 
-    public void logoutPage() {
-        wd.findElement(By.linkText("Logout")).click();
-    }
-
-    public boolean isElementPresent(By by) {
-        try {
-            wd.findElement(by);
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
-        }
-    }
 
     public GroupHelper getGroupHelper() {
         return groupHelper;
