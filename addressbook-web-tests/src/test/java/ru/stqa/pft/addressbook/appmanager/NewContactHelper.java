@@ -2,11 +2,11 @@ package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import ru.stqa.pft.addressbook.tests.NameNewContact;
+import ru.stqa.pft.addressbook.model.NameNewContact;
 
-public class NewContactClass extends HelperBase {
+public class NewContactHelper extends HelperBase {
 
-    public NewContactClass(FirefoxDriver wd) {
+    public NewContactHelper(FirefoxDriver wd) {
         super(wd);
     }
 
@@ -18,14 +18,7 @@ public class NewContactClass extends HelperBase {
         type(By.name("firstname"), nameNewContact.getFirstName());
         type(By.name("middlename"), nameNewContact.getMiddleName());
         type(By.name("lastname"), nameNewContact.getLastName());
-
-    }
-
-    public void setNickName(String nickName) {
-        type(By.name("nickname"), nickName);
-    }
-
-    public void setHome(String s) {
-        type(By.name("home"), s);
+        type(By.name("nickname"), nameNewContact.getNickName());
+        type(By.name("home"), nameNewContact.getMyHome());
     }
 }
