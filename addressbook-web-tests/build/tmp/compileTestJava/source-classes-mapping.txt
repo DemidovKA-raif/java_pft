@@ -8,21 +8,21 @@ ru/stqa/pft/addressbook/appmanager/SessionHelper.java
  ru.stqa.pft.addressbook.appmanager.SessionHelper
 ru/stqa/pft/addressbook/model/NameNewContact.java
  ru.stqa.pft.addressbook.model.NameNewContact
-ru/stqa/pft/addressbook/appmanager/NavigationHelper.java
- ru.stqa.pft.addressbook.appmanager.NavigationHelper
-ru/stqa/pft/addressbook/tests/AddNewContacts.java
- ru.stqa.pft.addressbook.tests.AddNewContacts
 ru/stqa/pft/addressbook/appmanager/ContactHelper.java
  ru.stqa.pft.addressbook.appmanager.ContactHelper
+ru/stqa/pft/addressbook/tests/GroupeCreationTests.java
+ ru.stqa.pft.addressbook.tests.GroupeCreationTests
+ru/stqa/pft/addressbook/tests/TestBase.java
+ ru.stqa.pft.addressbook.tests.TestBase
 ru/stqa/pft/addressbook/tests/GroupModificationTests.java
  ru.stqa.pft.addressbook.tests.GroupModificationTests
 ru/stqa/pft/addressbook/tests/ContactModification.java
  ru.stqa.pft.addressbook.tests.ContactModification
 ru/stqa/pft/addressbook/tests/GroupDeletionTests.java
  ru.stqa.pft.addressbook.tests.GroupDeletionTests
-ru/stqa/pft/addressbook/tests/StepTesting.java
- ru.stqa.pft.addressbook.tests.StepTesting
+ru/stqa/pft/addressbook/appmanager/NavigationHelper.java
+ ru.stqa.pft.addressbook.appmanager.NavigationHelper
 ru/stqa/pft/addressbook/appmanager/ApplicationManager.java
  ru.stqa.pft.addressbook.appmanager.ApplicationManager
-ru/stqa/pft/addressbook/tests/GroupeCreationTests.java
- ru.stqa.pft.addressbook.tests.GroupeCreationTests
+ru/stqa/pft/addressbook/tests/ContactCreation.java
+ ru.stqa.pft.addressbook.tests.ContactCreation
