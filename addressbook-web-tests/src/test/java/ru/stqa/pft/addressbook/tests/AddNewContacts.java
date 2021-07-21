@@ -7,8 +7,11 @@ public class AddNewContacts extends StepTesting {
 
     @Test
     public void pageAddNewContact() {
-        app.getNewContactClass().addNewContact();
-        app.getNewContactClass().setNameContact(new NameNewContact("Qqwerty", "Voiue", "Fret","Krevedko","New Bitch"));
+        app.getNavigationHelper().gotoHomePage();
+        app.getContactClass().addNewContact();
+        app.getContactClass().setNameContact(
+                new NameNewContact("Qqwerty", "Voiue", "Fret", "Krevedko", "New Bitch", "test1"), true);
+        app.getContactClass().clickNewContact();
         app.getNavigationHelper().gotoHomePage();
     }
 }

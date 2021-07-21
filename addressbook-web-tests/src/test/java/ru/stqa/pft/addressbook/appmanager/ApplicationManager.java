@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 public class ApplicationManager {
     WebDriver wd;
 
-    private NewContactHelper newContactHelper;
+    private ContactHelper ContactHelper;
     private SessionHelper sessionHelper;
     private NavigationHelper navigationHelper;
     private GroupHelper groupHelper;
@@ -27,15 +27,16 @@ public class ApplicationManager {
             wd = new ChromeDriver();
         }
 
-        wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         wd.get("http://localhost/addressbook/group.php");
         groupHelper = new GroupHelper(wd);
         navigationHelper = new NavigationHelper(wd);
         sessionHelper = new SessionHelper(wd);
-        newContactHelper = new NewContactHelper(wd);
-        sessionHelper.login("admin", "secret");
-    }
+        ContactHelper = new ContactHelper(wd);
 
+        sessionHelper.login("admin", "secret");
+
+    }
 
     public void stop() {
         wd.quit();
@@ -49,7 +50,7 @@ public class ApplicationManager {
         return navigationHelper;
     }
 
-    public NewContactHelper getNewContactClass() {
-        return newContactHelper;
+    public ContactHelper getContactClass() {
+        return ContactHelper;
     }
 }

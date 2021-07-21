@@ -6,14 +6,21 @@ public class NameNewContact {
     private final String lastName;
     private final String nickName;
     private final String myHome;
+    private String group;
 
 
-    public NameNewContact(String firstName, String middleName, String lastName, String nickName, String myHome) {
+    public NameNewContact(String firstName,
+                          String middleName,
+                          String lastName,
+                          String nickName,
+                          String myHome,
+                          String group) {
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
         this.nickName = nickName;
         this.myHome = myHome;
+        this.group = group;
     }
 
     public String getFirstName() {
@@ -32,7 +39,7 @@ public class NameNewContact {
         return nickName;
     }
 
-    public String getMyHome() {
-        return myHome;
+    public String getGroup() {
+        return group;
     }
 }
