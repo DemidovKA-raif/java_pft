@@ -3,7 +3,7 @@ package ru.stqa.pft.addressbook.tests;
 import org.testng.annotations.*;
 import ru.stqa.pft.addressbook.model.NameNewContact;
 
-public class ContactCreation extends TestBase {
+public class ContactCreationTests extends TestBase {
 
     @Test
     public void pageAddNewContact() {
