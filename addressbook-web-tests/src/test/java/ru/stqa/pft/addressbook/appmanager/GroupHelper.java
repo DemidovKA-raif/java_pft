@@ -44,4 +44,19 @@ public class GroupHelper extends HelperBase {
     public void deleteSelectedGroupe() {
         click(By.name("delete"));
     }
+
+    /**
+     * Метод, который заменяет дублирование кода по заполнению полей формы "группа"
+     * @param group - параметры для заполнения группы
+     */
+    public void createGroup(GroupData group) {
+        initGroupCreation();
+        fillGroupForm(group);
+        submitGroupCreation();
+        reternToGroupePage();
+    }
+
+    public boolean isThereAGroup() {
+        return isElementPresent(By.name("selected[]"));
+    }
 }

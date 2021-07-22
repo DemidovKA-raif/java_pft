@@ -18,8 +18,8 @@ public class ContactHelper extends HelperBase {
         click(By.linkText("add new"));
     }
 
-    public void modificationContact(){
-        click(By.xpath("//table[@id='maintable']/tbody/tr[4]/td[8]/a/img"));
+    public void modificationContact()  {
+        click(By.xpath("//img[@alt='Edit']"));
     }
 
     public void setNameContact(NameNewContact nameNewContact, boolean creation) {
@@ -28,8 +28,6 @@ public class ContactHelper extends HelperBase {
         type(By.name("lastname"), nameNewContact.getLastName());
         type(By.name("nickname"), nameNewContact.getNickName());
 
-
-//        click(By.linkText("home page"));
 
         /**
          * Выбор элемента из всплывающего списка
@@ -48,6 +46,16 @@ public class ContactHelper extends HelperBase {
 
     public void clickUpdateContact(){
         click(By.name("update"));
+    }
+
+    public boolean isThereAContact() {
+        return isElementPresent(By.xpath("//img[@alt='Edit']"));
+    }
+
+    public void createContact(NameNewContact contact, boolean creation) {
+        addNewContact();
+        setNameContact(contact,creation);
+        clickNewContact();
     }
 }
 

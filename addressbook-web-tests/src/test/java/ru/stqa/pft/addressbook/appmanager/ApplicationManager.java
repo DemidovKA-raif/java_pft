@@ -27,7 +27,7 @@ public class ApplicationManager {
             wd = new ChromeDriver();
         }
 
-        wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        wd.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         wd.get("http://localhost/addressbook/group.php");
         groupHelper = new GroupHelper(wd);
         navigationHelper = new NavigationHelper(wd);
@@ -50,7 +50,8 @@ public class ApplicationManager {
         return navigationHelper;
     }
 
-    public ContactHelper getContactClass() {
+    public ContactHelper getContactHelper() {
         return ContactHelper;
     }
 }
+

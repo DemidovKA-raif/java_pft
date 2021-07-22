@@ -9,12 +9,6 @@ public class NavigationHelper extends HelperBase {
         super(wd);
     }
 
-    public void gotoHomePage() {
-        if (isElementPresent(By.id("maintable"))) {
-            return;
-        }
-        click(By.linkText("home"));
-    }
 
     public void gotoGroupPage() {
         if (isElementPresent(By.tagName("h1"))
@@ -23,5 +17,12 @@ public class NavigationHelper extends HelperBase {
             return;
         }
         click(By.linkText("groups"));
+    }
+
+    public void gotoHomePage() {
+        if (isElementPresent(By.id("maintable"))) {
+            return;
+        }
+        click(By.linkText("home"));
     }
 }
