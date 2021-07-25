@@ -57,5 +57,10 @@ public class ContactHelper extends HelperBase {
         setNameContact(contact,creation);
         clickNewContact();
     }
+
+    public void clickDeletionContact(){
+        click(By.xpath("//input[@value='Delete']"));
+        wd.switchTo().alert().accept();
+    }
 }
 
