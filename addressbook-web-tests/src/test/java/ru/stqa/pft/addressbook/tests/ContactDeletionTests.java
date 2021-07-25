@@ -13,6 +13,10 @@ public class ContactDeletionTests extends TestBase{
                     new NameNewContact("Tramp", "Boris", "Gregor", "Donald", "New Bitch", "test1"), true);
             app.getNavigationHelper().gotoHomePage();
         }
+
+        /**
+         * Метод "selectGroupe" используется для чекбокса как в группах, так и в контактах
+         */
         app.getGroupHelper().selectGroupe();
         app.getContactHelper().clickDeletionContact();
         app.getNavigationHelper().gotoHomePage();
