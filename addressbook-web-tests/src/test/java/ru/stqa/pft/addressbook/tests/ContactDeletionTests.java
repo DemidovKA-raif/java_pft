@@ -17,7 +17,7 @@ public class ContactDeletionTests extends TestBase{
         /**
          * Метод "selectGroupe" используется для чекбокса как в группах, так и в контактах
          */
-        app.getGroupHelper().selectGroupe();
+        app.getGroupHelper().selectGroup();
         app.getContactHelper().clickDeletionContact();
         app.getNavigationHelper().gotoHomePage();
     }
