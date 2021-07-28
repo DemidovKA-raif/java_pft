@@ -1,12 +1,14 @@
 package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.NameNewContact;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ContactHelper extends HelperBase {
 
@@ -61,6 +63,27 @@ public class ContactHelper extends HelperBase {
     public void clickDeletionContact(){
         click(By.xpath("//input[@value='Delete']"));
         wd.switchTo().alert().accept();
+    }
+
+    public void selectContact(int indexContact) {
+        /**
+         * Выбор всех элементов по индексу и клик по установленному (-1 == последний элемент)
+         */
+        wd.findElements(By.name("selected[]")).get(indexContact).click();
+    }
+
+    public List<NameNewContact> getContactList() {
+        List<NameNewContact> contacts = new ArrayList<NameNewContact>();
+        List<WebElement> elements = wd.findElements(By.name(("entry")));
+        for (WebElement element : elements) {
+            String firstname = element.getText();
+            String middleName = element.getText();
+            String lastName= element.getText();
+            String nickName = element.getText();
+            NameNewContact contact = new NameNewContact(firstname, middleName, lastName, nickName, null, null);
+            contacts.add(contact);
+        }
+        return contacts;
     }
 }
 

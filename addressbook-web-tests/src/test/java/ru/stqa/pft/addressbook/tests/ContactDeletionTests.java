@@ -1,7 +1,10 @@
 package ru.stqa.pft.addressbook.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.NameNewContact;
+
+import java.util.List;
 
 public class ContactDeletionTests extends TestBase{
 
@@ -13,12 +16,14 @@ public class ContactDeletionTests extends TestBase{
                     new NameNewContact("Tramp", "Boris", "Gregor", "Donald", "New Bitch", "test1"), true);
             app.getNavigationHelper().gotoHomePage();
         }
-
-        /**
-         * Метод "selectGroupe" используется для чекбокса как в группах, так и в контактах
-         */
-        app.getGroupHelper().selectGroup();
+        List<NameNewContact> before = app.getContactHelper().getContactList();
+        app.getContactHelper().selectContact(before.size()-1);
         app.getContactHelper().clickDeletionContact();
         app.getNavigationHelper().gotoHomePage();
+        List<NameNewContact> after = app.getContactHelper().getContactList();
+        Assert.assertEquals(after.size(), before.size()-1);
+
+        before.remove(before.size()-1);
+        Assert.assertEquals(before, after);
     }
 }
