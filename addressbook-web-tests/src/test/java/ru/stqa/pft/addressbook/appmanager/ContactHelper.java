@@ -20,7 +20,7 @@ public class ContactHelper extends HelperBase {
         click(By.linkText("add new"));
     }
 
-    public void modificationContact()  {
+    public void modificationContact(int i)  {
         click(By.xpath("//img[@alt='Edit']"));
     }
 
@@ -80,7 +80,8 @@ public class ContactHelper extends HelperBase {
             String middleName = element.getText();
             String lastName= element.getText();
             String nickName = element.getText();
-            NameNewContact contact = new NameNewContact(firstname, middleName, lastName, nickName, null, null);
+            String id = element.findElement(By.tagName("input")).getAttribute("value");
+            NameNewContact contact = new NameNewContact(id, firstname, middleName, lastName, nickName, null, null);
             contacts.add(contact);
         }
         return contacts;
