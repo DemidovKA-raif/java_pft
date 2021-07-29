@@ -20,8 +20,9 @@ public class ContactHelper extends HelperBase {
         click(By.linkText("add new"));
     }
 
-    public void modificationContact()  {
-        click(By.xpath("//img[@alt='Edit']"));
+    public void modificationContact(int i)  {
+        wd.findElements(By.xpath("//img[@alt='Edit']")).get(i).click();
+//        click(By.xpath("//img[@alt='Edit']"));
     }
 
     public void setNameContact(NameNewContact nameNewContact, boolean creation) {

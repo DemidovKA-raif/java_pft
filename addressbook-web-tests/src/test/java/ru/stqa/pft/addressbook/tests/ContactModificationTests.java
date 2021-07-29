@@ -17,9 +17,9 @@ public class ContactModificationTests extends TestBase {
             app.getNavigationHelper().gotoHomePage();
         }
         List<NameNewContact> before = app.getContactHelper().getContactList();
-        app.getContactHelper().modificationContact();
+        app.getContactHelper().modificationContact(before.size()-1);
         app.getContactHelper().setNameContact(
-                new NameNewContact("Mackaley", "Calkin", "Gregor", "Donald", "New Bitch", "test1"), false);
+                new NameNewContact("Mackaley", "Calkin", "One", "Small", "New Y", "test1"), false);
         app.getContactHelper().clickUpdateContact();
         app.getNavigationHelper().gotoHomePage();
         List<NameNewContact> after = app.getContactHelper().getContactList();
