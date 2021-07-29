@@ -5,7 +5,7 @@ import java.util.Objects;
 public class NameNewContact {
 
 
-    private final String id;
+    private int id;
     private final String firstName;
     private final String middleName;
     private final String lastName;
@@ -23,20 +23,8 @@ public class NameNewContact {
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        NameNewContact contact = (NameNewContact) o;
-        return Objects.equals(id, contact.id) && Objects.equals(firstName, contact.firstName) && Objects.equals(lastName, contact.lastName);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, firstName, lastName);
-    }
-
-    public NameNewContact(String id,
+    public NameNewContact(int id,
                           String firstName,
                           String middleName,
                           String lastName,
@@ -51,14 +39,15 @@ public class NameNewContact {
         this.myHome = myHome;
         this.group = group;
     }
+
     public NameNewContact(
-                          String firstName,
-                          String middleName,
-                          String lastName,
-                          String nickName,
-                          String myHome,
-                          String group) {
-        this.id = null;
+            String firstName,
+            String middleName,
+            String lastName,
+            String nickName,
+            String myHome,
+            String group) {
+        this.id = 0;
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
@@ -87,7 +76,25 @@ public class NameNewContact {
         return group;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        NameNewContact contact = (NameNewContact) o;
+        return id == contact.id && Objects.equals(firstName, contact.firstName) && Objects.equals(lastName, contact.lastName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstName, lastName);
+    }
+
 }
