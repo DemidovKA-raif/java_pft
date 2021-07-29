@@ -22,7 +22,6 @@ public class ContactHelper extends HelperBase {
 
     public void modificationContact(int i)  {
         wd.findElements(By.xpath("//img[@alt='Edit']")).get(i).click();
-//        click(By.xpath("//img[@alt='Edit']"));
     }
 
     public void setNameContact(NameNewContact nameNewContact, boolean creation) {
@@ -66,10 +65,10 @@ public class ContactHelper extends HelperBase {
         wd.switchTo().alert().accept();
     }
 
+    /**
+     * Выбор всех элементов по индексу и клик по установленному (-1 == последний элемент)
+     */
     public void selectContact(int indexContact) {
-        /**
-         * Выбор всех элементов по индексу и клик по установленному (-1 == последний элемент)
-         */
         wd.findElements(By.name("selected[]")).get(indexContact).click();
     }
 
@@ -78,10 +77,8 @@ public class ContactHelper extends HelperBase {
         List<WebElement> elements = wd.findElements(By.name(("entry")));
         for (WebElement element : elements) {
             String firstname = element.getText();
-            String middleName = element.getText();
             String lastName= element.getText();
-            String nickName = element.getText();
-            NameNewContact contact = new NameNewContact(firstname, middleName, lastName, nickName, null, null);
+            NameNewContact contact = new NameNewContact(firstname, null, lastName, null, null, null);
             contacts.add(contact);
         }
         return contacts;

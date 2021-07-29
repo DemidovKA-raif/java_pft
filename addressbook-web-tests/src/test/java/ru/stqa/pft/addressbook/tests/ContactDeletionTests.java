@@ -9,7 +9,7 @@ import java.util.List;
 public class ContactDeletionTests extends TestBase{
 
     @Test
-    public void pageContactDeletion(){
+    public void pageContactDeletion() throws InterruptedException {
         app.getNavigationHelper().gotoHomePage();
         if (! app.getContactHelper().isThereAContact()) {
             app.getContactHelper().createContact(
@@ -19,6 +19,7 @@ public class ContactDeletionTests extends TestBase{
         List<NameNewContact> before = app.getContactHelper().getContactList();
         app.getContactHelper().selectContact(before.size()-1);
         app.getContactHelper().clickDeletionContact();
+        Thread.sleep(500);
         app.getNavigationHelper().gotoHomePage();
         List<NameNewContact> after = app.getContactHelper().getContactList();
         Assert.assertEquals(after.size(), before.size() -1);

@@ -16,21 +16,19 @@ public class NameNewContact {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         NameNewContact contact = (NameNewContact) o;
-        return Objects.equals(firstName, contact.firstName) && Objects.equals(middleName, contact.middleName) && Objects.equals(lastName, contact.lastName) && Objects.equals(nickName, contact.nickName);
+        return Objects.equals(firstName, contact.firstName) && Objects.equals(lastName, contact.lastName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, middleName, lastName, nickName);
+        return Objects.hash(firstName, lastName);
     }
 
     @Override
     public String toString() {
         return "NameNewContact{" +
                 "firstName='" + firstName + '\'' +
-                ", middleName='" + middleName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", nickName='" + nickName + '\'' +
                 '}';
     }
 

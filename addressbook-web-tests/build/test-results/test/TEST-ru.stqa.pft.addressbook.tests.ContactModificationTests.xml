@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.addressbook.tests.ContactModificationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-07-29T08:23:00" hostname="N-MSK-RUADMK3" time="5.633">
+<testsuite name="ru.stqa.pft.addressbook.tests.ContactModificationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-07-29T14:49:45" hostname="N-MSK-RUADMK3" time="4.007">
   <properties/>
-  <testcase name="pageContactModification" classname="ru.stqa.pft.addressbook.tests.ContactModificationTests" time="5.633"/>
+  <testcase name="pageContactModification" classname="ru.stqa.pft.addressbook.tests.ContactModificationTests" time="4.007"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-1627546976319	geckodriver	INFO	Listening on 127.0.0.1:27686
-1627546976952	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "0" "-foreground" "-no-remote" "-profile" "C:\\Users\\ruadmk3\\AppData\\Local\\Temp\\rust_mozprofileKMQtdz"
+1627570181649	geckodriver	INFO	Listening on 127.0.0.1:25375
+1627570182298	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "0" "-foreground" "-no-remote" "-profile" "C:\\Users\\ruadmk3\\AppData\\Local\\Temp\\rust_mozprofilecu8eLQ"
 console.error: JsonSchemaValidator.jsm: 
   Ignoring parameter "https://addons.mozilla.org/firefox/downloads/file/3448508/saml_tracer-1.6-an+fx.xpi?src=dp-btn-primary" - origin was expected but received full URL.
 console.error: JsonSchemaValidator.jsm: 
@@ -21,11 +21,11 @@ console.error: JsonSchemaValidator.jsm:
 console.error: JsonSchemaValidator.jsm: 
   Ignoring parameter "https://armbio-test-app.raiffeisen.ru/armb/*" - origin was expected but received full URL.
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
-1627546979076	Marionette	INFO	Listening on port 62252
-1627546979133	Marionette	WARN	TLS certificate errors will be ignored for this session
-Jul 29, 2021 11:22:59 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+1627570184268	Marionette	INFO	Listening on port 60108
+1627570184479	Marionette	WARN	TLS certificate errors will be ignored for this session
+Jul 29, 2021 5:49:44 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
-1627546986216	Marionette	INFO	Stopped listening on port 62252
+1627570189889	Marionette	INFO	Stopped listening on port 60108
 
 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
