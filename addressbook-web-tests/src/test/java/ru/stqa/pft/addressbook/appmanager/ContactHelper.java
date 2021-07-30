@@ -20,7 +20,7 @@ public class ContactHelper extends HelperBase {
         click(By.linkText("add new"));
     }
 
-    public void modificationContact(int i)  {
+    public void modificationContact(int i) {
         wd.findElements(By.xpath("//img[@alt='Edit']")).get(i).click();
     }
 
@@ -42,11 +42,11 @@ public class ContactHelper extends HelperBase {
 
     }
 
-    public void clickNewContact(){
+    public void clickNewContact() {
         click(By.xpath("//div[@id='content']/form/input[21]"));
     }
 
-    public void clickUpdateContact(){
+    public void clickUpdateContact() {
         click(By.name("update"));
     }
 
@@ -56,11 +56,11 @@ public class ContactHelper extends HelperBase {
 
     public void createContact(NameNewContact contact, boolean creation) {
         addNewContact();
-        setNameContact(contact,creation);
+        setNameContact(contact, creation);
         clickNewContact();
     }
 
-    public void clickDeletionContact(){
+    public void clickDeletionContact() {
         click(By.xpath("//input[@value='Delete']"));
         wd.switchTo().alert().accept();
     }

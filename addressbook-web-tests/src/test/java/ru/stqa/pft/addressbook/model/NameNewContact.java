@@ -40,6 +40,19 @@ public class NameNewContact {
         this.group = group;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        NameNewContact contact = (NameNewContact) o;
+        return Objects.equals(firstName, contact.firstName) && Objects.equals(lastName, contact.lastName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName);
+    }
+
     public NameNewContact(
             String firstName,
             String middleName,
@@ -47,7 +60,7 @@ public class NameNewContact {
             String nickName,
             String myHome,
             String group) {
-        this.id = 0;
+        this.id = Integer.MAX_VALUE;
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
@@ -82,19 +95,6 @@ public class NameNewContact {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        NameNewContact contact = (NameNewContact) o;
-        return id == contact.id && Objects.equals(firstName, contact.firstName) && Objects.equals(lastName, contact.lastName);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, firstName, lastName);
     }
 
 }

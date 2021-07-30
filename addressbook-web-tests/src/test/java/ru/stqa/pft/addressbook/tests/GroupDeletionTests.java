@@ -9,9 +9,9 @@ import java.util.List;
 public class GroupDeletionTests extends TestBase {
 
     @Test
-    public void testDeletion(){
+    public void testDeletion() {
         app.getNavigationHelper().gotoGroupPage();
-        if (! app.getGroupHelper().isThereAGroup()) {
+        if (!app.getGroupHelper().isThereAGroup()) {
             app.getGroupHelper().createGroup(new GroupData("test1", "test2", "test3"));
         }
         List<GroupData> before = app.getGroupHelper().getGroupList();
@@ -22,8 +22,8 @@ public class GroupDeletionTests extends TestBase {
         Assert.assertEquals(after.size(), before.size() - 1);
 
 
-        before.remove(before.size()-1);
-            Assert.assertEquals(before, after);
-        }
+        before.remove(before.size() - 1);
+        Assert.assertEquals(before, after);
     }
+}
 
