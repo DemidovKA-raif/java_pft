@@ -60,9 +60,30 @@ public class ContactHelper extends HelperBase {
         clickNewContact();
     }
 
+    public void modifyContact(int index, NameNewContact contact) {
+        modificationContact(index);
+        setNameContact(contact, false);
+        clickUpdateContact();
+        gotoHomePage();
+    }
+
+    public void deleteContact(int index) throws InterruptedException {
+        selectContact(index);
+        clickDeletionContact();
+        Thread.sleep(500);
+        gotoHomePage();
+    }
+
     public void clickDeletionContact() {
         click(By.xpath("//input[@value='Delete']"));
         wd.switchTo().alert().accept();
+    }
+
+    public void gotoHomePage() {
+        if (isElementPresent(By.id("maintable"))) {
+            return;
+        }
+        click(By.linkText("home"));
     }
 
     /**
