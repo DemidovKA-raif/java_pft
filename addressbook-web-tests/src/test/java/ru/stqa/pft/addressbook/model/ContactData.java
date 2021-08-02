@@ -2,7 +2,7 @@ package ru.stqa.pft.addressbook.model;
 
 import java.util.Objects;
 
-public class NameNewContact {
+public class ContactData {
 
 
     private int id;
@@ -24,13 +24,13 @@ public class NameNewContact {
     }
 
 
-    public NameNewContact(int id,
-                          String firstName,
-                          String middleName,
-                          String lastName,
-                          String nickName,
-                          String myHome,
-                          String group) {
+    public ContactData(int id,
+                       String firstName,
+                       String middleName,
+                       String lastName,
+                       String nickName,
+                       String myHome,
+                       String group) {
         this.id = id;
         this.firstName = firstName;
         this.middleName = middleName;
@@ -44,7 +44,7 @@ public class NameNewContact {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        NameNewContact contact = (NameNewContact) o;
+        ContactData contact = (ContactData) o;
         return Objects.equals(firstName, contact.firstName) && Objects.equals(lastName, contact.lastName);
     }
 
@@ -53,7 +53,7 @@ public class NameNewContact {
         return Objects.hash(firstName, lastName);
     }
 
-    public NameNewContact(
+    public ContactData(
             String firstName,
             String middleName,
             String lastName,

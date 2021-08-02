@@ -3,7 +3,7 @@ package ru.stqa.pft.addressbook.tests;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import ru.stqa.pft.addressbook.model.NameNewContact;
+import ru.stqa.pft.addressbook.model.ContactData;
 
 import java.util.List;
 
@@ -11,9 +11,9 @@ public class ContactDeletionTests extends TestBase {
 
     @BeforeMethod
     public void ensurePreconditionContscts() {
-        if (!app.getContactHelper().isThereAContact()) {
-            app.getContactHelper().createContact(
-                    new NameNewContact("Tramp", "Boris", "Gregor", "Donald", "New Bitch", "test1"), true);
+        if (app.group().list().size() ==0 ) {
+            app.getContactHelper().create(
+                    new ContactData("Tramp", "Boris", "Gregor", "Donald", "New Bitch", "test1"), true);
             app.getContactHelper().gotoHomePage();
         }
     }
@@ -21,10 +21,10 @@ public class ContactDeletionTests extends TestBase {
     @Test
     public void pageContactDeletion() throws InterruptedException {
 
-        List<NameNewContact> before = app.getContactHelper().getContactList();
+        List<ContactData> before = app.getContactHelper().getContactList();
         int index = before.size() - 1;
-        app.getContactHelper().deleteContact(index);
-        List<NameNewContact> after = app.getContactHelper().getContactList();
+        app.getContactHelper().delete(index);
+        List<ContactData> after = app.getContactHelper().getContactList();
 
         Assert.assertEquals(after.size(), index);
         before.remove(index);

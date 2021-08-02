@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import ru.stqa.pft.addressbook.model.NameNewContact;
+import ru.stqa.pft.addressbook.model.ContactData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,18 +24,18 @@ public class ContactHelper extends HelperBase {
         wd.findElements(By.xpath("//img[@alt='Edit']")).get(i).click();
     }
 
-    public void setNameContact(NameNewContact nameNewContact, boolean creation) {
-        type(By.name("firstname"), nameNewContact.getFirstName());
-        type(By.name("middlename"), nameNewContact.getMiddleName());
-        type(By.name("lastname"), nameNewContact.getLastName());
-        type(By.name("nickname"), nameNewContact.getNickName());
+    public void setNameContact(ContactData contactData, boolean creation) {
+        type(By.name("firstname"), contactData.getFirstName());
+        type(By.name("middlename"), contactData.getMiddleName());
+        type(By.name("lastname"), contactData.getLastName());
+        type(By.name("nickname"), contactData.getNickName());
 
 
         /**
          * Выбор элемента из всплывающего списка
          */
         if (creation) {
-            new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(nameNewContact.getGroup());
+            new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
         } else {
             Assert.assertFalse(isElementPresent(By.name("new_group")));
         }
@@ -54,20 +54,20 @@ public class ContactHelper extends HelperBase {
         return isElementPresent(By.xpath("//img[@alt='Edit']"));
     }
 
-    public void createContact(NameNewContact contact, boolean creation) {
+    public void create(ContactData contact, boolean creation) {
         addNewContact();
         setNameContact(contact, creation);
         clickNewContact();
     }
 
-    public void modifyContact(int index, NameNewContact contact) {
+    public void modify(int index, ContactData contact) {
         modificationContact(index);
         setNameContact(contact, false);
         clickUpdateContact();
         gotoHomePage();
     }
 
-    public void deleteContact(int index) throws InterruptedException {
+    public void delete(int index) throws InterruptedException {
         selectContact(index);
         clickDeletionContact();
         Thread.sleep(500);
@@ -93,14 +93,14 @@ public class ContactHelper extends HelperBase {
         wd.findElements(By.name("selected[]")).get(indexContact).click();
     }
 
-    public List<NameNewContact> getContactList() {
-        List<NameNewContact> contacts = new ArrayList<NameNewContact>();
+    public List<ContactData> getContactList() {
+        List<ContactData> contacts = new ArrayList<ContactData>();
         List<WebElement> elements = wd.findElements(By.name(("entry")));
         for (WebElement element : elements) {
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
             String firstname = element.findElement(By.xpath("td[3]")).getText();
             String lastName = element.findElement(By.xpath("td[2]")).getText();
-            NameNewContact contact = new NameNewContact(id, firstname, null, lastName, null, null, null);
+            ContactData contact = new ContactData(id, firstname, null, lastName, null, null, null);
             contacts.add(contact);
         }
         return contacts;
