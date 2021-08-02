@@ -13,14 +13,13 @@ public class ContactDeletionTests extends TestBase {
     public void ensurePreconditionContscts() {
         if (app.group().list().size() ==0 ) {
             app.getContactHelper().create(
-                    new ContactData("Tramp", "Boris", "Gregor", "Donald", "New Bitch", "test1"), true);
+                    new ContactData().withFirstName("Tramp").withLastName("Boris").withMiddleName("Gregor").withNickName("Donald").withMyHome("New Bitch").withGroup("test1"),true);
             app.getContactHelper().gotoHomePage();
         }
     }
 
     @Test
     public void pageContactDeletion() throws InterruptedException {
-
         List<ContactData> before = app.getContactHelper().getContactList();
         int index = before.size() - 1;
         app.getContactHelper().delete(index);

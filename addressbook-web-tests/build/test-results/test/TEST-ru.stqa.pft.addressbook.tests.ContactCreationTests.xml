@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.addressbook.tests.ContactCreationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-02T17:49:27" hostname="N-MSK-RUADMK3" time="4.355">
+  <properties/>
+  <testcase name="pageAddNewContact" classname="ru.stqa.pft.addressbook.tests.ContactCreationTests" time="4.355"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
