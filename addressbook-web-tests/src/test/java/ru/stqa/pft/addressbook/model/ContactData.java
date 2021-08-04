@@ -11,6 +11,22 @@ public class ContactData {
     private  String nickName;
     private  String myHome;
 
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ContactData that = (ContactData) o;
+        return id == that.id && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstName, lastName);
+    }
+
+
     public ContactData withFirstName(String firstName) {
         this.firstName = firstName;
         return this;
@@ -57,20 +73,6 @@ public class ContactData {
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ContactData contact = (ContactData) o;
-        return Objects.equals(firstName, contact.firstName) && Objects.equals(lastName, contact.lastName);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(firstName, lastName);
-    }
-
-
 
     public String getFirstName() {
         return firstName;
@@ -95,7 +97,5 @@ public class ContactData {
     public int getId() {
         return id;
     }
-
-
 
 }

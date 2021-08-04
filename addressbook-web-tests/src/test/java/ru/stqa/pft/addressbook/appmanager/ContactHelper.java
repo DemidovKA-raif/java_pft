@@ -22,9 +22,7 @@ public class ContactHelper extends HelperBase {
         click(By.linkText("add new"));
     }
 
-    public void modificationContact(int i) {
-        wd.findElements(By.xpath("//img[@alt='Edit']")).get(i).click();
-    }
+
 
     public void setNameContact(ContactData contactData, boolean creation) {
         type(By.name("firstname"), contactData.getFirstName());
@@ -68,12 +66,18 @@ public class ContactHelper extends HelperBase {
         clickUpdateContact();
         gotoHomePage();
     }
-
-    public void delete(int index) throws InterruptedException {
-        selectContact(index);
+    public void delete(ContactData contact) throws InterruptedException {
+        selectContactById(contact.getId());
         clickDeletionContact();
         Thread.sleep(500);
         gotoHomePage();
+    }
+
+    public void modificationContact(int i) {
+        wd.findElements(By.xpath("//img[@alt='Edit']")).get(i).click();
+    }
+    public void selectContactById(int id) {
+        wd.findElement(By.cssSelector("input[value='"+ id + "']")).click();
     }
 
     public void clickDeletionContact() {
@@ -86,13 +90,6 @@ public class ContactHelper extends HelperBase {
             return;
         }
         click(By.linkText("home"));
-    }
-
-    /**
-     * Выбор всех элементов по индексу и клик по установленному (-1 == последний элемент)
-     */
-    public void selectContact(int indexContact) {
-        wd.findElements(By.name("selected[]")).get(indexContact).click();
     }
 
     public List<ContactData> getContactList() {
@@ -118,5 +115,7 @@ public class ContactHelper extends HelperBase {
         }
         return contacts;
     }
+
+
 }
 

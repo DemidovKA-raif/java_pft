@@ -7,13 +7,14 @@ import ru.stqa.pft.addressbook.model.ContactData;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ContactModificationTests extends TestBase {
 
 
     @BeforeMethod
     public void ensurePreconditionContscts() {
-        if (app.group().all().size() ==0 ) {
+        if (app.getContactHelper().all().size() ==0 ) {
             app.getContactHelper().create(
                     new ContactData().withFirstName("Tramp").withLastName("Boris").withMiddleName("Gregor").withNickName("Donald").withMyHome("New Bitch").withGroup("test1"), true);
             app.getContactHelper().gotoHomePage();
@@ -22,7 +23,6 @@ public class ContactModificationTests extends TestBase {
 
     @Test
     public void pageContactModification() {
-
         List<ContactData> before = app.getContactHelper().getContactList();
         int index = before.size() - 1;
         ContactData contact = new ContactData()
