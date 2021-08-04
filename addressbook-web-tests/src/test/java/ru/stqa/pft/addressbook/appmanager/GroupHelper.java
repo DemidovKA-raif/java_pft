@@ -6,9 +6,8 @@ import org.openqa.selenium.WebElement;
 import ru.stqa.pft.addressbook.model.GroupData;
 import ru.stqa.pft.addressbook.model.Groups;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
+
 
 public class GroupHelper extends HelperBase {
 
@@ -35,7 +34,7 @@ public class GroupHelper extends HelperBase {
     }
 
     public void selectGroupById(int id) {
-        wd.findElement(By.cssSelector("input[value='"+ id + "']")).click();
+        wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
     }
 
     public void submitGroupModification() {
@@ -69,10 +68,11 @@ public class GroupHelper extends HelperBase {
         submitGroupModification();
         returnToGroupePage();
     }
+
     public void delete(GroupData group) {
-            selectGroupById(group.getId());
-            deleteSelectedGroupe();
-            returnToGroupePage();
+        selectGroupById(group.getId());
+        deleteSelectedGroupe();
+        returnToGroupePage();
     }
 
     public boolean isThereAGroup() {
