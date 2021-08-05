@@ -22,13 +22,15 @@ ru/stqa/pft/addressbook/tests/GroupModificationTests.java
  ru.stqa.pft.addressbook.tests.GroupModificationTests
 ru/stqa/pft/addressbook/tests/GroupDeletionTests.java
  ru.stqa.pft.addressbook.tests.GroupDeletionTests
-ru/stqa/pft/addressbook/tests/ContactCreationTests.java
- ru.stqa.pft.addressbook.tests.ContactCreationTests
+ru/stqa/pft/addressbook/tests/ContactDeletionTests.java
+ ru.stqa.pft.addressbook.tests.ContactDeletionTests
 ru/stqa/pft/addressbook/appmanager/ApplicationManager.java
  ru.stqa.pft.addressbook.appmanager.ApplicationManager
 ru/stqa/pft/addressbook/tests/GroupCreationTests.java
  ru.stqa.pft.addressbook.tests.GroupCreationTests
+ru/stqa/pft/addressbook/tests/ContactCreationTests.java
+ ru.stqa.pft.addressbook.tests.ContactCreationTests
 ru/stqa/pft/addressbook/tests/ContactModificationTests.java
  ru.stqa.pft.addressbook.tests.ContactModificationTests
-ru/stqa/pft/addressbook/tests/ContactDeletionTests.java
- ru.stqa.pft.addressbook.tests.ContactDeletionTests
+ru/stqa/pft/addressbook/tests/ContactPhoneTests.java
+ ru.stqa.pft.addressbook.tests.ContactPhoneTests

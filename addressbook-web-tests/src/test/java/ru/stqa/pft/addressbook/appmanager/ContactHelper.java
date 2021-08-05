@@ -78,7 +78,7 @@ public class ContactHelper extends HelperBase {
     }
 
     public void modificationContact(int id) {
-        wd.findElement(By.xpath("table[@id='maintable']/tbody/tr["+ id +"]/td[8]/a/img")).click();
+        wd.findElement(By.cssSelector(String.format("a[href='edit.php?id=%s']", id))).click();
     }
 
     public void selectContactById(int id) {
