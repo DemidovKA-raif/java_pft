@@ -59,26 +59,30 @@ public class ContactHelper extends HelperBase {
         addNewContact();
         setNameContact(contact, creation);
         clickNewContact();
+        contactCache = null;
     }
 
     public void modify(ContactData contact) {
         modificationContact(contact.getId());
         setNameContact(contact, false);
         clickUpdateContact();
+        contactCache = null;
         gotoHomePage();
     }
     public void delete(ContactData contact) throws InterruptedException {
         selectContactById(contact.getId());
         clickDeletionContact();
         Thread.sleep(500);
+        contactCache = null;
         gotoHomePage();
     }
 
     public void modificationContact(int id) {
-        wd.findElement(By.xpath("tr["+ id +"]")).click();
+        wd.findElement(By.xpath("table[@id='maintable']/tbody/tr["+ id +"]/td[8]/a/img")).click();
     }
+
     public void selectContactById(int id) {
-        wd.findElement(By.cssSelector("input[value='"+ id + "']")).click();
+        wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
     }
 
     public void clickDeletionContact() {
@@ -93,28 +97,25 @@ public class ContactHelper extends HelperBase {
         click(By.linkText("home"));
     }
 
-//    public List<ContactData> getContactList() {
-//        List<ContactData> contacts = new ArrayList<ContactData>();
-//        List<WebElement> elements = wd.findElements(By.name(("entry")));
-//        for (WebElement element : elements) {
-//            int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-//            String firstname = element.findElement(By.xpath("td[3]")).getText();
-//            String lastName = element.findElement(By.xpath("td[2]")).getText();
-//            contacts.add(new ContactData().withId(id).withFirstName(firstname).withMiddleName(null).withLastName(lastName).withMyHome(null).withGroup(null).withNickName(null));
-//        }
-//        return contacts;
-//    }
+    public int count() {
+        return wd.findElements(By.name("selected[]")).size();
+    }
+
+    private Contacts contactCache = null;
 
     public Contacts all() {
-        Contacts contacts = new Contacts();
+        if (contactCache != null){
+            return new Contacts(contactCache);
+        }
+        contactCache = new Contacts();
         List<WebElement> elements = wd.findElements(By.name(("entry")));
         for (WebElement element : elements) {
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
             String firstname = element.findElement(By.xpath("td[3]")).getText();
             String lastName = element.findElement(By.xpath("td[2]")).getText();
-            contacts.add(new ContactData().withId(id).withFirstName(firstname).withMiddleName(null).withLastName(lastName).withMyHome(null).withGroup(null).withNickName(null));
+            contactCache.add(new ContactData().withId(id).withFirstName(firstname).withMiddleName(null).withLastName(lastName).withMyHome(null).withGroup(null).withNickName(null));
         }
-        return contacts;
+        return contactCache;
     }
 
 
