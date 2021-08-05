@@ -75,7 +75,7 @@ public class ContactHelper extends HelperBase {
     }
 
     public void modificationContact(int id) {
-        wd.findElement(By.xpath("tr["+ id +"]")).click();
+        wd.findElement(By.cssSelector(String.format("a[href='edit.php?id=%s']", id))).click();
     }
     public void selectContactById(int id) {
         wd.findElement(By.cssSelector("input[value='"+ id + "']")).click();
@@ -93,17 +93,6 @@ public class ContactHelper extends HelperBase {
         click(By.linkText("home"));
     }
 
-//    public List<ContactData> getContactList() {
-//        List<ContactData> contacts = new ArrayList<ContactData>();
-//        List<WebElement> elements = wd.findElements(By.name(("entry")));
-//        for (WebElement element : elements) {
-//            int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-//            String firstname = element.findElement(By.xpath("td[3]")).getText();
-//            String lastName = element.findElement(By.xpath("td[2]")).getText();
-//            contacts.add(new ContactData().withId(id).withFirstName(firstname).withMiddleName(null).withLastName(lastName).withMyHome(null).withGroup(null).withNickName(null));
-//        }
-//        return contacts;
-//    }
 
     public Contacts all() {
         Contacts contacts = new Contacts();
