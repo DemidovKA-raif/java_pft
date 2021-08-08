@@ -19,6 +19,14 @@ public class ContactData {
     private String mailSecond;
     private String mailThree;
     private String allMail;
+    private String address;
+
+
+
+    public ContactData withAddress(String address) {
+        this.address = address;
+        return this;
+    }
 
 
     public ContactData withMailFirst(String mailFirst) {
@@ -153,6 +161,10 @@ public class ContactData {
 
     public String getMailFirst() {
         return mailFirst;
+    }
+
+    public String getAddress() {
+        return address;
     }
 
     @Override

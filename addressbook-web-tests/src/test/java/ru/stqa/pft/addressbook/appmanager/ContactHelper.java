@@ -30,6 +30,7 @@ public class ContactHelper extends HelperBase {
         String mailFirst = wd.findElement(By.name("email")).getAttribute("value");
         String mailSecond = wd.findElement(By.name("email2")).getAttribute("value");
         String mailThree = wd.findElement(By.name("email3")).getAttribute("value");
+        String address = wd.findElement(By.name("address")).getAttribute("value");
         wd.navigate().back();
         return new ContactData()
                 .withId(contact.getId())
@@ -40,7 +41,8 @@ public class ContactHelper extends HelperBase {
                 .withWorkPhone(work)
                 .withMailFirst(mailFirst)
                 .withMailSecond(mailSecond)
-                .withMailThree(mailThree);
+                .withMailThree(mailThree)
+                .withAddress(address);
     }
 
     public void setNameContact(ContactData contactData, boolean creation) {
@@ -137,8 +139,9 @@ public class ContactHelper extends HelperBase {
             String lastName = cells.get(2).getText();
             String allPhones = cells.get(5).getText();
             String allMail = cells.get(4).getText();
+            String address = cells.get(3).getText();
             contactCache.add(new ContactData().withId(id).withFirstName(firstname).withMiddleName(null).withLastName(lastName).withMyHome(null).withGroup(null).withNickName(null)
-                   .withAllPhones(allPhones).withAllMail(allMail));
+                   .withAllPhones(allPhones).withAllMail(allMail).withAddress(address));
 
         }
         return contactCache;
