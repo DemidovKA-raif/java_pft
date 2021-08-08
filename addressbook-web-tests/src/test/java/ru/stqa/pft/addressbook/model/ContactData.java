@@ -14,6 +14,9 @@ public class ContactData {
     private  String mobilePhone;
     private  String workPhone;
     private  String group;
+    private  String allPhones;
+
+
 
 
     public ContactData withHomePhone(String homePhone) {
@@ -63,6 +66,12 @@ public class ContactData {
         return this;
     }
 
+    public ContactData withAllPhones(String allPhones) {
+        this.allPhones = allPhones;
+        return this;
+    }
+
+
 
     public String getHomePhone() {
         return homePhone;
@@ -98,6 +107,10 @@ public class ContactData {
 
     public int getId() {
         return id;
+    }
+
+    public String getAllPhones() {
+        return allPhones;
     }
 
     @Override
