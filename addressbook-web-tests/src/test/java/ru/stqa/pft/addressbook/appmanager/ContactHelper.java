@@ -27,8 +27,20 @@ public class ContactHelper extends HelperBase {
         String home = wd.findElement(By.name("home")).getAttribute("value");
         String mobile = wd.findElement(By.name("mobile")).getAttribute("value");
         String work = wd.findElement(By.name("work")).getAttribute("value");
+        String mailFirst = wd.findElement(By.name("email")).getAttribute("value");
+        String mailSecond = wd.findElement(By.name("email2")).getAttribute("value");
+        String mailThree = wd.findElement(By.name("email3")).getAttribute("value");
         wd.navigate().back();
-        return new ContactData().withId(contact.getId()).withFirstName(firstname).withLastName(lastname).withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work);
+        return new ContactData()
+                .withId(contact.getId())
+                .withFirstName(firstname)
+                .withLastName(lastname)
+                .withHomePhone(home)
+                .withMobilePhone(mobile)
+                .withWorkPhone(work)
+                .withMailFirst(mailFirst)
+                .withMailSecond(mailSecond)
+                .withMailThree(mailThree);
     }
 
     public void setNameContact(ContactData contactData, boolean creation) {
@@ -124,8 +136,10 @@ public class ContactHelper extends HelperBase {
             String firstname = cells.get(1).getText();
             String lastName = cells.get(2).getText();
             String allPhones = cells.get(5).getText();
+            String allMail = cells.get(4).getText();
             contactCache.add(new ContactData().withId(id).withFirstName(firstname).withMiddleName(null).withLastName(lastName).withMyHome(null).withGroup(null).withNickName(null)
-                   .withAllPhones(allPhones));
+                   .withAllPhones(allPhones).withAllMail(allMail));
+
         }
         return contactCache;
     }

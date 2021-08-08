@@ -5,29 +5,55 @@ import java.util.Objects;
 public class ContactData {
 
     private int id = Integer.MAX_VALUE;
-    private  String firstName;
-    private  String middleName;
-    private  String lastName;
-    private  String nickName;
-    private  String myHome;
-    private  String homePhone;
-    private  String mobilePhone;
-    private  String workPhone;
-    private  String group;
-    private  String allPhones;
+    private String firstName;
+    private String middleName;
+    private String lastName;
+    private String nickName;
+    private String myHome;
+    private String homePhone;
+    private String mobilePhone;
+    private String workPhone;
+    private String group;
+    private String allPhones;
+    private String mailFirst;
+    private String mailSecond;
+    private String mailThree;
+    private String allMail;
 
 
+    public ContactData withMailFirst(String mailFirst) {
+        this.mailFirst = mailFirst;
+        return this;
+    }
 
+    public ContactData withMailSecond(String mailSecond) {
+        this.mailSecond = mailSecond;
+        return this;
+    }
+
+    public ContactData withMailThree(String mailThree) {
+        this.mailThree = mailThree;
+        return this;
+    }
+
+    public ContactData withAllMail(String allMail) {
+        this.allMail = allMail;
+        return this;
+    }
 
     public ContactData withHomePhone(String homePhone) {
         this.homePhone = homePhone;
         return this;
 
-    } public ContactData withMobilePhone(String mobilePhone) {
+    }
+
+    public ContactData withMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
         return this;
 
-    } public ContactData withWorkPhone(String workPhone) {
+    }
+
+    public ContactData withWorkPhone(String workPhone) {
         this.workPhone = workPhone;
         return this;
     }
@@ -61,6 +87,7 @@ public class ContactData {
         this.group = group;
         return this;
     }
+
     public ContactData withId(int id) {
         this.id = id;
         return this;
@@ -70,7 +97,6 @@ public class ContactData {
         this.allPhones = allPhones;
         return this;
     }
-
 
 
     public String getHomePhone() {
@@ -111,6 +137,22 @@ public class ContactData {
 
     public String getAllPhones() {
         return allPhones;
+    }
+
+    public String getAllMail() {
+        return allMail;
+    }
+
+    public String getMailThree() {
+        return mailThree;
+    }
+
+    public String getMailSecond() {
+        return mailSecond;
+    }
+
+    public String getMailFirst() {
+        return mailFirst;
     }
 
     @Override
