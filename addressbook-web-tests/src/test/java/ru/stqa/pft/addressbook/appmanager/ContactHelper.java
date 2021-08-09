@@ -50,17 +50,18 @@ public class ContactHelper extends HelperBase {
         type(By.name("middlename"), contactData.getMiddleName());
         type(By.name("lastname"), contactData.getLastName());
         type(By.name("nickname"), contactData.getNickName());
-        type(By.name("home"), contactData.getHomePhone());
-        type(By.name("mobile"), contactData.getMobilePhone());
-        type(By.name("work"), contactData.getWorkPhone());
+//        type(By.name("home"), contactData.getHomePhone());
+//        type(By.name("mobile"), contactData.getMobilePhone());
+//        type(By.name("work"), contactData.getWorkPhone());
+//        attach(By.name("photo"), contactData.getPhoto());
 
-        /**
-         * Выбор элемента из всплывающего списка
-         */
+
         if (creation) {
-            new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
-        } else {
-            Assert.assertFalse(isElementPresent(By.name("new_group")));
+            if (contactData.getGroup() != null) {
+                new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+            } else {
+                Assert.assertFalse(isElementPresent(By.name("new_group")));
+            }
         }
 
     }
@@ -134,17 +135,17 @@ public class ContactHelper extends HelperBase {
         List<WebElement> elements = wd.findElements(By.name(("entry")));
         for (WebElement element : elements) {
             List<WebElement> cells = element.findElements(By.tagName("td"));
-            int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
             String firstname = cells.get(1).getText();
             String lastName = cells.get(2).getText();
             String allPhones = cells.get(5).getText();
             String allMail = cells.get(4).getText();
             String address = cells.get(3).getText();
-            contactCache.add(new ContactData().withId(id).withFirstName(firstname).withMiddleName(null).withLastName(lastName).withMyHome(null).withGroup(null).withNickName(null)
+            int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
+            contactCache.add(new ContactData().withId(id).withFirstName(firstname).withLastName(lastName)
                    .withAllPhones(allPhones).withAllMail(allMail).withAddress(address));
 
         }
-        return contactCache;
+        return new Contacts(contactCache);
     }
 }
 

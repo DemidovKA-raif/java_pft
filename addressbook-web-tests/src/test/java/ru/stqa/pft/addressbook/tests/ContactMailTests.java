@@ -14,9 +14,9 @@ public class ContactMailTests extends TestBase{
 
     @Test
     public void testContactMail (){
-        app.getContactHelper().gotoHomePage();
-        ContactData contact = app.getContactHelper().all().iterator().next();
-        ContactData contactInfoFromEditForm = app.getContactHelper().infoFromEditForm(contact);
+        app.contact().gotoHomePage();
+        ContactData contact = app.contact().all().iterator().next();
+        ContactData contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
 
         assertThat(contact.getAllMail(), equalTo(mergeMail(contactInfoFromEditForm)));
     }

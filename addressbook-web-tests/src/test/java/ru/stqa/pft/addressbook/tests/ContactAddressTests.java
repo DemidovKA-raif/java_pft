@@ -10,9 +10,9 @@ public class ContactAddressTests extends TestBase{
 
     @Test
     public void testContactAddress(){
-        app.getContactHelper().gotoHomePage();
-        ContactData contact = app.getContactHelper().all().iterator().next();
-        ContactData contactInfoFromEditForm = app.getContactHelper().infoFromEditForm(contact);
+        app.contact().gotoHomePage();
+        ContactData contact = app.contact().all().iterator().next();
+        ContactData contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
 
         assertThat(contact.getAddress(), equalTo(contactInfoFromEditForm.getAddress()));
     }

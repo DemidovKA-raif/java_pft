@@ -15,20 +15,20 @@ public class ContactDeletionTests extends TestBase {
 
     @BeforeMethod
     public void ensurePreconditionContacts() {
-        if (app.getContactHelper().all().size() == 0 ) {
-            app.getContactHelper().create(
+        if (app.contact().all().size() == 0 ) {
+            app.contact().create(
                     new ContactData().withFirstName("Tramp").withLastName("Boris").withMiddleName("Gregor").withNickName("Donald").withMyHome("New Bitch").withGroup("test1"),true);
-            app.getContactHelper().gotoHomePage();
+            app.contact().gotoHomePage();
         }
     }
 
     @Test
     public void pageContactDeletion() throws InterruptedException {
-        Contacts before = app.getContactHelper().all();
+        Contacts before = app.contact().all();
         ContactData deletedContact = before.iterator().next();
-        app.getContactHelper().delete(deletedContact);
-        assertThat(app.getContactHelper().count(), equalTo(before.size()-1));
-        Contacts after = app.getContactHelper().all();
+        app.contact().delete(deletedContact);
+        assertThat(app.contact().count(), equalTo(before.size()-1));
+        Contacts after = app.contact().all();
         assertThat(after, CoreMatchers.equalTo(before.withOut(deletedContact)));
     }
 
