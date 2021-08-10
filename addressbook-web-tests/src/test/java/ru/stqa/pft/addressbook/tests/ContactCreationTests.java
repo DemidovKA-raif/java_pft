@@ -15,18 +15,25 @@ public class ContactCreationTests extends TestBase {
     public void pageAddNewContact() {
         app.contact().gotoHomePage();
         Contacts before = app.contact().all();
-//        File photo = new File("src/test/resources/stru.png");
+        File photo = new File("src/test/resources/stru.png");
         ContactData contact = new ContactData()
-                .withFirstName("Tramp").withLastName("Boris").withMiddleName("Gregor").withNickName("Donald").withMyHome("New Bitch").withGroup("test1");
-//                        .withPhoto(photo);
+                .withFirstName("FirstName")
+                .withLastName("LastName")
+                .withMiddleName("MiddleName")
+                .withNickName("NickName")
+                .withMyHome("New Bitch")
+                .withGroup("test1")
+                .withWorkPhone("111")
+                .withMobilePhone("222")
+                .withHomePhone("333")
+                .withPhoto(photo);
         app.contact().create(contact, true);
         app.contact().gotoHomePage();
-        assertThat(app.contact().count(), equalTo(before.size()+1 ));
+        assertThat(app.contact().count(), equalTo(before.size() + 1));
         Contacts after = app.contact().all();
         assertThat(after, equalTo(
                 before.withAdded(contact.withId(after.stream().mapToInt(ContactData::getId).max().getAsInt()))));
     }
-
 
 
     @Test
@@ -34,7 +41,7 @@ public class ContactCreationTests extends TestBase {
         app.contact().gotoHomePage();
         Contacts before = app.contact().all();
         ContactData contact = new ContactData()
-                .withFirstName("Tramp`").withLastName("Boris`").withMiddleName("Gregor`").withNickName("Donald").withMyHome("New Bitch").withGroup("test1").withHomePhone("111").withMobilePhone("222").withWorkPhone("333");
+                .withFirstName("FirstName").withLastName("LastName").withMiddleName("MiddleName").withNickName("Donald").withMyHome("New Bitch").withGroup("test1").withHomePhone("111").withMobilePhone("222").withWorkPhone("333");
         app.contact().create(contact, true);
         app.contact().gotoHomePage();
         assertThat(app.contact().count(), equalTo(before.size()));

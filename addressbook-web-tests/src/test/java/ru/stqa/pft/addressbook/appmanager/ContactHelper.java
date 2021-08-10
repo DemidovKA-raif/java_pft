@@ -50,10 +50,10 @@ public class ContactHelper extends HelperBase {
         type(By.name("middlename"), contactData.getMiddleName());
         type(By.name("lastname"), contactData.getLastName());
         type(By.name("nickname"), contactData.getNickName());
-//        type(By.name("home"), contactData.getHomePhone());
-//        type(By.name("mobile"), contactData.getMobilePhone());
-//        type(By.name("work"), contactData.getWorkPhone());
-//        attach(By.name("photo"), contactData.getPhoto());
+        type(By.name("home"), contactData.getHomePhone());
+        type(By.name("mobile"), contactData.getMobilePhone());
+        type(By.name("work"), contactData.getWorkPhone());
+        attach(By.name("photo"), contactData.getPhoto());
 
 
         if (creation) {
@@ -141,9 +141,13 @@ public class ContactHelper extends HelperBase {
             String allMail = cells.get(4).getText();
             String address = cells.get(3).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-            contactCache.add(new ContactData().withId(id).withFirstName(firstname).withLastName(lastName)
-                   .withAllPhones(allPhones).withAllMail(allMail).withAddress(address));
-
+            contactCache.add(new ContactData()
+                    .withId(id)
+                    .withFirstName(firstname)
+                    .withLastName(lastName)
+                    .withAllPhones(allPhones)
+                    .withAllMail(allMail)
+                    .withAddress(address));
         }
         return new Contacts(contactCache);
     }
