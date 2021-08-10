@@ -50,9 +50,6 @@ public class ContactHelper extends HelperBase {
         type(By.name("middlename"), contactData.getMiddleName());
         type(By.name("lastname"), contactData.getLastName());
         type(By.name("nickname"), contactData.getNickName());
-        type(By.name("home"), contactData.getHomePhone());
-        type(By.name("mobile"), contactData.getMobilePhone());
-        type(By.name("work"), contactData.getWorkPhone());
         attach(By.name("photo"), contactData.getPhoto());
 
 
@@ -135,8 +132,8 @@ public class ContactHelper extends HelperBase {
         List<WebElement> elements = wd.findElements(By.name(("entry")));
         for (WebElement element : elements) {
             List<WebElement> cells = element.findElements(By.tagName("td"));
-            String firstname = cells.get(1).getText();
-            String lastName = cells.get(2).getText();
+            String firstname = cells.get(2).getText();
+            String lastName = cells.get(1).getText();
             String allPhones = cells.get(5).getText();
             String allMail = cells.get(4).getText();
             String address = cells.get(3).getText();

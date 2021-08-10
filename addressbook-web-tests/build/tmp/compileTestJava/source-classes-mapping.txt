@@ -14,6 +14,8 @@ ru/stqa/pft/addressbook/appmanager/HelperBase.java
  ru.stqa.pft.addressbook.appmanager.HelperBase
 ru/stqa/pft/addressbook/appmanager/GroupHelper.java
  ru.stqa.pft.addressbook.appmanager.GroupHelper
+ru/stqa/pft/addressbook/generators/GroupDataGenerator.java
+ ru.stqa.pft.addressbook.generators.GroupDataGenerator
 ru/stqa/pft/addressbook/tests/TestBase.java
  ru.stqa.pft.addressbook.tests.TestBase
 ru/stqa/pft/addressbook/appmanager/ContactHelper.java
@@ -38,5 +40,3 @@ ru/stqa/pft/addressbook/tests/ContactModificationTests.java
  ru.stqa.pft.addressbook.tests.ContactModificationTests
 ru/stqa/pft/addressbook/tests/ContactCreationTests.java
  ru.stqa.pft.addressbook.tests.ContactCreationTests
-ru/stqa/pft/addressbook/generators/GroupDataGenerator.java
- ru.stqa.pft.addressbook.generators.GroupDataGenerator
