@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.addressbook.tests.ContactCreationTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-08-11T15:33:00" hostname="N-MSK-RUADMK3" time="22.122">
+  <properties/>
+  <testcase name="testContactCreation[0](ContactData{id=0, firstName='Mike 0', lastName='Braun 0', homePhone='null', mobilePhone='null', workPhone='null'})" classname="ru.stqa.pft.addressbook.tests.ContactCreationTests" time="5.606"/>
+  <testcase name="testContactCreation[1](ContactData{id=0, firstName='Mike 1', lastName='Braun 1', homePhone='null', mobilePhone='null', workPhone='null'})" classname="ru.stqa.pft.addressbook.tests.ContactCreationTests" time="4.126"/>
+  <testcase name="testContactCreation[2](ContactData{id=0, firstName='Mike 2', lastName='Braun 2', homePhone='null', mobilePhone='null', workPhone='null'})" classname="ru.stqa.pft.addressbook.tests.ContactCreationTests" time="4.273"/>
+  <testcase name="testContactCreation[3](ContactData{id=0, firstName='Mike 3', lastName='Braun 3', homePhone='null', mobilePhone='null', workPhone='null'})" classname="ru.stqa.pft.addressbook.tests.ContactCreationTests" time="4.064"/>
+  <testcase name="testContactCreation[4](ContactData{id=0, firstName='Mike 4', lastName='Braun 4', homePhone='null', mobilePhone='null', workPhone='null'})" classname="ru.stqa.pft.addressbook.tests.ContactCreationTests" time="4.05"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Security framework of XStream not explicitly initialized, using predefined black list on your own risk.
+]]></system-err>
+</testsuite>
