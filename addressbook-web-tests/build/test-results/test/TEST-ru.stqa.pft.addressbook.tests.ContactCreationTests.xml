@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.addressbook.tests.ContactCreationTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-08-11T12:30:00" hostname="N-MSK-RUADMK3" time="21.212">
+  <properties/>
+  <testcase name="pageAddNewContact[0](ContactData{id=2147483647, firstName='Mike 0', lastName='Braun 0', homePhone='null', mobilePhone='null', workPhone='null'})" classname="ru.stqa.pft.addressbook.tests.ContactCreationTests" time="5.223"/>
+  <testcase name="pageAddNewContact[1](ContactData{id=2147483647, firstName='Mike 1', lastName='Braun 1', homePhone='null', mobilePhone='null', workPhone='null'})" classname="ru.stqa.pft.addressbook.tests.ContactCreationTests" time="3.929"/>
+  <testcase name="pageAddNewContact[2](ContactData{id=2147483647, firstName='Mike 2', lastName='Braun 2', homePhone='null', mobilePhone='null', workPhone='null'})" classname="ru.stqa.pft.addressbook.tests.ContactCreationTests" time="4.313"/>
+  <testcase name="pageAddNewContact[3](ContactData{id=2147483647, firstName='Mike 3', lastName='Braun 3', homePhone='null', mobilePhone='null', workPhone='null'})" classname="ru.stqa.pft.addressbook.tests.ContactCreationTests" time="3.872"/>
+  <testcase name="pageAddNewContact[4](ContactData{id=2147483647, firstName='Mike 4', lastName='Braun 4', homePhone='null', mobilePhone='null', workPhone='null'})" classname="ru.stqa.pft.addressbook.tests.ContactCreationTests" time="3.871"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

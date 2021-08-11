@@ -202,4 +202,8 @@ public class ContactData {
                 ", workPhone='" + workPhone + '\'' +
                 '}';
     }
+
+    public String getMyHome() {
+        return myHome;
+    }
 }

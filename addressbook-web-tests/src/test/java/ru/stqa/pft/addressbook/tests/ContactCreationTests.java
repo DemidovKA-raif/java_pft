@@ -4,7 +4,10 @@ import org.testng.annotations.*;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -15,25 +18,23 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class ContactCreationTests extends TestBase {
 
     @DataProvider
-    public Iterator<Object[]> validContacts(){
-        List<Object[]> list = new ArrayList<Object[]>();
+    public Iterator<Object[]> validContacts() throws IOException {
         File photo = new File("src/test/resources/stru.png");
-        list.add(new Object[] {new ContactData()
-                .withFirstName("FirstName1")
-                .withLastName("LastName1")
-                .withMiddleName("MiddleName1")
-                .withNickName("NickName1")
-                .withMyHome("New Bitch1")
-                .withGroup("test1")
-                .withPhoto(photo)});
-        list.add(new Object[] {new ContactData()
-                .withFirstName("FirstName2")
-                .withLastName("LastName2")
-                .withMiddleName("MiddleName2")
-                .withNickName("NickName2")
-                .withMyHome("New Bitch2")
-                .withGroup("test1")
-                .withPhoto(photo)});
+        List<Object[]> list = new ArrayList<Object[]>();
+        BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts.csv.")));
+        String line = reader.readLine();
+        while (line != null){
+            String[] split = line.split(";");
+            list.add(new Object[]{ new ContactData()
+                    .withFirstName(split[0])
+                    .withLastName(split[1])
+                    .withMiddleName(split[2])
+                    .withNickName(split[3])
+                    .withGroup(split[4])
+                    .withPhoto(photo)
+            });
+            line = reader.readLine();
+        }
         return list.iterator();
     }
 
@@ -44,6 +45,7 @@ public class ContactCreationTests extends TestBase {
         app.contact().gotoHomePage();
         Contacts before = app.contact().all();
         app.contact().create(contact, true);
+
         app.contact().gotoHomePage();
         assertThat(app.contact().count(), equalTo(before.size() + 1));
         Contacts after = app.contact().all();
