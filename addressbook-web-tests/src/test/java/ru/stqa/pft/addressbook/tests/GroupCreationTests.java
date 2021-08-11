@@ -28,7 +28,7 @@ public class GroupCreationTests extends TestBase {
         }
         XStream xstream = new XStream();
         xstream.processAnnotations(GroupData.class);
-        List<GroupData> groups = (List<GroupData>) xstream.fromXML(xml);
+        @SuppressWarnings("unchecked") List<GroupData> groups = (List<GroupData>) xstream.fromXML(xml);
         return groups.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
     }
 
