@@ -1,0 +1,37 @@
+<list>
+  <contact>
+    <firstName>Mike 0</firstName>
+    <middleName>Urgant 0</middleName>
+    <lastName>Braun 0</lastName>
+    <nickName>Ships 0</nickName>
+    <group>test1</group>
+  </contact>
+  <contact>
+    <firstName>Mike 1</firstName>
+    <middleName>Urgant 1</middleName>
+    <lastName>Braun 1</lastName>
+    <nickName>Ships 1</nickName>
+    <group>test1</group>
+  </contact>
+  <contact>
+    <firstName>Mike 2</firstName>
+    <middleName>Urgant 2</middleName>
+    <lastName>Braun 2</lastName>
+    <nickName>Ships 2</nickName>
+    <group>test1</group>
+  </contact>
+  <contact>
+    <firstName>Mike 3</firstName>
+    <middleName>Urgant 3</middleName>
+    <lastName>Braun 3</lastName>
+    <nickName>Ships 3</nickName>
+    <group>test1</group>
+  </contact>
+  <contact>
+    <firstName>Mike 4</firstName>
+    <middleName>Urgant 4</middleName>
+    <lastName>Braun 4</lastName>
+    <nickName>Ships 4</nickName>
+    <group>test1</group>
+  </contact>
+</list>
