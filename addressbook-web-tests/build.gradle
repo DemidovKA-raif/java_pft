@@ -14,8 +14,6 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.7'
     implementation 'mysql:mysql-connector-java:8.0.26'
     implementation 'org.hibernate:hibernate-core:5.5.6.Final'
-    implementation "jakarta.xml.bind:jakarta.xml.bind-api:2.3.2"
-    implementation "org.glassfish.jaxb:jaxb-runtime:2.3.2"
 
 }
 task testGroups(type: Test) {
