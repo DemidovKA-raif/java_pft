@@ -12,5 +12,26 @@
     "lastName": "Braun 1",
     "nickName": "Ships 1",
     "group": "test1"
+  },
+  {
+    "firstName": "Mike 2",
+    "middleName": "Urgant 2",
+    "lastName": "Braun 2",
+    "nickName": "Ships 2",
+    "group": "test1"
+  },
+  {
+    "firstName": "Mike 3",
+    "middleName": "Urgant 3",
+    "lastName": "Braun 3",
+    "nickName": "Ships 3",
+    "group": "test1"
+  },
+  {
+    "firstName": "Mike 4",
+    "middleName": "Urgant 4",
+    "lastName": "Braun 4",
+    "nickName": "Ships 4",
+    "group": "test1"
   }
 ]
