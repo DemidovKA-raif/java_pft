@@ -14,6 +14,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class ContactModificationTests extends TestBase {
 
 
+
     @BeforeMethod
     public void ensurePreconditionContscts() {
         if (app.contact().all().size() ==0 ) {
