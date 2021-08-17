@@ -3,37 +3,70 @@ package ru.stqa.pft.addressbook.model;
 import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import org.hibernate.annotations.Type;
 
+import javax.persistence.*;
 import java.io.File;
 import java.util.Objects;
 
 @XStreamAlias("contact")
+@Entity
+@Table(name = "addressbook")
 public class ContactData {
 
     @XStreamOmitField
+    @Id
+    @Column(name = "id")
     private int id = Integer.MAX_VALUE;
+
     @Expose
+    @Column(name = "firstname")
     private String firstName;
+
     @Expose
+    @Column(name = "middlename")
     private String middleName;
+
     @Expose
+    @Column(name = "lastname")
     private String lastName;
+
     @Expose
+    @Column(name = "nickname")
     private String nickName;
+
     @Expose
     private String myHome;
+
+    @Column(name = "home")
     private String homePhone;
+
+    @Column(name = "mobile")
     private String mobilePhone;
+
+    @Column(name = "work")
     private String workPhone;
+
     @Expose
+    @Transient
     private String group;
+
+    @Transient
     private String allPhones;
+
     private String mailFirst;
+
     private String mailSecond;
+
     private String mailThree;
+
+    @Transient
     private String allMail;
+
     private String address;
+
     @Expose
+//    @Column(name = "photo")
     private File photo;
 
 
@@ -188,8 +221,13 @@ public class ContactData {
     }
 
     public File getPhoto() {
-        return photo;
+        return  photo;
     }
+
+    public String getMyHome() {
+        return myHome;
+    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -215,8 +253,6 @@ public class ContactData {
                 ", workPhone='" + workPhone + '\'' +
                 '}';
     }
-
-    public String getMyHome() {
-        return myHome;
-    }
 }
+
+
