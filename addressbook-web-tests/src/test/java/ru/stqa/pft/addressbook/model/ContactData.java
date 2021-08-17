@@ -5,6 +5,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
 import org.hibernate.annotations.Type;
 
+
 import javax.persistence.*;
 import java.io.File;
 import java.util.Objects;
@@ -35,16 +36,16 @@ public class ContactData {
     @Column(name = "nickname")
     private String nickName;
 
-    @Expose
-    private String myHome;
-
     @Column(name = "home")
+    @Type(type = "text")
     private String homePhone;
 
     @Column(name = "mobile")
+    @Type(type = "text")
     private String mobilePhone;
 
     @Column(name = "work")
+    @Type(type = "text")
     private String workPhone;
 
     @Expose
@@ -54,25 +55,34 @@ public class ContactData {
     @Transient
     private String allPhones;
 
+    @Column(name = "email")
+    @Type(type = "text")
     private String mailFirst;
 
+    @Column(name = "email2")
+    @Type(type = "text")
     private String mailSecond;
 
+    @Column(name = "email3")
+    @Type(type = "text")
     private String mailThree;
 
     @Transient
     private String allMail;
 
+    @Column(name = "address")
+    @Type(type = "text")
     private String address;
 
     @Expose
-//    @Column(name = "photo")
-    private File photo;
+    @Column(name = "photo")
+    @Type(type = "text")
+    private String photo;
 
 
 
     public ContactData withPhoto(File photo) {
-        this.photo = photo;
+        this.photo = photo.getPath();
         return this;
     }
 
@@ -139,10 +149,6 @@ public class ContactData {
         return this;
     }
 
-    public ContactData withMyHome(String myHome) {
-        this.myHome = myHome;
-        return this;
-    }
 
     public ContactData withGroup(String group) {
         this.group = group;
@@ -221,12 +227,9 @@ public class ContactData {
     }
 
     public File getPhoto() {
-        return  photo;
+        return new File(photo);
     }
 
-    public String getMyHome() {
-        return myHome;
-    }
 
 
     @Override
