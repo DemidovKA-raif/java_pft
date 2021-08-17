@@ -67,12 +67,14 @@ public class ContactDataGenerator {
 
     private List<ContactData> generaterContacts(int count) {
         List<ContactData> contacts = new ArrayList<ContactData>();
+        File photo = new File("src/test/resources/stru.png");
         for (int i = 0; i < count; i++) {
             contacts.add(new ContactData()
                     .withFirstName(String.format("Mike %s", i))
                     .withLastName(String.format("Braun %s", i))
                     .withMiddleName(String.format("Urgant %s", i))
                     .withNickName(String.format("Ships %s", i))
+                    .withPhoto(photo)
                     .withGroup("test1"));
         }
         return contacts;
