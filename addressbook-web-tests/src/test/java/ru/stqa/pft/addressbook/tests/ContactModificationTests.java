@@ -17,23 +17,25 @@ public class ContactModificationTests extends TestBase {
 
     @BeforeMethod
     public void ensurePreconditionContscts() {
-        if (app.contact().all().size() ==0 ) {
+        if (app.db().contacts().size() ==0 ) {
             app.contact().create(
                     new ContactData().withFirstName("Tramp").withLastName("Boris").withMiddleName("Gregor").withNickName("Donald").withGroup("test1"), true);
             app.contact().gotoHomePage();
         }
     }
 
+
     @Test
-    public void pageContactModification() {
+    public void testContactModification() {
         File photo = new File("src/test/resources/stru.png");
-        Contacts before = app.contact().all();
+        Contacts before = app.db().contacts();
         ContactData modifiedContact = before.iterator().next();
         ContactData contact = new ContactData()
                 .withId(modifiedContact.getId()).withFirstName("Mackaley").withMiddleName("Calkin").withLastName("One").withNickName("Small").withGroup("test1").withPhoto(photo);
+        app.contact().gotoHomePage();
         app.contact().modify(contact);
         assertThat(app.contact().count(), equalTo(before.size()));
-        Contacts after = app.contact().all();
-        assertThat(after, CoreMatchers.equalTo(before.withOut(modifiedContact).withAdded(contact)));
+        Contacts after = app.db().contacts();
+        assertThat(after, equalTo(before.withOut(modifiedContact).withAdded(contact)));
     }
 }

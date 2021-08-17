@@ -226,24 +226,23 @@ public class ContactData {
         return address;
     }
 
-    public File getPhoto() {
-        return new File(photo);
-    }
-
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ContactData that = (ContactData) o;
-        return id == that.id && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) && Objects.equals(homePhone, that.homePhone) && Objects.equals(mobilePhone, that.mobilePhone) && Objects.equals(workPhone, that.workPhone);
+        return id == that.id && Objects.equals(firstName, that.firstName) && Objects.equals(middleName, that.middleName) && Objects.equals(lastName, that.lastName) && Objects.equals(nickName, that.nickName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, homePhone, mobilePhone, workPhone);
+        return Objects.hash(id, firstName, middleName, lastName, nickName);
     }
+
+    public File getPhoto() {
+        return new File(photo);
+    }
+
 
     @Override
     public String toString() {
