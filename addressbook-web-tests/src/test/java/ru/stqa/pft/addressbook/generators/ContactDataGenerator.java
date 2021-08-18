@@ -59,7 +59,10 @@ public class ContactDataGenerator {
 
         try (Writer writer = new FileWriter(file)){
             for (ContactData contact : contacts) {
-                writer.write(String.format("%s;%s;%s;%s;%s\n", contact.getFirstName(), contact.getLastName(), contact.getMiddleName(), contact.getNickName(), contact.getGroup()));
+                writer.write(String.format("%s;%s;%s;%s;%s\n", contact.getFirstName(), contact.getLastName(), contact.getMiddleName(), contact.getNickName()
+
+//                        ,contact.getGroup()
+                ));
             }
         }
 
@@ -75,7 +78,8 @@ public class ContactDataGenerator {
                     .withMiddleName(String.format("Urgant %s", i))
                     .withNickName(String.format("Ships %s", i))
                     .withPhoto(photo)
-                    .withGroup("test1"));
+//                    .withGroup("test1")
+            );
         }
         return contacts;
     }
