@@ -92,13 +92,7 @@ public class ContactHelper extends HelperBase {
         contactCache = null;
         gotoHomePage();
     }
-    public void deleteGroupInContactById(ContactData contact) {
-        gotoHomePage();
-        selectAllGroupsInContacts();
-        selectContactById(contact.getId());
-        deleteGroupIsContact();
-        gotoHomePage();
-    }
+
 
 
     public void addGroupInContactById(ContactData contact){
@@ -107,9 +101,16 @@ public class ContactHelper extends HelperBase {
         gotoHomePage();
     }
 
-    private void selectAllGroupsInContacts() {
+    public void ContactDeleteGroup(int id, String text) {
+        selectAllGroupsInContacts(text);
+        selectContactById(id);
+        deleteGroupIsContact();
+    }
+
+
+    private void selectAllGroupsInContacts(String text) {
         click(By.name("group"));
-        new Select(wd.findElement(By.name("group"))).selectByVisibleText(("test 1"));
+        new Select(wd.findElement(By.name("group"))).selectByVisibleText(text);
     }
 
     private void clickAddGroup() {

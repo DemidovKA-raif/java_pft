@@ -10,7 +10,9 @@ import org.hibernate.cfg.Configuration;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.Contacts;
 import ru.stqa.pft.addressbook.model.GroupData;
+import ru.stqa.pft.addressbook.model.Groups;
 
 import java.util.List;
 
@@ -65,10 +67,16 @@ public class HbConnectionTest {
         for (ContactData contact : result) {
 //            System.out.println(contact);
             System.out.println(contact.getGroups());
+
         }
         session.getTransaction().commit();
         session.close();
     }
+
+
+
+
+
 }
 
 

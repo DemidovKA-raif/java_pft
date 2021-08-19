@@ -11,11 +11,20 @@ public class ContactGroupCreationTests extends TestBase {
 
     @Test
     public void addContactInGroupTest() {
+
         Contacts before = app.db().contactsRequestDB();
         ContactData addGroupContact = before.iterator().next();
         app.contact().addGroupInContactById(addGroupContact);
         assertThat(app.contact().count(), equalTo(before.size()));
         Contacts after = app.db().contactsRequestDB();
         assertThat(after, equalTo(before));
+
+//        Contacts before = app.db().contactsRequestDB();
+//        ContactData addGroupContact = before.iterator().next();
+//        app.contact().addGroupInContactById(addGroupContact);
+//        assertThat(app.contact().count(), equalTo(before.size()));
+//        Contacts after = app.db().contactsRequestDB();
+//        assertThat(after, equalTo(before));
+
     }
 }
