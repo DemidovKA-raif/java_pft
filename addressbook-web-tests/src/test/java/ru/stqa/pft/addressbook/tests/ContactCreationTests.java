@@ -3,9 +3,11 @@ package ru.stqa.pft.addressbook.tests;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.thoughtworks.xstream.XStream;
+import org.hamcrest.CoreMatchers;
 import org.testng.annotations.*;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
+import ru.stqa.pft.addressbook.model.Groups;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -71,12 +73,13 @@ public class ContactCreationTests extends TestBase {
 
     @Test
     public void pageAddNewBadContact() {
+        Groups groups = app.db().groups();
         File photo = new File("src/test/resources/stru.png");
         app.contact().gotoHomePage();
         Contacts before = app.db().contacts();
         ContactData contact = new ContactData()
                 .withFirstName("FirstName'").withLastName("LastName").withMiddleName("MiddleName").withNickName("Donald")
-//                .withGroup("test1")
+                .inGroup(groups.iterator().next())
                 .withHomePhone("111").withMobilePhone("222").withWorkPhone("333").withPhoto(photo);
         app.contact().create(contact, true);
         app.contact().gotoHomePage();
@@ -84,6 +87,17 @@ public class ContactCreationTests extends TestBase {
         Contacts after = app.db().contacts();
         assertThat(after, equalTo(before));
         verifyContactListInUI();
+    }
+
+    @Test
+    public void addContactInGroup(){
+        Groups groups = app.db().groups();
+        Contacts before = app.db().contacts();
+        ContactData addGroupContact = before.iterator().next();
+        app.contact().addGroupInContactById(addGroupContact);
+        assertThat(app.contact().count(), equalTo(before.size()));
+        Groups after = app.db().groups();
+        assertThat(after, equalTo(before.withOut(addGroupContact)));
     }
 }
 

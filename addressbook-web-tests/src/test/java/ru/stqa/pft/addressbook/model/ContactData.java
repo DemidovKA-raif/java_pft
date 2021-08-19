@@ -156,7 +156,6 @@ public class ContactData {
     }
 
 
-
     public ContactData withId(int id) {
         this.id = id;
         return this;
@@ -252,6 +251,11 @@ public class ContactData {
                 ", mobilePhone='" + mobilePhone + '\'' +
                 ", workPhone='" + workPhone + '\'' +
                 '}';
+    }
+
+    public ContactData inGroup(GroupData group) {
+        groups.add(group);
+        return this;
     }
 }
 

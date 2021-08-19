@@ -8,6 +8,7 @@ import com.google.gson.GsonBuilder;
 import com.thoughtworks.xstream.XStream;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.GroupData;
+import ru.stqa.pft.addressbook.model.Groups;
 
 
 import java.io.File;
@@ -70,6 +71,7 @@ public class ContactDataGenerator {
 
     private List<ContactData> generaterContacts(int count) {
         List<ContactData> contacts = new ArrayList<ContactData>();
+
         File photo = new File("src/test/resources/stru.png");
         for (int i = 0; i < count; i++) {
             contacts.add(new ContactData()
@@ -78,7 +80,7 @@ public class ContactDataGenerator {
                     .withMiddleName(String.format("Urgant %s", i))
                     .withNickName(String.format("Ships %s", i))
                     .withPhoto(photo)
-//                    .withGroup("test1")
+
             );
         }
         return contacts;
