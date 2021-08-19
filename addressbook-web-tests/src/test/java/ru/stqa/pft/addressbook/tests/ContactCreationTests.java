@@ -91,13 +91,12 @@ public class ContactCreationTests extends TestBase {
 
     @Test
     public void addContactInGroup(){
-        Groups groups = app.db().groups();
         Contacts before = app.db().contacts();
         ContactData addGroupContact = before.iterator().next();
         app.contact().addGroupInContactById(addGroupContact);
         assertThat(app.contact().count(), equalTo(before.size()));
-        Groups after = app.db().groups();
-        assertThat(after, equalTo(before.withOut(addGroupContact)));
+        Contacts after = app.db().contacts();
+        assertThat(after, equalTo(before));
     }
 }
 
