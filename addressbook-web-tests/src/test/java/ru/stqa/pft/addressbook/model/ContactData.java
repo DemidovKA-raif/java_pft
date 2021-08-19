@@ -223,6 +223,16 @@ public class ContactData {
         return address;
     }
 
+    public File getPhoto() {
+        return new File(photo);
+    }
+
+    public ContactData inGroup(GroupData group) {
+        groups.add(group);
+        return this;
+    }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -236,9 +246,7 @@ public class ContactData {
         return Objects.hash(id, firstName, middleName, lastName, nickName);
     }
 
-    public File getPhoto() {
-        return new File(photo);
-    }
+
 
 
     @Override
@@ -251,11 +259,6 @@ public class ContactData {
                 ", mobilePhone='" + mobilePhone + '\'' +
                 ", workPhone='" + workPhone + '\'' +
                 '}';
-    }
-
-    public ContactData inGroup(GroupData group) {
-        groups.add(group);
-        return this;
     }
 }
 

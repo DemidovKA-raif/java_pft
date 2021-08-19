@@ -31,7 +31,7 @@ public class TestBase {
 
     public void verifyGroupListInUI() {
         if (Boolean.getBoolean("verifyUI")) {
-            Groups dbGroups = app.db().groups();
+            Groups dbGroups = app.db().groupsRequestDB();
             Groups uiGroups = app.group().all();
             assertThat(uiGroups, equalTo(dbGroups.stream()
                     .map((g) -> new GroupData().withId(g.getId()).withName(g.getName()))
@@ -41,7 +41,7 @@ public class TestBase {
 
     public void verifyContactListInUI() {
         if (Boolean.getBoolean("verifyUI")) {
-            Contacts dbContacts = app.db().contacts();
+            Contacts dbContacts = app.db().contactsRequestDB();
             Contacts uiContacts = app.contact().all();
             assertThat(uiContacts, equalTo(dbContacts.stream()
                     .map((g) -> new ContactData().withId(g.getId()).withFirstName(g.getFirstName()).withLastName(g.getLastName())

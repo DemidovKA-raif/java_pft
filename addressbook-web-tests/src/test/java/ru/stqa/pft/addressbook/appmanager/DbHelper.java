@@ -23,7 +23,7 @@ public class DbHelper {
         sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
     }
 
-    public Groups groups() {
+    public Groups groupsRequestDB() {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         List<GroupData> result = session.createQuery("from GroupData").list();
@@ -32,10 +32,14 @@ public class DbHelper {
         return new Groups(result);
     }
 
-    public Contacts contacts(){
+    public Contacts contactsRequestDB(){
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         List<ContactData> result = session.createQuery("from ContactData").list();
+//        for (ContactData contact : result) {
+////            System.out.println(contact);
+//            System.out.println(contact.getGroups());
+//        }
         session.getTransaction().commit();
         session.close();
         return new Contacts(result);

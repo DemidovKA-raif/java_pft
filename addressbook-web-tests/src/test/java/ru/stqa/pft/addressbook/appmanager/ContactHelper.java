@@ -7,6 +7,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
+import ru.stqa.pft.addressbook.model.GroupData;
+import ru.stqa.pft.addressbook.model.Groups;
 
 import java.util.List;
 
@@ -54,15 +56,15 @@ public class ContactHelper extends HelperBase {
 
 
         if (creation) {
-//            if (contactData.getGroups().size()>0) {
-//                Assert.assertTrue(contactData.getGroups().size()==1);
-//                new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroups().iterator().next().getName());
+            if (contactData.getGroups().size()>0) {
+                Assert.assertTrue(contactData.getGroups().size()==1);
+                new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroups().iterator().next().getName());
             } else {
                 Assert.assertFalse(isElementPresent(By.name("new_group")));
             }
         }
 
-//    }
+    }
 
     public void clickNewContact() {
         click(By.xpath("//div[@id='content']/form/input[21]"));
@@ -90,21 +92,32 @@ public class ContactHelper extends HelperBase {
         contactCache = null;
         gotoHomePage();
     }
+    public void deleteGroupInContactById(ContactData contact) {
+        gotoHomePage();
+        selectAllGroupsInContacts();
+        selectContactById(contact.getId());
+        deleteGroupIsContact();
+        gotoHomePage();
+    }
+
 
     public void addGroupInContactById(ContactData contact){
         selectContactById(contact.getId());
         clickAddGroup();
         gotoHomePage();
-        selectAllGroupsInContacts();
     }
 
     private void selectAllGroupsInContacts() {
         click(By.name("group"));
-        new Select(wd.findElement(By.name("group"))).selectByVisibleText("[all]");
+        new Select(wd.findElement(By.name("group"))).selectByVisibleText(("test 1"));
     }
 
     private void clickAddGroup() {
         click(By.xpath("//input[@value='Add to']"));
+    }
+
+    private void deleteGroupIsContact() {
+        click(By.name("remove"));
     }
 
     public void delete(ContactData contact) throws InterruptedException {
@@ -165,5 +178,7 @@ public class ContactHelper extends HelperBase {
         }
         return new Contacts(contactCache);
     }
+
+
 }
 
