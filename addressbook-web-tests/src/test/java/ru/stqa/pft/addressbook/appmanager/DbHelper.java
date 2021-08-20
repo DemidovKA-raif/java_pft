@@ -36,9 +36,6 @@ public class DbHelper {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         List<ContactData> result = session.createQuery("from ContactData").list();
-        for (ContactData contact : result) {
-            System.out.println(contact.getGroups());
-        }
         session.getTransaction().commit();
         session.close();
         return new Contacts(result);

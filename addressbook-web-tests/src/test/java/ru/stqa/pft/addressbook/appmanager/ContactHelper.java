@@ -101,23 +101,23 @@ public class ContactHelper extends HelperBase {
         gotoHomePage();
     }
 
-    public void ContactDeleteGroup(int id, String text) {
-        selectAllGroupsInContacts(text);
-        selectContactById(id);
+    public void contactDeleteGroup(ContactData contact, String text) {
+        selectTypeGroupsInContacts(text);
+        selectContactById(contact.getId());
         deleteGroupIsContact();
     }
 
 
-    private void selectAllGroupsInContacts(String text) {
+    public void selectTypeGroupsInContacts(String text) {
         click(By.name("group"));
         new Select(wd.findElement(By.name("group"))).selectByVisibleText(text);
     }
 
-    private void clickAddGroup() {
+    public void clickAddGroup() {
         click(By.xpath("//input[@value='Add to']"));
     }
 
-    private void deleteGroupIsContact() {
+    public void deleteGroupIsContact() {
         click(By.name("remove"));
     }
 

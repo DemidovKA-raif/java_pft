@@ -28,19 +28,22 @@ public class ContactGroupDeletionTests extends TestBase {
 
     @Test
     public void deleteContactInGroupTest() {
-        Contacts beforeContact = app.db().contactsRequestDB();
-        ContactData contact = beforeContact.iterator().next();
-        Groups beforeGroups = app.db().contactAllGroups();
-        String name = contact.getGroups().iterator().next().getName();
-        app.contact().ContactDeleteGroup(contact.getId(), name);
-//        GroupData groupForContact = contact.getGroups()
-//                .stream().filter(g -> g.getName().equals(name)).findFirst().get();
+        /**
+         * Получаем список контактов "ДО", получаем список групп "ДО"
+         * Выбрали рандомный контакт
+         * Выполнили шаги по добавлению контакта в группу в UI
+         * Сравнили список контактов "ДО" и "После"
+         * Сравнили список групп "ДО" и "После"
+         */
+        Contacts before = app.db().contactsRequestDB();
+        Groups beforeInGroups = app.db().contactAllGroups();
 
-//        Contacts afterContact = app.db().contactsRequestDB();
-//        assertThat(afterContact.size(), equalTo(beforeContact.size()));
-//
-//        Groups afterInGroups = app.db().contactAllGroups();
-//        assertThat((afterInGroups), equalTo(new Groups(beforeGroups.withOut(groupForContact))));
-    }
+       ContactData contact = before.iterator().next();
+       String getNameGroup = contact.getGroups().iterator().next().getName();
+        app.contact().contactDeleteGroup(contact, getNameGroup);
+
+
+
+     }
     }
 

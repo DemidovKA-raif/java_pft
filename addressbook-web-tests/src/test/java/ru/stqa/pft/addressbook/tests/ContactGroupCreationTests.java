@@ -12,7 +12,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class ContactGroupCreationTests extends TestBase {
 
 
-
     @Test
     public void addContactInGroupTest() {
         /**
@@ -25,13 +24,11 @@ public class ContactGroupCreationTests extends TestBase {
 
         Contacts before = app.db().contactsRequestDB();
         Groups beforeInGroups = app.db().contactAllGroups();
-
         ContactData addGroupContact = before.iterator().next();
         app.contact().addGroupInContactById(addGroupContact);
         assertThat(app.contact().count(), equalTo(before.size()));
         Contacts after = app.db().contactsRequestDB();
         assertThat(after, equalTo(before));
-
         Groups afterInGrous = app.db().contactAllGroups();
         assertThat((afterInGrous), equalTo(beforeInGroups));
     }
