@@ -17,7 +17,6 @@ public class ContactGroupDeletionTests extends TestBase {
 
     @BeforeMethod
     public void ensurePreconditions() {
-        // Проверка наличия хоть одной группы и её добавление  если таковой нет
         if (app.db().groupsRequestDB().size() == 0) {
             app.goTo().groupPage();
             app.group().create(new GroupData().withName("test 1"));
@@ -25,25 +24,23 @@ public class ContactGroupDeletionTests extends TestBase {
     }
 
 
-
     @Test
     public void deleteContactInGroupTest() {
-        /**
-         * Получаем список контактов "ДО", получаем список групп "ДО"
-         * Выбрали рандомный контакт
-         * Выполнили шаги по добавлению контакта в группу в UI
-         * Сравнили список контактов "ДО" и "После"
-         * Сравнили список групп "ДО" и "После"
-         */
+
         Contacts before = app.db().contactsRequestDB();
         Groups beforeInGroups = app.db().contactAllGroups();
 
-       ContactData contact = before.iterator().next();
-       String getNameGroup = contact.getGroups().iterator().next().getName();
+        ContactData contact = before.iterator().next();
+        String getNameGroup = contact.getGroups().iterator().next().getName();
         app.contact().contactDeleteGroup(contact, getNameGroup);
 
-
-
-     }
+        assertThat(app.contact().count(), equalTo(before.size()));
+        Contacts after = app.db().contactsRequestDB();
+        assertThat(after, equalTo(before));
+        Groups afterInGrous = app.db().contactAllGroups();
+        assertThat((afterInGrous), equalTo(beforeInGroups));
     }
+
+}
+
 
