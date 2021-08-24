@@ -39,7 +39,7 @@ public class ContactGroupCreationTests extends TestBase {
         assertThat(app.contact().count(), equalTo(before.size()));
         Contacts after = app.db().contactsRequestDB();
         assertThat(after, equalTo(before));
-        Groups afterInGrous = app.db().contactAllGroups();
-        assertThat((afterInGrous), equalTo(beforeInGroups));
+        Groups afterInGroups = app.db().contactAllGroups();
+        assertThat((afterInGroups), equalTo(beforeInGroups));
     }
 }
