@@ -1,0 +1,12 @@
+ru/stqa/pft/mantis/tests/TestBase.java
+ ru.stqa.pft.mantis.tests.TestBase
+ru/stqa/pft/mantis/appmanager/ApplicationManager.java
+ ru.stqa.pft.mantis.appmanager.ApplicationManager
+ru/stqa/pft/mantis/tests/LoginTests.java
+ ru.stqa.pft.mantis.tests.LoginTests
+ru/stqa/pft/mantis/tests/RegistrationTests.java
+ ru.stqa.pft.mantis.tests.RegistrationTests
+ru/stqa/pft/mantis/appmanager/RegistrationHelper.java
+ ru.stqa.pft.mantis.appmanager.RegistrationHelper
+ru/stqa/pft/mantis/appmanager/HttpSession.java
+ ru.stqa.pft.mantis.appmanager.HttpSession
