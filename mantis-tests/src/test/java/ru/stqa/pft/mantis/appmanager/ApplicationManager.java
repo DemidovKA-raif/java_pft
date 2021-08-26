@@ -21,6 +21,7 @@ public class ApplicationManager {
     private final String browser;
     private RegistrationHelper registrationHelper;
     private FTPHelper ftp;
+    private MailHelper mailHelper;
 
     public ApplicationManager(String browser) {
         this.browser = browser;
@@ -32,7 +33,7 @@ public class ApplicationManager {
         String target = System.getProperty("target", "local");
         properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties", target))));
 
-     }
+    }
 
     public void stop() {
         if (wd != null) {
@@ -40,8 +41,8 @@ public class ApplicationManager {
         }
     }
 
-    public HttpSession newSession(){
-        return new  HttpSession(this);
+    public HttpSession newSession() {
+        return new HttpSession(this);
     }
 
     public String getProperty(String key) {
@@ -49,10 +50,10 @@ public class ApplicationManager {
     }
 
     public RegistrationHelper registration() {
-        if (registrationHelper == null){
+        if (registrationHelper == null) {
             registrationHelper = new RegistrationHelper(this);
         }
-      return registrationHelper;
+        return registrationHelper;
     }
 
     public FTPHelper ftp() {
@@ -62,8 +63,8 @@ public class ApplicationManager {
         return ftp;
     }
 
-    public WebDriver getDriver(){
-        if (wd == null){
+    public WebDriver getDriver() {
+        if (wd == null) {
             if (browser.equals(BrowserType.FIREFOX)) {
                 wd = new FirefoxDriver();
             } else if (browser.equals(BrowserType.CHROME)) {
@@ -75,5 +76,12 @@ public class ApplicationManager {
 
         }
         return wd;
+    }
+
+    public MailHelper mail() {
+        if (mailHelper == null) {
+            mailHelper = new MailHelper(this);
+        }
+        return mailHelper;
     }
 }
