@@ -10,3 +10,5 @@ ru/stqa/pft/mantis/appmanager/RegistrationHelper.java
  ru.stqa.pft.mantis.appmanager.RegistrationHelper
 ru/stqa/pft/mantis/appmanager/HttpSession.java
  ru.stqa.pft.mantis.appmanager.HttpSession
+ru/stqa/pft/mantis/appmanager/FTPHelper.java
+ ru.stqa.pft.mantis.appmanager.FTPHelper

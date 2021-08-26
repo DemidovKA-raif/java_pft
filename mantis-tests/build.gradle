@@ -10,6 +10,7 @@ dependencies {
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.0.0-beta-4'
     testImplementation 'org.hamcrest:hamcrest:2.2'
     implementation 'com.google.http-client:google-http-client:1.39.2-sp.1'
+    implementation 'commons-net:commons-net:3.8.0'
 
 
 }

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.mantis.tests.RegistrationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-25T18:42:01" hostname="N-MSK-RUADMK3" time="5.192">
+<testsuite name="ru.stqa.pft.mantis.tests.RegistrationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-26T10:06:18" hostname="N-MSK-RUADMK3" time="5.16">
   <properties/>
-  <testcase name="testRegistration" classname="ru.stqa.pft.mantis.tests.RegistrationTests" time="5.192"/>
+  <testcase name="testRegistration" classname="ru.stqa.pft.mantis.tests.RegistrationTests" time="5.16"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-1629916921981	geckodriver	INFO	Listening on 127.0.0.1:38934
-1629916922597	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "0" "-foreground" "-no-remote" "-profile" "C:\\Users\\ruadmk3\\AppData\\Local\\Temp\\rust_mozprofilep49n5B"
+1629972379243	geckodriver	INFO	Listening on 127.0.0.1:31119
+1629972379901	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "0" "-foreground" "-no-remote" "-profile" "C:\\Users\\ruadmk3\\AppData\\Local\\Temp\\rust_mozprofile3nxmzY"
 console.error: JsonSchemaValidator.jsm: 
   Ignoring parameter "https://addons.mozilla.org/firefox/downloads/file/3448508/saml_tracer-1.6-an+fx.xpi?src=dp-btn-primary" - origin was expected but received full URL.
 console.error: JsonSchemaValidator.jsm: 
@@ -21,9 +21,9 @@ console.error: JsonSchemaValidator.jsm:
 console.error: JsonSchemaValidator.jsm: 
   Ignoring parameter "https://armbio-test-app.raiffeisen.ru/armb/*" - origin was expected but received full URL.
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
-1629916924573	Marionette	INFO	Listening on port 49500
-1629916924837	Marionette	WARN	TLS certificate errors will be ignored for this session
-Aug 25, 2021 9:42:04 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+1629972381978	Marionette	INFO	Listening on port 62817
+1629972382075	Marionette	WARN	TLS certificate errors will be ignored for this session
+Aug 26, 2021 1:06:22 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 ]]></system-err>
 </testsuite>

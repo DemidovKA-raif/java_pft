@@ -20,6 +20,7 @@ public class ApplicationManager {
 
     private final String browser;
     private RegistrationHelper registrationHelper;
+    private FTPHelper ftp;
 
     public ApplicationManager(String browser) {
         this.browser = browser;
@@ -52,6 +53,13 @@ public class ApplicationManager {
             registrationHelper = new RegistrationHelper(this);
         }
       return registrationHelper;
+    }
+
+    public FTPHelper ftp() {
+        if (ftp == null) {
+            ftp = new FTPHelper(this);
+        }
+        return ftp;
     }
 
     public WebDriver getDriver(){
