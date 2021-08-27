@@ -1,3 +1,5 @@
+ru/stqa/pft/mantis/model/MailMessage.java
+ ru.stqa.pft.mantis.model.MailMessage
 ru/stqa/pft/mantis/appmanager/MailHelper.java
  ru.stqa.pft.mantis.appmanager.MailHelper
 ru/stqa/pft/mantis/tests/TestBase.java
@@ -16,5 +18,5 @@ ru/stqa/pft/mantis/appmanager/HttpSession.java
  ru.stqa.pft.mantis.appmanager.HttpSession
 ru/stqa/pft/mantis/appmanager/FTPHelper.java
  ru.stqa.pft.mantis.appmanager.FTPHelper
-ru/stqa/pft/mantis/model/MailMessage.java
- ru.stqa.pft.mantis.model.MailMessage
+ru/stqa/pft/mantis/appmanager/JamesHelper.java
+ ru.stqa.pft.mantis.appmanager.JamesHelper

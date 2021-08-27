@@ -13,10 +13,10 @@ dependencies {
     implementation 'commons-net:commons-net:3.8.0'
     implementation 'org.subethamail:subethasmtp:3.1.7'
     implementation 'ru.lanwen.verbalregex:java-verbal-expressions:1.8'
+    implementation 'ch.qos.logback:logback-classic:1.3.0-alpha10'
 
 
-}
-test { useTestNG() }
+    test { useTestNG() }
 
 //        {
 //        suites 'src/test/resources/testng.xml'
@@ -31,3 +31,4 @@ test { useTestNG() }
 //        systemProperty 'verifyUI', "${verifyUI}"
 //    }
 //}
+}

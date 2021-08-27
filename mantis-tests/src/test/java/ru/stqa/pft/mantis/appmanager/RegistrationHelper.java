@@ -12,7 +12,7 @@ public class RegistrationHelper extends HelperBase{
         wd.get(app.getProperty("web.BaseURL") + "/signup_page.php");
         type(By.name("username"), username);
         type(By.name("email"), email);
-        click(By.cssSelector("input[value='Signup']"));
+        click(By.cssSelector("input[type='submit']"));
     }
 
     public void finish(String confirmationLink, String password) {
