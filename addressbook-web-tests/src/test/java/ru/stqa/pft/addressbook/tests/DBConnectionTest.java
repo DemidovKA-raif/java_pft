@@ -15,8 +15,11 @@ public class DBConnectionTest {
             ResultSet resultSet = statement.executeQuery("select group_id,group_name,group_header,group_footer from group_list");
             Groups groups = new Groups();
             while (resultSet.next()){
-                groups.add(new GroupData().withId(resultSet.getInt("group_id")).withName(resultSet.getString("group_name"))
-                        .withHeader(resultSet.getString("group_header")).withFooter(resultSet.getString("group_footer")));
+                groups.add(new GroupData()
+                        .withId(resultSet.getInt("group_id"))
+                        .withName(resultSet.getString("group_name"))
+                        .withHeader(resultSet.getString("group_header"))
+                        .withFooter(resultSet.getString("group_footer")));
             }
             resultSet.close();
             statement.close();

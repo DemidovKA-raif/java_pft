@@ -27,6 +27,7 @@ public class Groups extends ForwardingSet<GroupData> {
     protected Set<GroupData> delegate() {
         return delegate;
     }
+
     public Groups withAdded(GroupData group){
         Groups groups = new Groups(this);
         groups.add(group);

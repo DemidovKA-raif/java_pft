@@ -1,22 +1,30 @@
-ru/stqa/pft/mantis/model/MailMessage.java
- ru.stqa.pft.mantis.model.MailMessage
 ru/stqa/pft/mantis/appmanager/MailHelper.java
  ru.stqa.pft.mantis.appmanager.MailHelper
 ru/stqa/pft/mantis/tests/TestBase.java
  ru.stqa.pft.mantis.tests.TestBase
 ru/stqa/pft/mantis/appmanager/ApplicationManager.java
  ru.stqa.pft.mantis.appmanager.ApplicationManager
-ru/stqa/pft/mantis/appmanager/HelperBase.java
- ru.stqa.pft.mantis.appmanager.HelperBase
-ru/stqa/pft/mantis/tests/LoginTests.java
- ru.stqa.pft.mantis.tests.LoginTests
 ru/stqa/pft/mantis/tests/RegistrationTests.java
  ru.stqa.pft.mantis.tests.RegistrationTests
 ru/stqa/pft/mantis/appmanager/RegistrationHelper.java
  ru.stqa.pft.mantis.appmanager.RegistrationHelper
 ru/stqa/pft/mantis/appmanager/HttpSession.java
  ru.stqa.pft.mantis.appmanager.HttpSession
-ru/stqa/pft/mantis/appmanager/FTPHelper.java
- ru.stqa.pft.mantis.appmanager.FTPHelper
 ru/stqa/pft/mantis/appmanager/JamesHelper.java
  ru.stqa.pft.mantis.appmanager.JamesHelper
+ru/stqa/pft/mantis/appmanager/FTPHelper.java
+ ru.stqa.pft.mantis.appmanager.FTPHelper
+ru/stqa/pft/mantis/model/MailMessage.java
+ ru.stqa.pft.mantis.model.MailMessage
+ru/stqa/pft/mantis/model/Users.java
+ ru.stqa.pft.mantis.model.Users
+ru/stqa/pft/mantis/tests/LoginTests.java
+ ru.stqa.pft.mantis.tests.LoginTests
+ru/stqa/pft/mantis/appmanager/HelperBase.java
+ ru.stqa.pft.mantis.appmanager.HelperBase
+ru/stqa/pft/mantis/tests/DBConnectionTests.java
+ ru.stqa.pft.mantis.tests.DBConnectionTests
+ru/stqa/pft/mantis/model/UsersData.java
+ ru.stqa.pft.mantis.model.UsersData
+ru/stqa/pft/mantis/tests/HbConnectionTest.java
+ ru.stqa.pft.mantis.tests.HbConnectionTest

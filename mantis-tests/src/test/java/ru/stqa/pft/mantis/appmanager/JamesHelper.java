@@ -40,9 +40,9 @@ public class JamesHelper {
 
     public void createUser(String name, String password) {
         initTelnetSession();
-        write("adduser " + name + " " + password); //пишем команду
-        String result = readUntil("User " + name + " added"); //ждем пока на консоли появится этот текст
-        closeTelnetSession(); //разрываем соед
+        write("adduser " + name + " " + password);
+        String result = readUntil("User " + name + " added");
+        closeTelnetSession();
     }
 
     public void deleteUser(String name) {
