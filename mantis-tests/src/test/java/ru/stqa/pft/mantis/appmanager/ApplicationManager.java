@@ -23,6 +23,7 @@ public class ApplicationManager {
     private FTPHelper ftp;
     private MailHelper mailHelper;
     private JamesHelper jamesHelper;
+    private DbHelper dbHelper;
 
     public ApplicationManager(String browser) {
         this.browser = browser;
@@ -34,6 +35,13 @@ public class ApplicationManager {
         String target = System.getProperty("target", "local");
         properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties", target))));
 
+
+        dbHelper = new DbHelper();
+        if (browser.equals(BrowserType.FIREFOX)) {
+            wd = new FirefoxDriver();
+        } else if (browser.equals(BrowserType.CHROME)) {
+            wd = new ChromeDriver();
+        }
     }
 
     public void stop() {
@@ -57,7 +65,9 @@ public class ApplicationManager {
         return registrationHelper;
     }
 
-
+    public DbHelper db(){
+        return dbHelper;
+    }
 
     public WebDriver getDriver() {
         if (wd == null) {
