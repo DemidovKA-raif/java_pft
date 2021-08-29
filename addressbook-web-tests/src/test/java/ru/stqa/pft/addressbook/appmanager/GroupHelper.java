@@ -65,6 +65,13 @@ public class GroupHelper extends HelperBase {
         returnToGroupePage();
     }
 
+    public void gotoHomePage() {
+        if (isElementPresent(By.id("maintable"))) {
+            return;
+        }
+        click(By.linkText("home"));
+    }
+
     public void modify(GroupData group) {
         selectGroupById(group.getId());
         initGroupModification();

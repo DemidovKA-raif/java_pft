@@ -7,7 +7,9 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
+import ru.stqa.pft.addressbook.model.Groups;
 
+import java.io.File;
 import java.util.List;
 
 public class ContactHelper extends HelperBase {
@@ -108,6 +110,7 @@ public class ContactHelper extends HelperBase {
         String number = wd.findElements(By.id("search_count")).get(0).getText();
         return number.equals("0");
     }
+
 
 
     public void addGroupInContactById(ContactData contact){
