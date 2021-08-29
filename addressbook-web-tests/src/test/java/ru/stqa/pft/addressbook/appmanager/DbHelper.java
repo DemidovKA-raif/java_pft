@@ -52,18 +52,6 @@ public class DbHelper {
         }
         return null;
     }
-
-    public Groups contactAllGroupsSize() {
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
-        List<ContactData> result = session.createQuery("from ContactData").list();
-        session.getTransaction().commit();
-        session.close();
-        for (ContactData contact : result) {
-            return new Groups();
-        }
-        return null;
-    }
 }
 
 
