@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="15" />
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="sandbox.test" options="--add-exports jdk.jdi/com.sun.tools.example.debug.expr=ALL-UNNAMED" />
+    </option>
+  </component>
+</project>
