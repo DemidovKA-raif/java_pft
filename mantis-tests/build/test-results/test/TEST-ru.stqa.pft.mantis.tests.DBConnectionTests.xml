@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.mantis.tests.DBConnectionTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-27T14:54:28" hostname="N-MSK-RUADMK3" time="0.192">
+  <properties/>
+  <testcase name="testDBConnection" classname="ru.stqa.pft.mantis.tests.DBConnectionTests" time="0.192"/>
+  <system-out><![CDATA[[UsersData{id=1, username='administrator'}]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
