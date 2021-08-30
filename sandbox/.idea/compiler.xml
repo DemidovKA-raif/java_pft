@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="15" />
+    <bytecodeTargetLevel target="15">
+      <module name="addressbook-web-tests" target="1.8" />
+      <module name="addressbook-web-tests.main" target="1.8" />
+      <module name="addressbook-web-tests.test" target="1.8" />
+      <module name="addressbook-web-tests.untitled" target="1.8" />
+      <module name="addressbook-web-tests.untitled.main" target="1.8" />
+      <module name="addressbook-web-tests.untitled.test" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

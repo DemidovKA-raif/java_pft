@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: io.opentelemetry:opentelemetry-sdk-trace:1.2.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-sdk-trace/1.2.0/2a1881ee7596602a3bd3962b1815eb09339feb6f/opentelemetry-sdk-trace-1.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-sdk-trace/1.2.0/a8d998731fa11ee603dbfa3dba324e2be9b49052/opentelemetry-sdk-trace-1.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
