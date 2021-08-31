@@ -19,7 +19,7 @@ public class SoapTests extends TestBase{
         Set<Project> projects = app.soap().getProject();
         System.out.println(projects.size());
         for(Project project : projects){
-            System.out.println(project.getName());
+            System.out.println(project.getId());
         }
     }
 
@@ -32,10 +32,24 @@ public class SoapTests extends TestBase{
     }
 
     @Test
-    public void testCheckResolution() throws MalformedURLException, ServiceException, RemoteException {
-        Set<Project> projects = app.soap().getResolution();
-        for(Project project : projects){
-            System.out.println(project.getName());
-        }
+    public void testGetIssues() throws MalformedURLException, ServiceException, RemoteException {
+        Set<Issue> issues = app.soap().getAllIssues();
+        System.out.println(issues.size());
+        for(Issue issue : issues){
+            System.out.println(issue.getIssue_id());
+
+
+
+
+    }
+//    @Test
+//    public void testCheckResolution() throws MalformedURLException, ServiceException, RemoteException {
+//        Set<Project> projects = app.soap().getProject();
+//        Issue issue = new Issue().withProject(projects.iterator().next());
+//
+//        for(Project project : projects){
+//            System.out.println(project);
+//            System.out.println(resolution);
+//        }
     }
 }

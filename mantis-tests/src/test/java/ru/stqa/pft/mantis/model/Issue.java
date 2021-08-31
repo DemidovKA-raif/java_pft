@@ -1,5 +1,7 @@
 package ru.stqa.pft.mantis.model;
 
+import java.util.Set;
+
 public class Issue {
 
     private int id;
@@ -7,8 +9,16 @@ public class Issue {
     private String description;
     private Project project;
     private String resolution;
+    private int  issue_id;
 
+    public int getIssue_id() {
+        return issue_id;
+    }
 
+    public Issue withIssue_id(int issue_id) {
+        this.issue_id = issue_id;
+        return this;
+    }
 
     public Issue withResolution(String resolution) {
         this.resolution = resolution;
