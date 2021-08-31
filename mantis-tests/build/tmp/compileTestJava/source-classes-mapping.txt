@@ -12,6 +12,8 @@ ru/stqa/pft/mantis/tests/DBConnectionTests.java
  ru.stqa.pft.mantis.tests.DBConnectionTests
 ru/stqa/pft/mantis/model/MailMessage.java
  ru.stqa.pft.mantis.model.MailMessage
+ru/stqa/pft/mantis/model/Issue.java
+ ru.stqa.pft.mantis.model.Issue
 ru/stqa/pft/mantis/appmanager/MailHelper.java
  ru.stqa.pft.mantis.appmanager.MailHelper
 ru/stqa/pft/mantis/tests/TestBase.java
