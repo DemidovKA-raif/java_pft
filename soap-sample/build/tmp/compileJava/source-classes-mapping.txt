@@ -1,0 +1,2 @@
+com/lavasoft/package-info.java
+ com.lavasoft.package-info
