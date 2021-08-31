@@ -2,7 +2,22 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-web-tests.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-web-tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-web-tests.main.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-web-tests.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-web-tests.test.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-web-tests.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/untitled/addressbook-web-tests.untitled.iml" filepath="$PROJECT_DIR$/.idea/modules/untitled/addressbook-web-tests.untitled.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/untitled/addressbook-web-tests.untitled.main.iml" filepath="$PROJECT_DIR$/.idea/modules/untitled/addressbook-web-tests.untitled.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/untitled/addressbook-web-tests.untitled.test.iml" filepath="$PROJECT_DIR$/.idea/modules/untitled/addressbook-web-tests.untitled.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/java_pft.sandbox.test.iml" filepath="$PROJECT_DIR$/.idea/modules/java_pft.sandbox.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mantis-tests.iml" filepath="$PROJECT_DIR$/.idea/modules/mantis-tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mantis-tests.main.iml" filepath="$PROJECT_DIR$/.idea/modules/mantis-tests.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mantis-tests.test.iml" filepath="$PROJECT_DIR$/.idea/modules/mantis-tests.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sandbox.iml" filepath="$PROJECT_DIR$/.idea/modules/sandbox.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sandbox.main.iml" filepath="$PROJECT_DIR$/.idea/modules/sandbox.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sandbox.test.iml" filepath="$PROJECT_DIR$/.idea/modules/sandbox.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/soap-sample.iml" filepath="$PROJECT_DIR$/.idea/modules/soap-sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/soap-sample.main.iml" filepath="$PROJECT_DIR$/.idea/modules/soap-sample.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/soap-sample.test.iml" filepath="$PROJECT_DIR$/.idea/modules/soap-sample.test.iml" />
     </modules>
   </component>
 </project>
