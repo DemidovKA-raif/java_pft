@@ -1,6 +1,5 @@
 package ru.stqa.pft.mantis.tests;
 
-import biz.futureware.mantis.rpc.soap.client.MantisConnect;
 import biz.futureware.mantis.rpc.soap.client.MantisConnectLocator;
 import biz.futureware.mantis.rpc.soap.client.MantisConnectPortType;
 import biz.futureware.mantis.rpc.soap.client.ProjectData;
@@ -15,11 +14,11 @@ public class SoapTests {
 
     @Test
     public void testGetProjects() throws MalformedURLException, ServiceException, RemoteException {
-        MantisConnectPortType mc = new MantisConnectLocator()
-                .getMantisConnectPort(new URL("http://localhost/mantisbt-1.2.19/api/soap/mantisconnect.php"));
-        ProjectData[] projects = mc.mc_projects_get_user_accessible("administrator", "root");
-        System.out.println(projects.length);
-        for ( ProjectData project : projects){
+        MantisConnectPortType ms = new MantisConnectLocator()
+                .getMantisConnectPort(new URL("http://localhost/mantisbt-2.25.2/api/soap/mantisconnect.php"));
+        ProjectData[] projectData = ms.mc_projects_get_user_accessible("administrator", "root");
+        System.out.println(projectData.length);
+        for(ProjectData project : projectData){
             System.out.println(project.getName());
         }
     }

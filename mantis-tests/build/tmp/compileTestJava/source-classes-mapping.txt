@@ -22,8 +22,6 @@ ru/stqa/pft/mantis/tests/DBConnectionTests.java
  ru.stqa.pft.mantis.tests.DBConnectionTests
 ru/stqa/pft/mantis/model/UsersData.java
  ru.stqa.pft.mantis.model.UsersData
-ru/stqa/pft/mantis/tests/SoapTests.java
- ru.stqa.pft.mantis.tests.SoapTests
 ru/stqa/pft/mantis/appmanager/HelperBase.java
  ru.stqa.pft.mantis.appmanager.HelperBase
 ru/stqa/pft/mantis/model/Users.java
@@ -32,3 +30,5 @@ ru/stqa/pft/mantis/tests/LoginTests.java
  ru.stqa.pft.mantis.tests.LoginTests
 ru/stqa/pft/mantis/appmanager/JamesHelper.java
  ru.stqa.pft.mantis.appmanager.JamesHelper
+ru/stqa/pft/mantis/tests/SoapTests.java
+ ru.stqa.pft.mantis.tests.SoapTests
