@@ -24,24 +24,18 @@ public class ApplicationManager {
     private MailHelper mailHelper;
     private JamesHelper jamesHelper;
     private DbHelper dbHelper;
+    private SoapHelper soapHelper;
 
     public ApplicationManager(String browser) {
         this.browser = browser;
-        properties = new Properties();
 
+        properties = new Properties();
+        dbHelper = new DbHelper();
     }
 
     public void init() throws IOException {
         String target = System.getProperty("target", "local");
         properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties", target))));
-
-
-        dbHelper = new DbHelper();
-        if (browser.equals(BrowserType.FIREFOX)) {
-            wd = new FirefoxDriver();
-        } else if (browser.equals(BrowserType.CHROME)) {
-            wd = new ChromeDriver();
-        }
     }
 
     public void stop() {
@@ -103,5 +97,12 @@ public class ApplicationManager {
             jamesHelper = new JamesHelper(this);
         }
         return jamesHelper;
+    }
+
+    public SoapHelper soap(){
+        if(soapHelper == null){
+            soapHelper = new SoapHelper(this);
+        }
+        return soapHelper;
     }
 }
