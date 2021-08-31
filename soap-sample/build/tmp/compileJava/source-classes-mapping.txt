@@ -1,0 +1,32 @@
+com/lavasoft/GetCountryISO2ByNameResponse.java
+ com.lavasoft.GetCountryISO2ByNameResponse
+com/lavasoft/GetCountryNameByISO2Response.java
+ com.lavasoft.GetCountryNameByISO2Response
+com/lavasoft/GetLocation.java
+ com.lavasoft.GetLocation
+com/lavasoft/package-info.java
+ com.lavasoft.package-info
+com/lavasoft/GeoIPServiceHttpPost.java
+ com.lavasoft.GeoIPServiceHttpPost
+com/lavasoft/GeoIPServiceHttpGet.java
+ com.lavasoft.GeoIPServiceHttpGet
+com/lavasoft/GetIpLocation.java
+ com.lavasoft.GetIpLocation
+com/lavasoft/GeoIPService.java
+ com.lavasoft.GeoIPService
+com/lavasoft/GetIpLocationResponse.java
+ com.lavasoft.GetIpLocationResponse
+com/lavasoft/GetLocationResponse.java
+ com.lavasoft.GetLocationResponse
+com/lavasoft/GetCountryISO2ByName.java
+ com.lavasoft.GetCountryISO2ByName
+com/lavasoft/GetCountryNameByISO2.java
+ com.lavasoft.GetCountryNameByISO2
+com/lavasoft/ObjectFactory.java
+ com.lavasoft.ObjectFactory
+com/lavasoft/GetIpLocation20.java
+ com.lavasoft.GetIpLocation20
+com/lavasoft/GeoIPServiceSoap.java
+ com.lavasoft.GeoIPServiceSoap
+com/lavasoft/GetIpLocation20Response.java
+ com.lavasoft.GetIpLocation20Response
