@@ -30,6 +30,14 @@ ru/stqa/pft/addressbook/tests/ContactGroupCreationTests.java
  ru.stqa.pft.addressbook.tests.ContactGroupCreationTests
 ru/stqa/pft/addressbook/tests/ContactModificationTests.java
  ru.stqa.pft.addressbook.tests.ContactModificationTests
+ru/stqa/pft/addressbook/tests/HbConnectionTest.java
+ ru.stqa.pft.addressbook.tests.HbConnectionTest
+ru/stqa/pft/addressbook/appmanager/NavigationHelper.java
+ ru.stqa.pft.addressbook.appmanager.NavigationHelper
+ru/stqa/pft/addressbook/generators/GroupDataGenerator.java
+ ru.stqa.pft.addressbook.generators.GroupDataGenerator
+ru/stqa/pft/addressbook/tests/ContactModificationTests.java
+ ru.stqa.pft.addressbook.tests.ContactModificationTests
 ru/stqa/pft/addressbook/tests/TestBase.java
  ru.stqa.pft.addressbook.tests.TestBase
 ru/stqa/pft/addressbook/appmanager/DbHelper.java
