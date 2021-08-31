@@ -11,6 +11,17 @@ public class Issue {
     private String resolution;
     private int  issue_id;
 
+    public String getStatus() {
+        return status;
+    }
+
+    public Issue withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    private String status;
+
     public int getIssue_id() {
         return issue_id;
     }

@@ -4,9 +4,15 @@ import org.openqa.selenium.remote.BrowserType;
 import org.testng.SkipException;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
 import ru.stqa.pft.mantis.appmanager.ApplicationManager;
+import ru.stqa.pft.mantis.model.Issue;
 
+import javax.xml.rpc.ServiceException;
 import java.io.File;
+import java.net.MalformedURLException;
+import java.rmi.RemoteException;
+import java.util.Set;
 
 public class TestBase {
 
@@ -17,6 +23,17 @@ public class TestBase {
     public void setUp() throws Exception {
         app.init();
         app.ftp().upload(new File("src/test/resources/config_inc.php"), "config_inc.php", "config_inc.php.bak");
+    }
+
+    @BeforeSuite
+    public void testGetIssues() throws MalformedURLException, ServiceException, RemoteException {
+        Set<Issue> issues = app.soap().getAllIssues();
+        System.out.println(issues.size());
+        for (Issue issue : issues) {
+            int issueId = issue.getIssue_id();
+
+//            System.out.println(issue.getStatus() + " " + issue.getIssue_id());
+        }
     }
 
     public static boolean isIssueOpen(int issueId) {
