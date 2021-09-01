@@ -14,6 +14,8 @@ import java.util.Set;
 
 public class SoapTests extends TestBase{
 
+    private int issueId;
+
     @Test
     public void testGetProjects() throws MalformedURLException, ServiceException, RemoteException {
         Set<Project> projects = app.soap().getProject();
@@ -40,13 +42,17 @@ public class SoapTests extends TestBase{
     }
 
     @Test
-    public void issueIdForStatus () throws MalformedURLException, ServiceException, RemoteException {
-
-        Set<Issue> issueForID = app.soap().getIssueForID();
-        for (Issue issue : issueForID) {
-            System.out.println(issue.getStatus());
-        }
+    public void testBeforeCheckStatus(){
+        System.out.println("test");
     }
+
+//    @Test
+//    public void issueIdForStatus () throws MalformedURLException, ServiceException, RemoteException {
+//        Set<Issue> issueForID = app.soap().getIssueForID();
+//        for (Issue issue : issueForID) {
+//            System.out.println(issue.getStatus(issueId));
+//        }
+//    }
 
 
 //    @Test

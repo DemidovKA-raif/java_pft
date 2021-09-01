@@ -12,10 +12,12 @@ import java.rmi.RemoteException;
 import java.util.Arrays;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class SoapHelper {
     private ApplicationManager app;
-    int idIss = 3;
+    private int idIss;
+//    int idIss;
 
 
     public SoapHelper(ApplicationManager app) {
@@ -54,19 +56,19 @@ public class SoapHelper {
         return Arrays.asList(issueData).stream().map((p) -> new Issue().withIssue_id(p.getId().intValue()).withStatus(p.getStatus().getName())).collect(Collectors.toSet());
     }
 
-    public Set<Issue> getIssueForID() throws MalformedURLException, ServiceException, RemoteException {
-//        int idIssue = 3;
+    public Set<Issue> getIssueForID(int idIss) throws MalformedURLException, ServiceException, RemoteException {
         MantisConnectPortType mc = getMantisConnectPortType();
         IssueData issueData = mc.mc_issue_get("administrator", "root", BigInteger.valueOf(idIss));
-        return Arrays.asList(issueData).stream().map((p) -> new Issue().withStatus(p.getStatus().getName())).collect(Collectors.toSet());
-    }
+        return Stream.of(issueData).map((p) -> new Issue().withStatus(p.getStatus().getName())).collect(Collectors.toSet());
+//    }return Arrays.asList(projectData).stream().map((p) -> new Project().withId(p.getId().intValue()).withName(p.getName())).collect(Collectors.toSet());
 
+//        return Arrays.asList(issueData).stream().map((p) -> new Issue().withStatus(p.getStatus().getName())).collect(Collectors.toSet());
 
 //    public Set<Issue> getResolution(Issue issue) throws MalformedURLException, ServiceException, RemoteException {
 //        MantisConnectPortType mc = getMantisConnectPortType();
 //        IssueData issueGet = mc.mc_issue_get("administrator", "root", BigInteger.valueOf(issue.getIssue_id()));
 //        return Arrays.asList(issueGet).stream().map((p) -> new Issue().withId(p.getId().intValue())).collect(Collectors.toSet());
-//    }
+    }
 }
 
 

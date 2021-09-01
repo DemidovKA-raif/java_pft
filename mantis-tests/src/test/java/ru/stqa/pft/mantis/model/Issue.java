@@ -1,15 +1,15 @@
 package ru.stqa.pft.mantis.model;
 
-import java.util.Set;
-
 public class Issue {
 
     private int id;
+    private int  issue_id;
     private String summary;
     private String description;
     private Project project;
     private String resolution;
-    private int  issue_id;
+    private String status;
+
 
     public String getStatus() {
         return status;
@@ -20,7 +20,6 @@ public class Issue {
         return this;
     }
 
-    private String status;
 
     public int getIssue_id() {
         return issue_id;
