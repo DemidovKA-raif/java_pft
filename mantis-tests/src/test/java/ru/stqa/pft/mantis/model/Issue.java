@@ -3,7 +3,7 @@ package ru.stqa.pft.mantis.model;
 public class Issue {
 
     private int id;
-    private int  issue_id;
+    private int issue_id;
     private String summary;
     private String description;
     private Project project;

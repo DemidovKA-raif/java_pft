@@ -18,24 +18,18 @@ public class TestBase {
     protected static final ApplicationManager app =
             new ApplicationManager(System.getProperty("browser", BrowserType.FIREFOX));
 
-    private int ISSUEID;
-
-    public int setISSUEID(int ISSUEID) {
-        this.ISSUEID = ISSUEID;
-        return ISSUEID;
-    }
-
-    public int getISSUEID(int i) {
-        return ISSUEID;
-    }
-
+    /**
+     * Я не смог придумать, как передавать параметр непосредственно из теста, пришлось его вынести как ручной.
+     */
+    public int ISSUEID = 10;
 
 
     @BeforeSuite
     public void setUp() throws Exception {
         app.init();
         app.ftp().upload(new File("src/test/resources/config_inc.php"), "config_inc.php", "config_inc.php.bak");
-        skipIfNotFixed(setISSUEID(3));
+        isIssueList(); //опция, для красоты, случайно получилось
+        skipIfNotFixed(ISSUEID);
     }
 
 
@@ -54,6 +48,15 @@ public class TestBase {
             System.out.println("Ignored because of issue " + issueId);
             throw new SkipException("Ignored because of issue " + issueId);
         }
+    }
+
+    public void isIssueList() throws MalformedURLException, ServiceException, RemoteException {
+        Set<Issue> issues = app.soap().getAllIssues();
+        for (Issue issue : issues) {
+            String allIssuesStatus = "Status = " + issue.getStatus() + "; " + "ID = " + issue.getIssue_id();
+            System.out.println("List of all open tasks: " + allIssuesStatus + System.lineSeparator() + "_______________________");
+        }
+
     }
 
     @AfterSuite
