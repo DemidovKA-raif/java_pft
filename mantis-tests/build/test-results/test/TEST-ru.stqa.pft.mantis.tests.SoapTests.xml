@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.mantis.tests.SoapTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-09-01T15:09:56" hostname="N-MSK-RUADMK3" time="0.0">
+<testsuite name="ru.stqa.pft.mantis.tests.SoapTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-09-01T19:33:20" hostname="N-MSK-RUADMK3" time="0.679">
   <properties/>
   <testcase name="testBeforeCheckStatus" classname="ru.stqa.pft.mantis.tests.SoapTests" time="0.0"/>
+  <testcase name="testCreateIssue" classname="ru.stqa.pft.mantis.tests.SoapTests" time="0.526"/>
+  <testcase name="testGetProjects" classname="ru.stqa.pft.mantis.tests.SoapTests" time="0.153"/>
   <system-out><![CDATA[test pass! task id = 10 status not closed!
+1
+1
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
