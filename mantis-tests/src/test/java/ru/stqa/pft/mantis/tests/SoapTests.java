@@ -31,6 +31,23 @@ public class SoapTests extends TestBase{
         Assert.assertEquals(issue.getSummary(), created.getSummary());
     }
 
+    @Test
+    public void isIssueList() throws MalformedURLException, ServiceException, RemoteException {
+        Set<Issue> issues = app.soap().getAllIssues();
+        for (Issue issue : issues) {
+            System.out.println(issue.getStatus() + " " + issue.getIssue_id());
+        }
+    }
+
+    @Test
+    public void issueIdForStatus () throws MalformedURLException, ServiceException, RemoteException {
+
+        Set<Issue> issueForID = app.soap().getIssueForID();
+        for (Issue issue : issueForID) {
+            System.out.println(issue.getStatus());
+        }
+    }
+
 
 //    @Test
 //    public void testCheckResolution() throws MalformedURLException, ServiceException, RemoteException {
@@ -42,4 +59,4 @@ public class SoapTests extends TestBase{
 //            System.out.println(resolution);
 //        }
     }
-}
+

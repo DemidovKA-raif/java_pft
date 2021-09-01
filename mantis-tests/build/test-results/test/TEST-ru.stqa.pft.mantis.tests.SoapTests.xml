@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.mantis.tests.SoapTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-31T20:51:09" hostname="N-MSK-RUADMK3" time="0.555">
+<testsuite name="ru.stqa.pft.mantis.tests.SoapTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-09-01T07:50:57" hostname="N-MSK-RUADMK3" time="0.841">
   <properties/>
-  <testcase name="testGetIssues" classname="ru.stqa.pft.mantis.tests.SoapTests" time="0.555"/>
-  <system-out><![CDATA[7
-Task number: 4 have status: new
-Task number: 6 have status: new
-Task number: 2 have status: new
-Task number: 3 have status: new
-Task number: 7 have status: new
-Task number: 1 have status: new
-Task number: 5 have status: new
+  <testcase name="issueIdForStatus" classname="ru.stqa.pft.mantis.tests.SoapTests" time="0.841"/>
+  <system-out><![CDATA[assigned
+[ru.stqa.pft.mantis.model.Issue@ae77c3]
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

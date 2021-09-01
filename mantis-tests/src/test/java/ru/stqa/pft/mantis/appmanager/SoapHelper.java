@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
 
 public class SoapHelper {
     private ApplicationManager app;
+    int idIss = 3;
 
 
     public SoapHelper(ApplicationManager app) {
@@ -53,7 +54,12 @@ public class SoapHelper {
         return Arrays.asList(issueData).stream().map((p) -> new Issue().withIssue_id(p.getId().intValue()).withStatus(p.getStatus().getName())).collect(Collectors.toSet());
     }
 
-
+    public Set<Issue> getIssueForID() throws MalformedURLException, ServiceException, RemoteException {
+//        int idIssue = 3;
+        MantisConnectPortType mc = getMantisConnectPortType();
+        IssueData issueData = mc.mc_issue_get("administrator", "root", BigInteger.valueOf(idIss));
+        return Arrays.asList(issueData).stream().map((p) -> new Issue().withStatus(p.getStatus().getName())).collect(Collectors.toSet());
+    }
 
 
 //    public Set<Issue> getResolution(Issue issue) throws MalformedURLException, ServiceException, RemoteException {

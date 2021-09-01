@@ -10,8 +10,10 @@ import ru.stqa.pft.mantis.model.Issue;
 
 import javax.xml.rpc.ServiceException;
 import java.io.File;
+import java.lang.reflect.Array;
 import java.net.MalformedURLException;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.util.Set;
 
 public class TestBase {
@@ -25,26 +27,18 @@ public class TestBase {
         app.ftp().upload(new File("src/test/resources/config_inc.php"), "config_inc.php", "config_inc.php.bak");
     }
 
-    @BeforeSuite
-    public void testGetIssues() throws MalformedURLException, ServiceException, RemoteException {
-        Set<Issue> issues = app.soap().getAllIssues();
-        System.out.println(issues.size());
-        for (Issue issue : issues) {
-            int issueId = issue.getIssue_id();
 
-//            System.out.println(issue.getStatus() + " " + issue.getIssue_id());
-        }
-    }
 
     public static boolean isIssueOpen(int issueId) {
+
      return false;
     }
 
-    public void skipIfNotFixed(int issueId) {
-        if (isIssueOpen(issueId)) {
-            throw new SkipException("Ignored because of issue " + issueId);
-        }
-    }
+//    public void skipIfNotFixed(int issueId) {
+//        if (isIssueOpen(issueId)) {
+//            throw new SkipException("Ignored because of issue " + issueId);
+//        }
+//    }
 
     @AfterSuite
     public void tearDown() throws Exception {

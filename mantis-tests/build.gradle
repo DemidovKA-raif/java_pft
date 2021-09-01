@@ -19,7 +19,9 @@ dependencies {
     implementation 'com.thoughtworks.xstream:xstream:1.4.17'
     implementation 'biz.futureware.mantis:mantis-axis-soap-client:1.2.19'
 
-    test { useTestNG() }
+    test {
+        useTestNG()
+    }
 
 //        {
 //        suites 'src/test/resources/testng.xml'
