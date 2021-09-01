@@ -43,6 +43,7 @@ public class SoapTests extends TestBase{
 
     @Test
     public void testBeforeCheckStatus(){
+        ISSUEID = 4;
         System.out.println("test");
     }
 

@@ -19,7 +19,7 @@ public class TestBase {
             new ApplicationManager(System.getProperty("browser", BrowserType.FIREFOX));
 
 
-    private int ISSUEID = 2;
+    public int ISSUEID;
 
     @BeforeSuite
     public void setUp() throws Exception {
@@ -33,14 +33,16 @@ public class TestBase {
         Set<Issue> issueForID = app.soap().getIssueForID(issueId);
         for (Issue issue : issueForID) {
             String statusIssue = issue.getStatus();
-//            if (issue.getStatus() == "new") {
-                return (statusIssue.equals("new"));
+            if (statusIssue == "closed") {
+                return false;
             }
+        }
         return true;
     }
 
     public void skipIfNotFixed(int issueId) throws MalformedURLException, ServiceException, RemoteException {
         if (isIssueOpen(issueId)) {
+            System.out.println("Ignored because of issue " + issueId);
             throw new SkipException("Ignored because of issue " + issueId);
         }
     }
