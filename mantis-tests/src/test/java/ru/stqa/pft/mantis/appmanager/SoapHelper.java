@@ -15,9 +15,9 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class SoapHelper {
+
     private ApplicationManager app;
-    private int idIss;
-//    int idIss;
+
 
 
     public SoapHelper(ApplicationManager app) {

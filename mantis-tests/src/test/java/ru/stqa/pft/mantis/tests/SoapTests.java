@@ -14,7 +14,6 @@ import java.util.Set;
 
 public class SoapTests extends TestBase{
 
-    private int issueId;
 
     @Test
     public void testGetProjects() throws MalformedURLException, ServiceException, RemoteException {
@@ -43,7 +42,7 @@ public class SoapTests extends TestBase{
 
     @Test
     public void testBeforeCheckStatus(){
-        ISSUEID = 4;
+       getISSUEID(10);
         System.out.println("test");
     }
 

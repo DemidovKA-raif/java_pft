@@ -18,14 +18,24 @@ public class TestBase {
     protected static final ApplicationManager app =
             new ApplicationManager(System.getProperty("browser", BrowserType.FIREFOX));
 
+    private int ISSUEID;
 
-    public int ISSUEID;
+    public int setISSUEID(int ISSUEID) {
+        this.ISSUEID = ISSUEID;
+        return ISSUEID;
+    }
+
+    public int getISSUEID(int i) {
+        return ISSUEID;
+    }
+
+
 
     @BeforeSuite
     public void setUp() throws Exception {
         app.init();
         app.ftp().upload(new File("src/test/resources/config_inc.php"), "config_inc.php", "config_inc.php.bak");
-        skipIfNotFixed(ISSUEID);
+        skipIfNotFixed(setISSUEID(3));
     }
 
 
@@ -33,9 +43,8 @@ public class TestBase {
         Set<Issue> issueForID = app.soap().getIssueForID(issueId);
         for (Issue issue : issueForID) {
             String statusIssue = issue.getStatus();
-            if (statusIssue == "closed") {
+            if (statusIssue.equals("closed"))
                 return false;
-            }
         }
         return true;
     }
