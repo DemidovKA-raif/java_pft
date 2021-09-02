@@ -1,32 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.mantis.tests.LoginTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-09-02T08:26:16" hostname="N-MSK-RUADMK3" time="84.74">
+<testsuite name="ru.stqa.pft.mantis.tests.LoginTests" tests="2" skipped="1" failures="1" errors="0" timestamp="2021-09-02T11:51:50" hostname="N-MSK-RUADMK3" time="2.559">
   <properties/>
-  <testcase name="testLogin" classname="ru.stqa.pft.mantis.tests.LoginTests" time="84.74">
-    <failure message="org.apache.http.client.ClientProtocolException" type="org.apache.http.client.ClientProtocolException">org.apache.http.client.ClientProtocolException
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
-	at ru.stqa.pft.mantis.appmanager.HttpSession.login(HttpSession.java:37)
-	at ru.stqa.pft.mantis.tests.LoginTests.testLogin(LoginTests.java:15)
+  <testcase name="setUp" classname="ru.stqa.pft.mantis.tests.LoginTests" time="2.525">
+    <failure message="java.lang.IllegalStateException: The path to the driver executable The path to the driver executable must be set by the webdriver.gecko.driver system property; for more information, see https://github.com/mozilla/geckodriver. The latest version can be downloaded from https://github.com/mozilla/geckodriver/releases" type="java.lang.IllegalStateException">java.lang.IllegalStateException: The path to the driver executable The path to the driver executable must be set by the webdriver.gecko.driver system property; for more information, see https://github.com/mozilla/geckodriver. The latest version can be downloaded from https://github.com/mozilla/geckodriver/releases
+	at org.openqa.selenium.internal.Require$StateChecker.nonNull(Require.java:280)
+	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:152)
+	at org.openqa.selenium.firefox.GeckoDriverService.access$100(GeckoDriverService.java:45)
+	at org.openqa.selenium.firefox.GeckoDriverService$Builder.findDefaultExecutable(GeckoDriverService.java:186)
+	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:434)
+	at org.openqa.selenium.firefox.FirefoxDriver.toExecutor(FirefoxDriver.java:236)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:193)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:171)
+	at ru.stqa.pft.mantis.appmanager.ApplicationManager.init(ApplicationManager.java:41)
+	at ru.stqa.pft.mantis.tests.TestBase.setUp(TestBase.java:17)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:497)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at org.testng.TestRunner$$Lambda$166/16760240.accept(Unknown Source)
-	at java.util.ArrayList.forEach(ArrayList.java:1249)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:317)
 	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
@@ -62,14 +57,11 @@
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
 	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.apache.http.ProtocolException: Target host is not specified
-	at org.apache.http.impl.conn.DefaultRoutePlanner.determineRoute(DefaultRoutePlanner.java:71)
-	at org.apache.http.impl.client.InternalHttpClient.determineRoute(InternalHttpClient.java:125)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
-	... 58 more
 </failure>
   </testcase>
-  <system-out><![CDATA[11:26:49.129 [Hibernate Connection Pool Validation Thread] DEBUG org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - Connection pool now considered primed; min-size will be maintained
-]]></system-out>
+  <testcase name="testLogin" classname="ru.stqa.pft.mantis.tests.LoginTests" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

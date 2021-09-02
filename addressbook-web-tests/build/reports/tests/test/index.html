@@ -20,13 +20,13 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">0</div>
+<div class="counter">16</div>
 <p>tests</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">5</div>
 <p>failures</p>
 </div>
 </td>
@@ -38,7 +38,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">-</div>
+<div class="counter">23.888s</div>
 <p>duration</p>
 </div>
 </td>
@@ -47,8 +47,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
-<div class="percent">-</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">68%</div>
 <p>successful</p>
 </div>
 </td>
@@ -58,10 +58,68 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Classes</a>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Packages</a>
+</li>
+<li>
+<a href="#tab2">Classes</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<ul class="linkList">
+<li>
+<a href="classes/ru.stqa.pft.addressbook.tests.ContactCreationTests.html">ContactCreationTests</a>.
+<a href="classes/ru.stqa.pft.addressbook.tests.ContactCreationTests.html#testContactCreation[0](ContactData{id=2147483647, firstName='Mike 0', lastName='Braun 0', homePhone='null', mobilePhone='null', workPhone='null'})">testContactCreation[0](ContactData{id=2147483647, firstName='Mike 0', lastName='Braun 0', homePhone='null', mobilePhone='null', workPhone='null'})</a>
+</li>
+<li>
+<a href="classes/ru.stqa.pft.addressbook.tests.ContactCreationTests.html">ContactCreationTests</a>.
+<a href="classes/ru.stqa.pft.addressbook.tests.ContactCreationTests.html#testContactCreation[1](ContactData{id=2147483647, firstName='Mike 1', lastName='Braun 1', homePhone='null', mobilePhone='null', workPhone='null'})">testContactCreation[1](ContactData{id=2147483647, firstName='Mike 1', lastName='Braun 1', homePhone='null', mobilePhone='null', workPhone='null'})</a>
+</li>
+<li>
+<a href="classes/ru.stqa.pft.addressbook.tests.ContactDeletionTests.html">ContactDeletionTests</a>.
+<a href="classes/ru.stqa.pft.addressbook.tests.ContactDeletionTests.html#pageContactDeletion">pageContactDeletion</a>
+</li>
+<li>
+<a href="classes/ru.stqa.pft.addressbook.tests.ContactGroupCreationTests.html">ContactGroupCreationTests</a>.
+<a href="classes/ru.stqa.pft.addressbook.tests.ContactGroupCreationTests.html#addContactInGroupTest">addContactInGroupTest</a>
+</li>
+<li>
+<a href="classes/ru.stqa.pft.addressbook.tests.ContactGroupDeletionTests.html">ContactGroupDeletionTests</a>.
+<a href="classes/ru.stqa.pft.addressbook.tests.ContactGroupDeletionTests.html#deleteContactInGroupTest">deleteContactInGroupTest</a>
+</li>
+</ul>
+</div>
+<div id="tab1" class="tab">
+<h2>Packages</h2>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Tests</th>
+<th>Failures</th>
+<th>Ignored</th>
+<th>Duration</th>
+<th>Success rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="failures">
+<a href="packages/ru.stqa.pft.addressbook.tests.html">ru.stqa.pft.addressbook.tests</a>
+</td>
+<td>16</td>
+<td>5</td>
+<td>0</td>
+<td>23.888s</td>
+<td class="failures">68%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tab2" class="tab">
 <h2>Classes</h2>
 <table>
 <thead>
@@ -74,7 +132,118 @@
 <th>Success rate</th>
 </tr>
 </thead>
-<tbody/>
+<tbody>
+<tr>
+<td class="failures">
+<a href="classes/ru.stqa.pft.addressbook.tests.ContactCreationTests.html">ru.stqa.pft.addressbook.tests.ContactCreationTests</a>
+</td>
+<td>3</td>
+<td>2</td>
+<td>0</td>
+<td>8.183s</td>
+<td class="failures">33%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="classes/ru.stqa.pft.addressbook.tests.ContactDeletionTests.html">ru.stqa.pft.addressbook.tests.ContactDeletionTests</a>
+</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1.020s</td>
+<td class="failures">0%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="classes/ru.stqa.pft.addressbook.tests.ContactGroupCreationTests.html">ru.stqa.pft.addressbook.tests.ContactGroupCreationTests</a>
+</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1.025s</td>
+<td class="failures">0%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="classes/ru.stqa.pft.addressbook.tests.ContactGroupDeletionTests.html">ru.stqa.pft.addressbook.tests.ContactGroupDeletionTests</a>
+</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1.007s</td>
+<td class="failures">0%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/ru.stqa.pft.addressbook.tests.ContactModificationTests.html">ru.stqa.pft.addressbook.tests.ContactModificationTests</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>4.049s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/ru.stqa.pft.addressbook.tests.ContactPhoneMailAddressTests.html">ru.stqa.pft.addressbook.tests.ContactPhoneMailAddressTests</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0.779s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/ru.stqa.pft.addressbook.tests.DBConnectionTest.html">ru.stqa.pft.addressbook.tests.DBConnectionTest</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0.020s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/ru.stqa.pft.addressbook.tests.GroupCreationTests.html">ru.stqa.pft.addressbook.tests.GroupCreationTests</a>
+</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>5.040s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/ru.stqa.pft.addressbook.tests.GroupDeletionTests.html">ru.stqa.pft.addressbook.tests.GroupDeletionTests</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0.876s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/ru.stqa.pft.addressbook.tests.GroupModificationTests.html">ru.stqa.pft.addressbook.tests.GroupModificationTests</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1.855s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/ru.stqa.pft.addressbook.tests.HbConnectionTest.html">ru.stqa.pft.addressbook.tests.HbConnectionTest</a>
+</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0.034s</td>
+<td class="success">100%</td>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
@@ -85,7 +254,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.8</a> at Aug 16, 2021, 2:47:03 PM</p>
+<a href="http://www.gradle.org">Gradle 6.8</a> at Sep 2, 2021, 2:55:07 PM</p>
 </div>
 </div>
 </body>

@@ -18,7 +18,7 @@ public class ContactGroupCreationTests extends TestBase {
     public void ensurePreconditions() {
 
         /**
-         * Необходимо, что бы была хртя бы одна группа, для включения контакта в нее
+         * Необходимо, что бы была хотя бы одна группа, для включения контакта в нее
          */
         if (app.db().groupsRequestDB().size() == 0) {
             app.goTo().groupPage();
@@ -40,35 +40,36 @@ public class ContactGroupCreationTests extends TestBase {
             app.contact().gotoHomePage();
         }
 
-        /**
-         * Необходимо, что бы была хотя бы одна запись в таблице address_in_groups для сравнения
-         */
-        if (app.db().contactAllGroups().size()==0){
-            Contacts before = app.db().contactsRequestDB();
-            ContactData addGroupContact = before.iterator().next();
-            app.contact().addGroupInContactById(addGroupContact);
-        }
     }
 
 
     @Test
     public void addContactInGroupTest() {
         /**
-         * Получаем список контактов "ДО", получаем список групп "ДО"
+         * Получаем список контактов "ДО"
+         * Получаем список групп "ДО"
          * Выбрали рандомный контакт
-         * Выполнили шаги по добавлению контакта в группу в UI
+         * Выбрали рандомную группу
+         * Берем список контактов в группе
+         * Возвращаемся на главную
+         * Выполнили шаги по добавлению контакта в группу в UI, получаем ID- контакта, name-группы
+         * Возвращаемся на главную
+         * Получаем список контактов "После"
          * Сравнили список контактов "ДО" и "После"
+         * Получаем список контактов в группах
          * Сравнили список групп "ДО" и "После"
          */
 
         Contacts before = app.db().contactsRequestDB();
-        Groups beforeInGroups = app.db().contactAllGroups();
+        Groups group = app.db().groupsRequestDB();
         ContactData addGroupContact = before.iterator().next();
-        app.contact().addGroupInContactById(addGroupContact);
-        assertThat(app.contact().count(), equalTo(before.size()));
+        GroupData groupForContact = group.iterator().next();
+        Groups beforeInGroups = app.db().contactAllGroups();
+        app.contact().gotoHomePage();
+        app.contact().selectContactByIdByName(addGroupContact.getId(), groupForContact.getName());
         Contacts after = app.db().contactsRequestDB();
-        assertThat(after, equalTo(before));
+        assertThat(after.size(), equalTo(before.size()));
         Groups afterInGroups = app.db().contactAllGroups();
-        assertThat((afterInGroups), equalTo(beforeInGroups));
+        assertThat((afterInGroups), equalTo(new Groups(beforeInGroups.withAdded(groupForContact))));
     }
 }

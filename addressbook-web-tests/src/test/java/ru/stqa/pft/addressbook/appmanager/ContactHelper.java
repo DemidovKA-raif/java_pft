@@ -112,16 +112,16 @@ public class ContactHelper extends HelperBase {
     }
 
 
-
-    public void addGroupInContactById(ContactData contact){
-        selectContactById(contact.getId());
-        clickAddGroup();
-        gotoHomePage();
-    }
-
     public void contactDeleteGroup(ContactData contact, String text) {
         selectTypeGroupsInContacts(text);
         selectContactById(contact.getId());
+        deleteGroupIsContact();
+        gotoHomePage();
+    }
+
+    public void contactDeleteGroupTest(int id, String text) {
+        selectTypeGroupsInContacts(text);
+        selectContactById(id);
         deleteGroupIsContact();
         gotoHomePage();
     }
@@ -154,6 +154,13 @@ public class ContactHelper extends HelperBase {
 
     public void selectContactById(int id) {
         wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
+    }
+
+    public void selectContactByIdByName(int id, String name) {
+        wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
+        new Select(wd.findElement(By.name("to_group"))).selectByVisibleText(name);
+        clickAddGroup();
+        gotoHomePage();
     }
 
     public void clickDeletionContact() {
