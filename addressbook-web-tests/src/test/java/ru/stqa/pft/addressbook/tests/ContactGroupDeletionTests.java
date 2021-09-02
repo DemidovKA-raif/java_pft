@@ -78,9 +78,9 @@ public class ContactGroupDeletionTests extends TestBase {
         app.contact().gotoHomePage();
         app.contact().contactDeleteGroupTest(addGroupContact.getId(), contactInGroups.getName());
         Contacts after = app.db().contactsRequestDB();
-        assertThat(after.size(), equalTo(before.size()));
+        assertThat(after.size(), CoreMatchers.equalTo(before.size()));
         Groups afterInGroups = app.db().contactAllGroups();
-        assertThat((afterInGroups).size(), equalTo(new Groups(beforeInGroups.withAdded(groupForContact)).size()-1));
+        assertThat((afterInGroups), CoreMatchers.equalTo(beforeInGroups.withOut(groupForContact)));
     }
 }
 
