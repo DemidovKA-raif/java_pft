@@ -19,12 +19,18 @@ public class ContactGroupDeletionTests extends TestBase {
     @BeforeMethod
     public void ensurePreconditions() {
 
+        /**
+         * Проверяем, что есть хотя бы одну группа
+         */
         if (app.db().groupsRequestDB().size() == 0) {
             app.goTo().groupPage();
             app.group().create(new GroupData().withName("test 1"));
             app.contact().gotoHomePage();
         }
 
+        /**
+         * Проверяем, что есть хотя бы один контакт
+         */
         if (app.db().contactsRequestDB().size() == 0) {
             Groups groups = app.db().groupsRequestDB();
             File photo = new File("src/test/resources/stru.png");
@@ -36,6 +42,9 @@ public class ContactGroupDeletionTests extends TestBase {
             app.contact().gotoHomePage();
         }
 
+        /**
+         * Добавляем контакт в группу
+         */
         Contacts before = app.db().contactsRequestDB();
         ContactData contactForGroup = before.iterator().next();
         if (contactForGroup.getGroups().size() == 0) {
@@ -45,6 +54,18 @@ public class ContactGroupDeletionTests extends TestBase {
         }
     }
 
+
+    /**
+     * Получаем список контактов в группах
+     * Выбираем случайную группу из списка, где есть контакты
+     * Получаем список контактов "ДО"
+     * Получаем список групп "ДО"
+     * Выбираем случайный контак из рандоной группы
+     * Выбираем случайную группу
+     * Переходим на главную страницу в UI
+     * Выбираем подготовленную заранее группу и контакт, удаляем контакт из группы
+     * Сравниваем все полученные заранее списки
+     */
 
     @Test
     public void deleteContactInGroupTest() {
@@ -60,8 +81,6 @@ public class ContactGroupDeletionTests extends TestBase {
         assertThat(after.size(), equalTo(before.size()));
         Groups afterInGroups = app.db().contactAllGroups();
         assertThat((afterInGroups).size(), equalTo(new Groups(beforeInGroups.withAdded(groupForContact)).size()-1));
-
-//
     }
 }
 

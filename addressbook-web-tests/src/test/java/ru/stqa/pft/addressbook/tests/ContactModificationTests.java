@@ -25,6 +25,7 @@ public class ContactModificationTests extends TestBase {
     }
 
 
+
     @Test
     public void testContactModification() {
         File photo = new File("src/test/resources/stru.png");

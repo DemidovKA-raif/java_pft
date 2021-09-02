@@ -104,20 +104,6 @@ public class ContactHelper extends HelperBase {
         click(By.id("MassCB"));
     }
 
-    public boolean verifyFreeContact() {
-        String text = "[none]";
-        selectTypeGroupsInContacts(text);
-        String number = wd.findElements(By.id("search_count")).get(0).getText();
-        return number.equals("0");
-    }
-
-
-    public void contactDeleteGroup(ContactData contact, String text) {
-        selectTypeGroupsInContacts(text);
-        selectContactById(contact.getId());
-        deleteGroupIsContact();
-        gotoHomePage();
-    }
 
     public void contactDeleteGroupTest(int id, String text) {
         selectTypeGroupsInContacts(text);
