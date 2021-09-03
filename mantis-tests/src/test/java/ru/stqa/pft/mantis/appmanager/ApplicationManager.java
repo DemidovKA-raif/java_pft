@@ -4,8 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.BrowserType;
-import org.openqa.selenium.remote.HttpSessionId;
-import org.testng.junit.JUnit4TestRunner;
 
 import java.io.File;
 import java.io.FileReader;
@@ -24,6 +22,7 @@ public class ApplicationManager {
     private MailHelper mailHelper;
     private JamesHelper jamesHelper;
     private DbHelper dbHelper;
+    private UsersHelper users;
 
     public ApplicationManager(String browser) {
         this.browser = browser;
@@ -37,10 +36,8 @@ public class ApplicationManager {
 
 
         dbHelper = new DbHelper();
-        if (browser.equals(BrowserType.FIREFOX)) {
-            wd = new FirefoxDriver();
-        } else if (browser.equals(BrowserType.CHROME)) {
-            wd = new ChromeDriver();
+        if (browser.equals(BrowserType.CHROME)) {
+           wd = new ChromeDriver();
         }
     }
 
@@ -65,21 +62,24 @@ public class ApplicationManager {
         return registrationHelper;
     }
 
+    public UsersHelper users() {
+        if (users == null) {
+            users = new UsersHelper(this);
+        }
+        return users;
+    }
+
     public DbHelper db(){
         return dbHelper;
     }
 
     public WebDriver getDriver() {
         if (wd == null) {
-            if (browser.equals(BrowserType.FIREFOX)) {
-                wd = new FirefoxDriver();
-            } else if (browser.equals(BrowserType.CHROME)) {
+            if (browser.equals(BrowserType.CHROME)) {
                 wd = new ChromeDriver();
+            } else if (browser.equals(BrowserType.FIREFOX)) {
+                wd = new FirefoxDriver();
             }
-
-            wd.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-            wd.get(properties.getProperty("web.BaseURL"));
-
         }
         return wd;
     }

@@ -23,7 +23,7 @@ public class JamesHelper {
     private Store store;
     private String mailServer;
 
-    public  JamesHelper(ApplicationManager app) {
+    public JamesHelper(ApplicationManager app) {
         this.app = app;
         telnet = new TelnetClient();
         mailSession = Session.getDefaultInstance(System.getProperties());
@@ -34,7 +34,7 @@ public class JamesHelper {
         write("verify " + name);
         String result = readUntil("exist");
         closeTelnetSession();
-        return  result.trim().equals("User " + name + " exist");
+        return result.trim().equals("User " + name + " exist");
     }
 
 
@@ -60,7 +60,7 @@ public class JamesHelper {
         String password = app.getProperty("mailserver.adminpassword");
 
         try {
-            telnet.connect(mailServer,port);
+            telnet.connect(mailServer, port);
             in = telnet.getInputStream();
             out = new PrintStream(telnet.getOutputStream());
         } catch (Exception e) {
@@ -84,8 +84,9 @@ public class JamesHelper {
         write("quit");
     }
 
-    /**  посимвольно читаются данные из входного потока, данные которые вовит на консоль сервер
-      и сравнивается с заданным шаблоном, как только совпадет с шаблоном ожидание завершается
+    /**
+     * посимвольно читаются данные из входного потока, данные которые вовит на консоль сервер
+     * и сравнивается с заданным шаблоном, как только совпадет с шаблоном ожидание завершается
      */
     private String readUntil(String pattern) {
         try {
@@ -95,14 +96,14 @@ public class JamesHelper {
             while (true) {
                 System.out.print(ch);
                 sb.append(ch);
-                if (ch == lastChar){
-                    if(sb.toString().endsWith(pattern)) {
+                if (ch == lastChar) {
+                    if (sb.toString().endsWith(pattern)) {
                         return sb.toString();
                     }
                 }
                 ch = (char) in.read();
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
@@ -113,7 +114,7 @@ public class JamesHelper {
             out.println(value);
             out.flush();
             System.out.println(value);
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -140,7 +141,7 @@ public class JamesHelper {
 
     private List<MailMessage> getAllMail(String username, String password) throws MessagingException {
 
-        Folder inbox = openInbox(username,password);
+        Folder inbox = openInbox(username, password);
         List<MailMessage> messages = Arrays.asList(inbox.getMessages()).stream().map((m) -> toModelMail(m)).collect(Collectors.toList());
         closeFolder(inbox);
         return messages;
@@ -163,7 +164,7 @@ public class JamesHelper {
     private Folder openInbox(String username, String password) throws MessagingException {
 
         store = mailSession.getStore("pop3");
-        store.connect(mailServer,username,password);
+        store.connect(mailServer, username, password);
         Folder folder = store.getDefaultFolder().getFolder("INBOX");
         folder.open(Folder.READ_WRITE);
         return folder;

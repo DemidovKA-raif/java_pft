@@ -93,16 +93,6 @@ public class ContactHelper extends HelperBase {
         gotoHomePage();
     }
 
-    public void verifyGroupContact(){
-        String text = "[none]";
-        selectTypeGroupsInContacts(text);
-        selectAllContact();
-        clickAddGroup();
-    }
-
-    private void selectAllContact() {
-        click(By.id("MassCB"));
-    }
 
 
     public void contactDeleteGroupTest(int id, String text) {
