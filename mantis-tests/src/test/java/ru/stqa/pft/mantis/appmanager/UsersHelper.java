@@ -3,6 +3,7 @@ package ru.stqa.pft.mantis.appmanager;
 import org.openqa.selenium.By;
 import ru.lanwen.verbalregex.VerbalExpression;
 import ru.stqa.pft.mantis.model.MailMessage;
+import ru.stqa.pft.mantis.model.UsersData;
 
 import javax.mail.MessagingException;
 import java.io.IOException;
@@ -13,6 +14,12 @@ public class UsersHelper extends HelperBase{
 
     public UsersHelper(ApplicationManager app) {
         super(app);
+    }
+
+    public void resetPassword(String password, UsersData next) throws MessagingException, IOException {
+       clickUserNameByID(next.getUsername());
+       clickResetPassword();
+       finish(password);
     }
 
 

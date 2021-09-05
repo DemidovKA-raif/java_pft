@@ -1,18 +1,16 @@
 package ru.stqa.pft.mantis.tests;
 
-import biz.futureware.mantis.rpc.soap.client.UserData;
-import org.openqa.selenium.By;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import ru.lanwen.verbalregex.VerbalExpression;
-import ru.stqa.pft.mantis.model.MailMessage;
+import ru.stqa.pft.mantis.appmanager.HttpSession;
 import ru.stqa.pft.mantis.model.Users;
 import ru.stqa.pft.mantis.model.UsersData;
 
 import javax.mail.MessagingException;
 import java.io.IOException;
-import java.util.List;
+
 
 import static org.testng.Assert.assertTrue;
 
@@ -30,22 +28,14 @@ public class ChangePasswordUsers extends TestBase {
         String password = app.getProperty("web.adminPassword");
         String user = app.getProperty("web.adminLogin");
         Users usersData = app.db().usersRequestDB();
-        app.users().authorization(app.getProperty("web.adminLogin"), app.getProperty("web.adminPassword"));
+        app.users().authorization(user, password);
         app.users().clickMenu();
         UsersData next = usersData.iterator().next();
-        app.users().clickUserNameByID(next.getUsername());
-        app.users().clickResetPassword();
-        app.users().finish(password);
-        assertTrue(app.newSession().login(user, password));
+        app.users().resetPassword(password, next);
+        HttpSession session = app.newSession();
+        assertTrue(session.login(user, password));
+        assertTrue(session.isLoggedInAs(user));
     }
-
-
-
-//    private String findConfirmationLink(List<MailMessage> mailMessages, String email) {
-//        MailMessage mailMessage = mailMessages.stream().filter((m) -> m.to.equals(email)).findFirst().get();
-//        VerbalExpression regex = VerbalExpression.regex().find("http://").nonSpace().oneOrMore().build();
-//        return regex.getText(mailMessage.text);
-//    }
 
 
     @AfterMethod(alwaysRun = true)
