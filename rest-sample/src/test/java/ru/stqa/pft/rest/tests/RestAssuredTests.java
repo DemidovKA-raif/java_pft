@@ -7,6 +7,7 @@ import com.google.gson.reflect.TypeToken;
 import com.jayway.restassured.RestAssured;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import ru.stqa.pft.rest.model.Issue;
 
 import java.io.IOException;
 import java.util.Set;

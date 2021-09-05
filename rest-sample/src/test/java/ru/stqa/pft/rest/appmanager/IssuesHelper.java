@@ -1,4 +1,4 @@
-package appmanager;
+package ru.stqa.pft.rest.appmanager;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -6,7 +6,7 @@ import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import org.apache.http.client.fluent.Executor;
 import org.apache.http.client.fluent.Request;
-import ru.stqa.pft.rest.tests.Issue;
+import ru.stqa.pft.rest.model.Issue;
 
 import java.io.IOException;
 import java.util.Set;

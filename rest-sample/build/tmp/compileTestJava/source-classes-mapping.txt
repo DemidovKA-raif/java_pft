@@ -1,17 +1,17 @@
-ru/stqa/pft/rest/tests/Issue.java
- ru.stqa.pft.rest.tests.Issue
-appmanager/IssuesHelper.java
- appmanager.IssuesHelper
- appmanager.IssuesHelper$1
-appmanager/ApplicationManager.java
- appmanager.ApplicationManager
 ru/stqa/pft/rest/tests/RestAssuredTests.java
  ru.stqa.pft.rest.tests.RestAssuredTests
  ru.stqa.pft.rest.tests.RestAssuredTests$1
 ru/stqa/pft/rest/tests/RestTests.java
  ru.stqa.pft.rest.tests.RestTests
  ru.stqa.pft.rest.tests.RestTests$1
+ru/stqa/pft/rest/appmanager/ApplicationManager.java
+ ru.stqa.pft.rest.appmanager.ApplicationManager
 ru/stqa/pft/rest/tests/IssueTests.java
  ru.stqa.pft.rest.tests.IssueTests
 ru/stqa/pft/rest/tests/TestBase.java
  ru.stqa.pft.rest.tests.TestBase
+ru/stqa/pft/rest/appmanager/IssuesHelper.java
+ ru.stqa.pft.rest.appmanager.IssuesHelper
+ ru.stqa.pft.rest.appmanager.IssuesHelper$1
+ru/stqa/pft/rest/model/Issue.java
+ ru.stqa.pft.rest.model.Issue
