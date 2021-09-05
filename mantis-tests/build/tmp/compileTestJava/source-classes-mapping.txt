@@ -1,15 +1,5 @@
 ru/stqa/pft/mantis/appmanager/DbHelper.java
  ru.stqa.pft.mantis.appmanager.DbHelper
-ru/stqa/pft/mantis/tests/HbConnectionTest.java
- ru.stqa.pft.mantis.tests.HbConnectionTest
-ru/stqa/pft/mantis/tests/DBConnectionTests.java
- ru.stqa.pft.mantis.tests.DBConnectionTests
-ru/stqa/pft/mantis/model/Users.java
- ru.stqa.pft.mantis.model.Users
-ru/stqa/pft/mantis/model/UsersData.java
- ru.stqa.pft.mantis.model.UsersData
-ru/stqa/pft/mantis/model/MailMessage.java
- ru.stqa.pft.mantis.model.MailMessage
 ru/stqa/pft/mantis/appmanager/MailHelper.java
  ru.stqa.pft.mantis.appmanager.MailHelper
 ru/stqa/pft/mantis/tests/TestBase.java
@@ -26,14 +16,24 @@ ru/stqa/pft/mantis/appmanager/RegistrationHelper.java
  ru.stqa.pft.mantis.appmanager.RegistrationHelper
 ru/stqa/pft/mantis/appmanager/HttpSession.java
  ru.stqa.pft.mantis.appmanager.HttpSession
+ru/stqa/pft/mantis/tests/HbConnectionTest.java
+ ru.stqa.pft.mantis.tests.HbConnectionTest
 ru/stqa/pft/mantis/appmanager/FTPHelper.java
  ru.stqa.pft.mantis.appmanager.FTPHelper
+ru/stqa/pft/mantis/model/MailMessage.java
+ ru.stqa.pft.mantis.model.MailMessage
+ru/stqa/pft/mantis/tests/DBConnectionTests.java
+ ru.stqa.pft.mantis.tests.DBConnectionTests
+ru/stqa/pft/mantis/model/UsersData.java
+ ru.stqa.pft.mantis.model.UsersData
 ru/stqa/pft/mantis/model/Project.java
  ru.stqa.pft.mantis.model.Project
 ru/stqa/pft/mantis/tests/SoapTests.java
  ru.stqa.pft.mantis.tests.SoapTests
 ru/stqa/pft/mantis/appmanager/HelperBase.java
  ru.stqa.pft.mantis.appmanager.HelperBase
+ru/stqa/pft/mantis/model/Users.java
+ ru.stqa.pft.mantis.model.Users
 ru/stqa/pft/mantis/tests/LoginTests.java
  ru.stqa.pft.mantis.tests.LoginTests
 ru/stqa/pft/mantis/appmanager/SoapHelper.java

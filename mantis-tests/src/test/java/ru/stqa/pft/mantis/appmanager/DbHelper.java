@@ -24,7 +24,7 @@ public class DbHelper {
     public Users usersRequestDB() {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        List<UsersData> result = session.createQuery("from UsersData").list();
+        List<UsersData> result = session.createQuery("from UsersData where id != '1'").list();
         session.getTransaction().commit();
         session.close();
         System.out.println(result);
