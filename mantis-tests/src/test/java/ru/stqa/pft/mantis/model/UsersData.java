@@ -1,5 +1,6 @@
 package ru.stqa.pft.mantis.model;
 
+import biz.futureware.mantis.rpc.soap.client.UserData;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
 import org.hibernate.annotations.Type;
@@ -23,6 +24,7 @@ public class UsersData {
 
     @Column(name="username")
     private String username;
+
 
 
     public UsersData withId(int id) {
