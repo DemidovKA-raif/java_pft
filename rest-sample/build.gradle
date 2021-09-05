@@ -1,0 +1,25 @@
+apply plugin: 'java'
+
+
+
+repositories {
+    mavenCentral{}
+}
+
+
+dependencies {
+    testCompile 'org.testng:testng:7.4.0'
+    implementation 'com.google.code.gson:gson:2.8.7'
+    implementation 'org.apache.httpcomponents:httpclient:4.5.13'
+    implementation 'org.apache.httpcomponents:fluent-hc:4.5.13'
+}
+
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+}
+test {
+    useTestNG()
+}
