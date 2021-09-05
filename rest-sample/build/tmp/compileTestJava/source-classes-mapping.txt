@@ -3,3 +3,8 @@ ru/stqa/pft/rest/Issue.java
 ru/stqa/pft/rest/RestTests.java
  ru.stqa.pft.rest.RestTests
  ru.stqa.pft.rest.RestTests$1
+ru/stqa/pft/rest/TestBase.java
+ ru.stqa.pft.rest.TestBase
+ru/stqa/pft/rest/RestAssuredTests.java
+ ru.stqa.pft.rest.RestAssuredTests
+ ru.stqa.pft.rest.RestAssuredTests$1
