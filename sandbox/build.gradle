@@ -1,20 +1,27 @@
 apply plugin: 'java'
-apply plugin: 'application'
-mainClassName = "Runner"
+
 
 repositories {
     mavenCentral{}
 }
 
+
 dependencies {
     testCompile 'org.testng:testng:7.4.0'
 }
 
-dependencies {
-    implementation 'org.testng:testng:7.1.0'
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'no.nils:wsdl2java:0.9'
+    }
 }
+
+
+
 test {
     useTestNG()
 }
-
-

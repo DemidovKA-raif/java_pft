@@ -100,4 +100,5 @@
     <orderEntry type="library" name="Gradle: io.opentelemetry:opentelemetry-sdk-metrics:1.2.0-alpha" level="project" />
     <orderEntry type="library" name="Gradle: io.opentelemetry:opentelemetry-api-metrics:1.2.0-alpha" level="project" />
   </component>
+  <component name="TestModuleProperties" production-module="addressbook-web-tests.main" />
 </module>
