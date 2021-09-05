@@ -1,4 +1,4 @@
-package ru.stqa.pft.rest;
+package ru.stqa.pft.rest.tests;
 
 import java.util.Objects;
 
@@ -7,9 +7,6 @@ public class Issue {
     private int id;
     private String subject;
     private String description;
-
-
-
 
     @Override
     public boolean equals(Object o) {
@@ -23,6 +20,8 @@ public class Issue {
     public int hashCode() {
         return Objects.hash(id, subject, description);
     }
+
+    private String state_name;
 
     public Issue withId(int id) {
         this.id = id;
@@ -39,6 +38,11 @@ public class Issue {
         return this;
     }
 
+    public Issue withState_name(String state_name) {
+        this.state_name = state_name;
+        return this;
+    }
+
     public String getDescription() {
         return description;
     }
@@ -49,6 +53,10 @@ public class Issue {
 
     public int getId() {
         return id;
+    }
+
+    public String getState_name() {
+        return state_name;
     }
 
 
