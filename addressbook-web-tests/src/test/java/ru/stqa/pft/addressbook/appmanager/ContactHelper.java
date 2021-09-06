@@ -132,11 +132,13 @@ public class ContactHelper extends HelperBase {
         wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
     }
 
-    public void selectContactByIdByName(int id, String name) {
+    public void selectContactByIdByName(int id, String name) throws InterruptedException {
         wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
         new Select(wd.findElement(By.name("to_group"))).selectByVisibleText(name);
         clickAddGroup();
+        Thread.sleep(2000);
         gotoHomePage();
+
     }
 
     public void clickDeletionContact() {

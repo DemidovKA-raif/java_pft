@@ -1,5 +1,6 @@
 package ru.stqa.pft.addressbook.tests;
 
+import org.hamcrest.CoreMatchers;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
@@ -22,9 +23,10 @@ public class ContactGroupCreationTests extends TestBase {
         /**
          * Необходимо, что бы была хотя бы одна группа, для включения контакта в нее
          */
-            app.goTo().groupPage();
-            app.group().create(new GroupData().withName("test M"));
-            app.group().gotoHomePage();
+        app.goTo().groupPage();
+        long now = System.currentTimeMillis();
+        app.group().create(new GroupData().withName("Autotest"+now).withFooter("Add").withHeader("Contact in group"));
+        app.group().gotoHomePage();
 
 
         /**
@@ -45,59 +47,32 @@ public class ContactGroupCreationTests extends TestBase {
 
 
     /**
-     * Получаем список контактов "ДО"
-     * Получаем список групп "ДО"
-     * Выбрали рандомный контакт
-     * Выбрали рандомную группу
-     * Берем список контактов в группе
-     * Возвращаемся на главную
-     * Выполнили шаги по добавлению контакта в группу в UI, получаем ID- контакта, name-группы
-     * Возвращаемся на главную
-     * Получаем список контактов "После"
-     * Сравнили список контактов "ДО" и "После"
-     * Получаем список контактов в группах
-     * Сравнили список групп "ДО" и "После"
+     * получили список всех контактов
+     * получили список всех групп
+     * Выбрали рандомный контакт и получаем ID
+     * получили список групп, в которые входит контакт
+     * преобразовали полученные данные в список 1
+     * преобразовали все группы в список 2
+     * вывели лишь разницу - группу, в которой контакт не состоит
+     * выбираем рандомную свободную от нашего контакта группу
+     * идем домой
+     * добавляем контакт в свободную группу
      */
     @Test
-    public void addContactInGroupTest() {
+    public void addContactInGroupTest() throws InterruptedException {
         Contacts allContacts = app.db().contactsRequestDB();//получили список всех контактов
         Groups allGroup = app.db().groupsRequestDB();//получили список всех групп
         int contactId = allContacts.iterator().next().getId();//рандомный контакт и получаем ID
-        Groups contactGroups = app.db().contactInGroupPack1(contactId);//получили список групп, в которые входит контакт
+        Groups contactGroups = app.db().contactInGroup(contactId);//получили список групп, в которые входит контакт
         Collection<GroupData> listFirst = new ArrayList<>(contactGroups);//преобразовали полученные данные в список 1
         Collection<GroupData> listSecond = new ArrayList<>(allGroup);//преобразовали все группы в список 2
-        listSecond.removeAll( listFirst );//вывели лишь разницу - группу, в которой контакт не состоит
-        System.out.println(listSecond);//выводим результат для понимания, есть ли группа свободная
-        GroupData freeGroup = listSecond.iterator().next();//выбираем рандомную свободную группу
-        Groups beforeGroup = app.db().contactInGroup(freeGroup.getId());
+        listSecond.removeAll(listFirst);//вывели лишь разницу - группу, в которой контакт не состоит
+        GroupData freeGroup = listSecond.iterator().next();//выбираем рандомную свободную от нашего контакта группу
         app.contact().gotoHomePage();//идем домой
         app.contact().selectContactByIdByName(contactId, freeGroup.getName());//добавляем контакт в свободную группу
-        Groups afterGroup = app.db().contactInGroup(freeGroup.getId());
-        assertThat((afterGroup), equalTo(beforeGroup.withAdded(freeGroup)));
-
-
-
-//        GroupData randomGroup = group.iterator().next();//выбрали рандомную группу
-//        int randomGroupId = randomGroup.getId();//получили ID рандомной группы
-//        Groups contactData = app.db().contactInGroupPack1(randomGroupId);//нужно получить список контактов, которых нет в этой группе
-//        System.out.println(contactData);
-
-
-
-//        Groups groupForContactByID = app.db().contactInGroupPack1(contactGroups);//получаем список групп, в которых состоит контакт
-//        Iterator<GroupData> iterator = groupForContactByID.iterator();
-//        int id = String.format(iterator.toString(), id)
-//        GroupData groupsFreeAtContact = app.db().contactInGroupPack2(id).iterator().next();
-//        System.out.println(groupsFreeAtContact);
-
-
-//        GroupData groupForContact = groupForContactByID.iterator().next();//выбрали случайную группу без контакта из предыдущего шага
-//        Groups beforeInGroups = app.db().contactInGroupPack1(contactGroups);
-//        app.contact().gotoHomePage();
-//        app.contact().selectContactByIdByName(contactGroups, groupForContact.getName());
-//        Contacts after = app.db().contactsRequestDB();
-//        assertThat(after.size(), equalTo(before.size()));
-//        Groups afterInGroups = app.db().contactAllGroups();
-//        assertThat((afterInGroups), equalTo(beforeInGroups.withAdded(groupForContact)));
+        Groups contactGroupsAfter = app.db().contactInGroup(contactId);
+        assertThat((contactGroupsAfter), CoreMatchers.equalTo(contactGroups.withAdded(freeGroup)));
     }
 }
+
+

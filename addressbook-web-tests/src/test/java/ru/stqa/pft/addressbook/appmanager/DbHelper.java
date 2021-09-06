@@ -53,7 +53,8 @@ public class DbHelper {
         return null;
     }
 
-    public Groups contactInGroupPack1(int groupID) {
+
+    public Groups contactInGroup(int groupID) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         List<ContactData> result = session.createQuery("from ContactData where id =" + groupID).list();
@@ -65,18 +66,6 @@ public class DbHelper {
         return null;
     }
 
-
-    public Groups contactInGroup(int groupID) {
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
-        List<ContactData> result = session.createQuery("from ContactData where group_id =" + groupID).list();
-        session.getTransaction().commit();
-        session.close();
-        for (ContactData contact : result) {
-            return new Groups(contact.getGroups());
-        }
-        return null;
-    }
 
 }
 

@@ -17,7 +17,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
 public class ContactGroupDeletionTests extends TestBase {
 
     @BeforeMethod
-    public void ensurePreconditions() {
+    public void ensurePreconditions() throws InterruptedException {
 
         /**
          * Проверяем, что есть хотя бы одну группа
