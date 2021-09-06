@@ -66,7 +66,7 @@ public class ContactGroupCreationTests extends TestBase {
         Groups contactGroups = app.db().contactInGroup(contactId);//получили список групп, в которые входит контакт
         Collection<GroupData> listFirst = new ArrayList<>(contactGroups);//преобразовали полученные данные в список 1
         Collection<GroupData> listSecond = new ArrayList<>(allGroup);//преобразовали все группы в список 2
-        listSecond.removeAll(listFirst);//вывели лишь разницу - группу, в которой контакт не состоит
+        listSecond.removeAll(listFirst);//вывели разницу - группу, в которой контакт не состоит
         GroupData freeGroup = listSecond.iterator().next();//выбираем рандомную свободную от нашего контакта группу
         app.contact().gotoHomePage();//идем домой
         app.contact().selectContactByIdByName(contactId, freeGroup.getName());//добавляем контакт в свободную группу

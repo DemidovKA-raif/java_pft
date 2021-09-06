@@ -9,6 +9,9 @@ import ru.stqa.pft.addressbook.model.GroupData;
 import ru.stqa.pft.addressbook.model.Groups;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.IsEqual.equalTo;
@@ -48,39 +51,42 @@ public class ContactGroupDeletionTests extends TestBase {
         Contacts before = app.db().contactsRequestDB();
         ContactData contactForGroup = before.iterator().next();
         if (contactForGroup.getGroups().size() == 0) {
-            Groups group = app.db().groupsRequestDB()  ;
+            Groups group = app.db().groupsRequestDB();
             GroupData groupForContact = group.iterator().next();
             app.contact().selectContactByIdByName(contactForGroup.getId(), groupForContact.getName());
         }
     }
 
 
-    /**
-     * Получаем список контактов в группах
-     * Выбираем случайную группу из списка, где есть контакты
-     * Получаем список контактов "ДО"
-     * Получаем список групп "ДО"
-     * Выбираем случайный контак из рандоной группы
-     * Выбираем случайную группу
-     * Переходим на главную страницу в UI
-     * Выбираем подготовленную заранее группу и контакт, удаляем контакт из группы
-     * Сравниваем все полученные заранее списки
-     */
+
 
     @Test
-    public void deleteContactInGroupTest() {
-        Groups beforeInGroups = app.db().contactAllGroups();
-        GroupData contactInGroups = beforeInGroups.iterator().next();
-        Contacts before = app.db().contactsRequestDB();
-        Groups group = app.db().groupsRequestDB();
-        ContactData addGroupContact = before.iterator().next();
-        GroupData groupForContact = group.iterator().next();
+    public void deleteContactInGroupTest() throws InterruptedException {
+        Contacts allContacts = app.db().contactsRequestDB();//получили список всех контактов
+        Groups allGroup = app.db().groupsRequestDB();//получили список всех групп
+        int contactId = allContacts.iterator().next().getId();//рандомный контакт и получаем ID
+        Groups contactGroups = app.db().contactInGroup(contactId);//получили список групп, в которые входит контакт
+        if(contactGroups.size()==0){
+            Collection<GroupData> listGroup = new ArrayList<>(allGroup);//преобразовали все группы в список 2
+            GroupData freeGroup = listGroup.iterator().next();//выбираем рандомную свободную от нашего контакта группу
+            app.contact().gotoHomePage();//идем домой
+            app.contact().selectContactByIdByName(contactId, freeGroup.getName());
+            app.contact().contactDeleteGroupTest(contactId, freeGroup.getName());
+            Groups contactGroupsAfter = app.db().contactInGroup(contactId);
+            assertThat((contactGroupsAfter), CoreMatchers.equalTo(contactGroups.withOut(freeGroup)));
+            return;
+        }
+        Collection<GroupData> listGroups = new ArrayList<>(contactGroups);
+        GroupData freeGroup = listGroups.iterator().next();
         app.contact().gotoHomePage();
-        app.contact().contactDeleteGroupTest(addGroupContact.getId(), contactInGroups.getName());
-        Contacts after = app.db().contactsRequestDB();
-        assertThat(after.size(), CoreMatchers.equalTo(before.size()));
-        Groups afterInGroups = app.db().contactAllGroups();
-        assertThat((afterInGroups), CoreMatchers.equalTo(beforeInGroups.withOut(groupForContact)));
+        app.contact().contactDeleteGroupTest(contactId, freeGroup.getName());
+        Groups contactGroupsAfter = app.db().contactInGroup(contactId);
+        assertThat((contactGroupsAfter), CoreMatchers.equalTo(contactGroups.withOut(freeGroup)));
+
+
+//   :-(
+
+
     }
 }
 
