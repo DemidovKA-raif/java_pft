@@ -58,33 +58,46 @@ public class ContactGroupDeletionTests extends TestBase {
     }
 
 
-
-
     @Test
-    public void deleteContactInGroupTest() throws InterruptedException {
-        Contacts allContacts = app.db().contactsRequestDB();//получили список всех контактов
-        Groups allGroup = app.db().groupsRequestDB();//получили список всех групп
-        int contactId = allContacts.iterator().next().getId();//рандомный контакт и получаем ID
-        Groups contactGroups = app.db().contactInGroup(contactId);//получили список групп, в которые входит контакт
-        if(contactGroups.size()==0){
-            Collection<GroupData> listGroup = new ArrayList<>(allGroup);//преобразовали все группы в список 2
-            GroupData freeGroup = listGroup.iterator().next();//выбираем рандомную свободную от нашего контакта группу
-            app.contact().gotoHomePage();//идем домой
-            app.contact().selectContactByIdByName(contactId, freeGroup.getName());
-            app.contact().contactDeleteGroupTest(contactId, freeGroup.getName());
-            Groups contactGroupsAfter = app.db().contactInGroup(contactId);
-            assertThat((contactGroupsAfter), CoreMatchers.equalTo(contactGroups.withOut(freeGroup)));
-            return;
-        }
-        Collection<GroupData> listGroups = new ArrayList<>(contactGroups);
-        GroupData freeGroup = listGroups.iterator().next();
+    public void deleteContactInGroupTest() {
+
+        ContactData groupData = app.db().contactAllGroups();//получили контактам c группой
+        int contactId = groupData.getId();//получили ID контакта
+        Groups groupBefore = app.db().contactInGroup(contactId);//получили группу контакта
+        GroupData randomGroup = groupBefore.iterator().next();
+        String groupName = randomGroup.getName();//имя группы с контактом
         app.contact().gotoHomePage();
-        app.contact().contactDeleteGroupTest(contactId, freeGroup.getName());
-        Groups contactGroupsAfter = app.db().contactInGroup(contactId);
-        assertThat((contactGroupsAfter), CoreMatchers.equalTo(contactGroups.withOut(freeGroup)));
+        app.contact().contactDeleteGroupTest(contactId, groupName);
+        Groups contactInGroupAfter = app.db().contactInGroup(contactId);
+        assertThat((contactInGroupAfter), CoreMatchers.equalTo(groupBefore.withOut(randomGroup)));
 
 
-//   :-(
+
+
+        //for memory
+//        Contacts allContacts = app.db().contactsRequestDB();//получили список всех контактов
+//        Groups allGroup = app.db().groupsRequestDB();//получили список всех групп
+//        int contactId = allContacts.iterator().next().getId();//рандомный контакт и получаем ID
+//        Groups contactGroups = app.db().contactInGroup(contactId);//получили список групп, в которые входит контакт
+//        if(contactGroups.size()==0){
+//            Collection<GroupData> listGroup = new ArrayList<>(allGroup);//преобразовали все группы в список 2
+//            GroupData freeGroup = listGroup.iterator().next();//выбираем рандомную свободную от нашего контакта группу
+//            app.contact().gotoHomePage();//идем домой
+//            app.contact().selectContactByIdByName(contactId, freeGroup.getName());
+//            app.contact().contactDeleteGroupTest(contactId, freeGroup.getName());
+//            Groups contactGroupsAfter = app.db().contactInGroup(contactId);
+//            assertThat((contactGroupsAfter), CoreMatchers.equalTo(contactGroups.withOut(freeGroup)));
+//            return;
+//        }
+//        Collection<GroupData> listGroups = new ArrayList<>(contactGroups);
+//        GroupData freeGroup = listGroups.iterator().next();
+//        app.contact().gotoHomePage();
+//        app.contact().contactDeleteGroupTest(contactId, freeGroup.getName());
+//        Groups contactGroupsAfter = app.db().contactInGroup(contactId);
+//        assertThat((contactGroupsAfter), CoreMatchers.equalTo(contactGroups.withOut(freeGroup)));
+
+
+
 
 
     }
