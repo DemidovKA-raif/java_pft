@@ -25,7 +25,7 @@ public class ContactGroupCreationTests extends TestBase {
          */
         app.goTo().groupPage();
         long now = System.currentTimeMillis();
-        app.group().create(new GroupData().withName("Autotest"+now).withFooter("Add").withHeader("Contact in group"));
+        app.group().create(new GroupData().withName("Autotest" + now).withFooter("Add").withHeader("Contact in group"));
         app.group().gotoHomePage();
 
 

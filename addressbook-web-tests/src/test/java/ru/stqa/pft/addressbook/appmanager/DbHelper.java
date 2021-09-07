@@ -49,7 +49,7 @@ public class DbHelper {
         session.close();
         for (ContactData contact : result) {
             Groups groups = new Groups(contact.getGroups());
-            if (groups.size()==0){
+            if (groups.size() == 0) {
                 continue;
             }
             return contact;
@@ -70,24 +70,6 @@ public class DbHelper {
         }
         return null;
     }
-
-    public ContactData contactInGroup1(int groupID) {
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
-        List<ContactData> result = session.createQuery("from ContactData where id="+ groupID).list();
-        session.getTransaction().commit();
-        session.close();
-        for (ContactData contact : result) {
-//            Groups groups = new Groups(contact.getGroups());
-//            if (groups.size()==0){
-//                continue;
-//            }
-            return contact;
-
-        }
-        return null;
-    }
-
 
 }
 

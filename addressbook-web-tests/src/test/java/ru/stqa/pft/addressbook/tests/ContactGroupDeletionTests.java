@@ -73,7 +73,7 @@ public class ContactGroupDeletionTests extends TestBase {
     }
 }
 
-        //                                  for memory
+//                                  for memory
 //        Contacts allContacts = app.db().contactsRequestDB();//получили список всех контактов
 //        Groups allGroup = app.db().groupsRequestDB();//получили список всех групп
 //        int contactId = allContacts.iterator().next().getId();//рандомный контакт и получаем ID
