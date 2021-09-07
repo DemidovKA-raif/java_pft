@@ -70,11 +70,10 @@ public class ContactGroupDeletionTests extends TestBase {
         app.contact().contactDeleteGroupTest(contactId, groupName);
         Groups contactInGroupAfter = app.db().contactInGroup(contactId);
         assertThat((contactInGroupAfter), CoreMatchers.equalTo(groupBefore.withOut(randomGroup)));
+    }
+}
 
-
-
-
-        //for memory
+        //                                  for memory
 //        Contacts allContacts = app.db().contactsRequestDB();//получили список всех контактов
 //        Groups allGroup = app.db().groupsRequestDB();//получили список всех групп
 //        int contactId = allContacts.iterator().next().getId();//рандомный контакт и получаем ID
@@ -95,13 +94,6 @@ public class ContactGroupDeletionTests extends TestBase {
 //        app.contact().contactDeleteGroupTest(contactId, freeGroup.getName());
 //        Groups contactGroupsAfter = app.db().contactInGroup(contactId);
 //        assertThat((contactGroupsAfter), CoreMatchers.equalTo(contactGroups.withOut(freeGroup)));
-
-
-
-
-
-    }
-}
 
 
 
