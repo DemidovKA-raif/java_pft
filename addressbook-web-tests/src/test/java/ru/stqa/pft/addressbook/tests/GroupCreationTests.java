@@ -63,14 +63,16 @@ public class GroupCreationTests extends TestBase {
 
     @Test
     public void testBadGroupCreation() {
-        app.goTo().groupPage();
-        Groups before = app.db().groupsRequestDB();
-        GroupData group = new GroupData().withName("test2'");
-        app.group().create(group);
-        assertThat(app.group().count(), equalTo(before.size()));
-        Groups after = app.db().groupsRequestDB();
-        assertThat(after, equalTo(before));
-        verifyGroupListInUI();
+            app.goTo().groupPage();
+            Groups before = app.db().groupsRequestDB();
+            long now = System.currentTimeMillis();
+            GroupData group = new GroupData().withName("test2 `" + now);
+            app.group().create(group);
+            assertThat(app.group().count(), equalTo(before.size()));
+            Groups after = app.db().groupsRequestDB();
+            assertThat(after, equalTo(before));
+            verifyGroupListInUI();
+
     }
 }
 
