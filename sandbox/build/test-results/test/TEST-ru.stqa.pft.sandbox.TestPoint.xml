@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.sandbox.TestPoint" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-09-08T09:13:42" hostname="N-MSK-RUADMK3" time="0.019">
+  <properties/>
+  <testcase name="testPoint1" classname="ru.stqa.pft.sandbox.TestPoint" time="0.019"/>
+  <testcase name="testPoint2" classname="ru.stqa.pft.sandbox.TestPoint" time="0.0"/>
+  <system-out><![CDATA[It is OKay!
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

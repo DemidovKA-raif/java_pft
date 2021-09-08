@@ -7,7 +7,7 @@ repositories {
 
 
 dependencies {
-    testCompile 'org.testng:testng:7.4.0'
+    testImplementation 'org.testng:testng:7.4.0'
 }
 
 buildscript {
@@ -19,7 +19,6 @@ buildscript {
         classpath 'no.nils:wsdl2java:0.9'
     }
 }
-
 
 
 test {
