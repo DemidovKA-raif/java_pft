@@ -26,7 +26,7 @@ public class ApplicationManager {
     private final String browser;
     private DbHelper dbHelper;
 
-    public ApplicationManager(String browser){
+    public ApplicationManager(String browser) {
         this.browser = browser;
         properties = new Properties();
 
@@ -37,17 +37,17 @@ public class ApplicationManager {
         properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties", target))));
 
         dbHelper = new DbHelper();
-if("".equals(properties.getProperty("selenium.server"))) {
-    if (browser.equals(BrowserType.FIREFOX)) {
-        wd = new FirefoxDriver();
-    } else if (browser.equals(BrowserType.CHROME)) {
-        wd = new ChromeDriver();
-    }
-}else {
-    DesiredCapabilities capabilities = new DesiredCapabilities();
-    capabilities.setBrowserName(browser);
-    wd = new RemoteWebDriver(new URL(properties.getProperty("selenium.server")), capabilities);
-}
+        if ("".equals(properties.getProperty("selenium.server"))) {
+            if (browser.equals(BrowserType.FIREFOX)) {
+                wd = new FirefoxDriver();
+            } else if (browser.equals(BrowserType.CHROME)) {
+                wd = new ChromeDriver();
+            }
+        } else {
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setBrowserName(browser);
+            wd = new RemoteWebDriver(new URL(properties.getProperty("selenium.server")), capabilities);
+        }
         wd.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         wd.get(properties.getProperty("web.BaseURL"));
         groupHelper = new GroupHelper(wd);
@@ -73,7 +73,7 @@ if("".equals(properties.getProperty("selenium.server"))) {
         return contactHelper;
     }
 
-    public DbHelper db(){
+    public DbHelper db() {
         return dbHelper;
     }
 }
