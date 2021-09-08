@@ -15,8 +15,9 @@ public class GroupModificationTests extends TestBase {
     @BeforeMethod
     public void ensurePrecondition() {
         if (app.db().groupsRequestDB().size() == 0) {
+            long now = System.currentTimeMillis();
             app.goTo().groupPage();
-            app.group().create(new GroupData().withName("test1"));
+            app.group().create(new GroupData().withName("autotest"+now));
         }
     }
 
@@ -24,8 +25,9 @@ public class GroupModificationTests extends TestBase {
     public void testGroupModification() {
         Groups before = app.db().groupsRequestDB();
         GroupData modifiedGroup = before.iterator().next();
+        long now = System.currentTimeMillis();
         GroupData group = new GroupData()
-                .withId(modifiedGroup.getId()).withName("test1").withHeader("test2").withFooter("test3");
+                .withId(modifiedGroup.getId()).withName("test1"+now).withHeader("test2").withFooter("test3");
         app.goTo().groupPage();
         app.group().modify(group);
         assertThat(app.group().count(), equalTo(before.size()));
