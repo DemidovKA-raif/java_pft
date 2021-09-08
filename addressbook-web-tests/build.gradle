@@ -6,7 +6,7 @@ repositories {
 }
 
 dependencies {
-    testCompile 'org.testng:testng:7.4.0'
+    testImplementation 'org.testng:testng:7.4.0'
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.0.0-beta-4'
     testImplementation 'org.hamcrest:hamcrest:2.2'
     compile "com.beust:jcommander:1.71"
