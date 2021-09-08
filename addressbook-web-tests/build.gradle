@@ -9,7 +9,7 @@ dependencies {
     testImplementation 'org.testng:testng:7.4.0'
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.0.0-beta-4'
     testImplementation 'org.hamcrest:hamcrest:2.2'
-    compile "com.beust:jcommander:1.71"
+    testImplementation "com.beust:jcommander:1.71"
     implementation 'com.thoughtworks.xstream:xstream:1.4.17'
     implementation 'com.google.code.gson:gson:2.8.7'
     implementation 'mysql:mysql-connector-java:8.0.26'
