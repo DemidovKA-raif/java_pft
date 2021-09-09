@@ -41,7 +41,7 @@ public class ApplicationManager {
 
         if ("".equals(properties.getProperty("selenium.server"))) {
             if (browser.equals(BrowserType.FIREFOX)) {
-                wd = new FirefoxDriver((Capabilities) new FirefoxBinary(new File("C:\\Program Files\\Mozilla Firefox\\firefox.exe")));
+                wd = new FirefoxDriver();
             } else if (browser.equals(BrowserType.CHROME)) {
                 wd = new ChromeDriver();
             }
