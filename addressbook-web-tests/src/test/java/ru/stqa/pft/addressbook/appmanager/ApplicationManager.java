@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -42,8 +41,7 @@ public class ApplicationManager {
 
         if ("".equals(properties.getProperty("selenium.server"))) {
             if (browser.equals(BrowserType.FIREFOX)) {
-                FirefoxBinary binary_location= new FirefoxBinary(new File("C:\\Program Files\\Mozilla Firefox\\firefox.exe"));
-                wd = new FirefoxDriver((Capabilities) binary_location);
+                wd = new FirefoxDriver((Capabilities) new FirefoxBinary(new File("C:\\Program Files\\Mozilla Firefox\\firefox.exe")));
             } else if (browser.equals(BrowserType.CHROME)) {
                 wd = new ChromeDriver();
             }
