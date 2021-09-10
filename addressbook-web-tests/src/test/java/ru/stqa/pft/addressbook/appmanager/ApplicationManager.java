@@ -45,14 +45,12 @@ public class ApplicationManager {
             if (browser.equals(BrowserType.FIREFOX)) {
                 wd = new FirefoxDriver();
             } else if (browser.equals(BrowserType.CHROME)) {
+                System.setProperty("webdriver.chrome.driver", "C:\\Develop\\chromedriver.exe");
                 wd = new ChromeDriver();
             }
         } else {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
-            browserstackOptions.put("os", "Windows");
-            browserstackOptions.put("osVersion", "10");
-            browserstackOptions.put("local", "false");
             browserstackOptions.put("seleniumVersion", "4.0.0-alpha-2");
             capabilities.setCapability("bstack:options", browserstackOptions);
             capabilities.setBrowserName(browser);
