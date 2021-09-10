@@ -43,16 +43,13 @@ public class ApplicationManager {
         dbHelper = new DbHelper();
         if ("".equals(properties.getProperty("selenium.server"))) {
             if (browser.equals(BrowserType.FIREFOX)) {
-                wd = new FirefoxDriver();
+                FirefoxBinary binary = new FirefoxBinary(new File("C:\\Program Files\\Mozilla Firefox\\firefox.exe"));
+                wd = new FirefoxDriver((Capabilities) binary);
             } else if (browser.equals(BrowserType.CHROME)) {
-                System.setProperty("webdriver.chrome.driver", "C:\\Develop\\chromedriver.exe");
                 wd = new ChromeDriver();
             }
         } else {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
-            browserstackOptions.put("seleniumVersion", "4.0.0-alpha-2");
-            capabilities.setCapability("bstack:options", browserstackOptions);
             capabilities.setBrowserName(browser);
             capabilities.setPlatform(Platform.fromString(System.getProperty("platform", "win10")));
             wd = new RemoteWebDriver(new URL(properties.getProperty("selenium.server")), capabilities);
