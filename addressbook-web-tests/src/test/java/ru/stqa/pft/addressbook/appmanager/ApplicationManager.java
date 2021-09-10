@@ -16,6 +16,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -48,13 +49,12 @@ public class ApplicationManager {
             }
         } else {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            DesiredCapabilities caps = new DesiredCapabilities();
-            caps.setCapability("os", "Windows");
-            caps.setCapability("os_version", "10");
-            caps.setCapability("browser", "Chrome");
-            caps.setCapability("browser_version", "85.0");
-            caps.setCapability("browserstack.local", "false");
-            caps.setCapability("browserstack.selenium_version", "4.0.0-alpha-2");
+            HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+            browserstackOptions.put("os", "Windows");
+            browserstackOptions.put("osVersion", "10");
+            browserstackOptions.put("local", "false");
+            browserstackOptions.put("seleniumVersion", "4.0.0-alpha-2");
+            capabilities.setCapability("bstack:options", browserstackOptions);
             capabilities.setBrowserName(browser);
             capabilities.setPlatform(Platform.fromString(System.getProperty("platform", "win10")));
             wd = new RemoteWebDriver(new URL(properties.getProperty("selenium.server")), capabilities);
