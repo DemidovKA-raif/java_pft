@@ -38,8 +38,6 @@ public class ApplicationManager {
 
     public void init() throws IOException {
         String target = System.getProperty("target", "local");
-        System.setProperty("webdriver.chrome.driver", "src/test/resources");
-        System.setProperty("webdriver.firefox.driver", "src/test/resources");
         properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties", target))));
         dbHelper = new DbHelper();
         if ("".equals(properties.getProperty("selenium.server"))) {
