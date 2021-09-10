@@ -48,6 +48,13 @@ public class ApplicationManager {
             }
         } else {
             DesiredCapabilities capabilities = new DesiredCapabilities();
+            DesiredCapabilities caps = new DesiredCapabilities();
+            caps.setCapability("os", "Windows");
+            caps.setCapability("os_version", "10");
+            caps.setCapability("browser", "Chrome");
+            caps.setCapability("browser_version", "85.0");
+            caps.setCapability("browserstack.local", "false");
+            caps.setCapability("browserstack.selenium_version", "4.0.0-alpha-2");
             capabilities.setBrowserName(browser);
             capabilities.setPlatform(Platform.fromString(System.getProperty("platform", "win10")));
             wd = new RemoteWebDriver(new URL(properties.getProperty("selenium.server")), capabilities);
