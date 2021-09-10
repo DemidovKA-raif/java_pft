@@ -20,7 +20,6 @@ import java.util.HashMap;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-
 public class ApplicationManager {
     WebDriver wd;
     private final Properties properties;
@@ -44,14 +43,13 @@ public class ApplicationManager {
         dbHelper = new DbHelper();
         if ("".equals(properties.getProperty("selenium.server"))) {
             if (browser.equals(BrowserType.FIREFOX)) {
-                System.setProperty("webdriver.firefox.driver","C:\\Program Files\\Mozilla Firefox\\firefox.exe");
                 wd = new FirefoxDriver();
             } else if (browser.equals(BrowserType.CHROME)) {
                 wd = new ChromeDriver();
             }
         } else {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setBrowserName("firefox");
+            capabilities.setBrowserName(browser);
             capabilities.setPlatform(Platform.fromString(System.getProperty("platform", "win10")));
             wd = new RemoteWebDriver(new URL(properties.getProperty("selenium.server")), capabilities);
         }
